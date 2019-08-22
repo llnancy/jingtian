@@ -8,8 +8,8 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>Java 8实战</artifactId>
-    <description>《Java8实战》书中代码及其它Java 8相关测试代码</description>
+    <artifactId>Java8实战</artifactId>
+    <description>《Java8实战》书中代码及其它Java8相关测试代码</description>
 
     <properties>
         <springboot.version>2.1.6.RELEASE</springboot.version>

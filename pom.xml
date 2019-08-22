@@ -16,10 +16,10 @@
     <version>1.0-SNAPSHOT</version>
 
     <modules>
-        <module>Java SE</module>
+        <module>JavaSE</module>
         <module>设计模式</module>
         <module>数据结构-算法</module>
-        <module>Java EE</module>
+        <module>JavaEE</module>
         <module>数据库</module>
         <module>中间件</module>
         <module>分布式</module>

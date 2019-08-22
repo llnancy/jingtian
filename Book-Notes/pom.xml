@@ -12,6 +12,6 @@
     <description>读书笔记</description>
     <packaging>pom</packaging>
     <modules>
-        <module>Java 8实战</module>
+        <module>Java8实战</module>
     </modules>
 </project>
