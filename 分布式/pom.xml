@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>gold-road-to-java</artifactId>
+        <groupId>cn.org.lilu</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>分布式</artifactId>
+    <description>
+        此部分是分布式专题。
+        包含
+        分布式Session
+        SSO单点登录
+        分布式全局ID生成方案
+        接口幂等性
+        分布式事务-TCC
+        分布式事务-消息队列
+        分布式锁
+        分布式缓存-redis
+    </description>
+</project>

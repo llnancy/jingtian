@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.6.RELEASE</version>
+    </parent>
+    <groupId>cn.org.lilu</groupId>
+    <artifactId>gold-road-to-java</artifactId>
+    <description>Java成魔之路</description>
+
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <modules>
+        <module>Java SE</module>
+        <module>设计模式</module>
+        <module>数据结构-算法</module>
+        <module>Java EE</module>
+        <module>数据库</module>
+        <module>中间件</module>
+        <module>分布式</module>
+        <module>微服务</module>
+        <module>项目管理-持续集成</module>
+        <module>Book-Notes</module>
+    </modules>
+</project>
