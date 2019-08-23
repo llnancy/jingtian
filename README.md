@@ -14,28 +14,30 @@
 </div> 
 
 ## 简介
-gold-road-to-Java 是一条通往Java的黄金道路  ---  Java成魔之路。
+gold-road-to-Java 是一条通往Java的黄金道路  ----  Java成魔之路。
 
-本项目包含了Java成魔的必备知识，以笔记+源码的方式提供给读者学习。
+本项目包含Java成魔的必备知识，内容来源于平时学习和工作中的积累和沉淀。才疏学浅。难免有不足之处，欢迎指正，万分感谢。
 
 ## Java成魔脑图
 完善中...
 ![Java成魔之路](assets/gold-road-to-java.png)
 
+<center style="color:#744DA9;"><br /><br />没有行动的梦想都是妄想。<br /><br /></center>
+
 | Java SE | 设计模式 | 数据结构/算法 | Java EE | 数据库 | 中间件 | 分布式 | 微服务 | 项目管理/持续集成 | 优秀书籍 |
 | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: |
-| [:coffee:](#coffee-JavaSE) | [:sunflower:](#sunflower-设计模式) | [:pencil:](#pencil-数据结构/算法) | [:baby_bottle:](#baby_bottle-JavaEE) | [:package:](#package-数据库) | [:mailbox:](#mailbox-中间件) | [:globe_with_meridians:](#globe_with_meridians-分布式) | [:cloud:](#cloud-微服务) | [:octocat:](#octocat-项目管理/持续集成) | [:books:](#books-优秀书籍) |
+| [:coffee:](#coffee-Java SE) | [:sunflower:](#sunflower-设计模式) | [:pencil:](#pencil-数据结构/算法) | [:baby_bottle:](#baby_bottle-Java EE) | [:package:](#package-数据库) | [:mailbox:](#mailbox-中间件) | [:globe_with_meridians:](#globe_with_meridians-分布式) | [:cloud:](#cloud-微服务) | [:octocat:](#octocat-项目管理/持续集成) | [:books:](#books-优秀书籍) |
 
-## :coffee: [Java SE](./JavaSE)
-- [数据类型](./JavaSE/docs/数据类型.md)
-- [类和对象](./JavaSE/docs/类和对象.md)
-- [异常](./JavaSE/docs/异常.md)
-- [反射](./JavaSE/docs/反射.md)
-- [泛型](./JavaSE/docs/泛型.md)
-- [容器](./JavaSE/docs/容器.md)
-- [并发](./JavaSE/docs/并发.md)
-- [IO](./JavaSE/docs/IO.md)
-- [JVM](./JavaSE/docs/JVM.md)
+## :coffee: [Java SE](./Java SE)
+- [数据类型](./Java SE/docs/数据类型.md)
+- [类和对象](./Java SE/docs/类和对象.md)
+- [异常](./Java SE/docs/异常.md)
+- [反射](./Java SE/docs/反射.md)
+- [泛型](./Java SE/docs/泛型.md)
+- [容器](./Java SE/docs/容器.md)
+- [并发](./Java SE/docs/并发.md)
+- [IO](./Java SE/docs/IO.md)
+- [JVM](./Java SE/docs/JVM.md)
 
 ## :sunflower: [设计模式](./设计模式)
 待完善...
@@ -84,7 +86,7 @@ gold-road-to-Java 是一条通往Java的黄金道路  ---  Java成魔之路。
 
 待完善...
 
-## :baby_bottle: [JavaEE](./JavaEE)
+## :baby_bottle: [Java EE](./Java EE)
 待完善...
 
 ## :package: [数据库](./数据库)
@@ -119,13 +121,15 @@ gold-road-to-Java 是一条通往Java的黄金道路  ---  Java成魔之路。
 待完善...
 
 ## :books: [优秀书籍](./Book-Notes)
-- [Java8实战](./Book-Notes/Java8实战/README.md)
-  - [第一章：Java8的前世今生](./Book-Notes/Java8实战/notes/第1章-Java8的前世今生.md)
-  - [第二章：通过行为参数化传递代码](./Book-Notes/Java8实战/notes/第2章-通过行为参数化传递代码.md)
-  - [第三章：Lambda表达式](./Book-Notes/Java8实战/notes/第3章-Lambda表达式.md)
-  - [第四章：引入流](./Book-Notes/Java8实战/notes/第4章-引入流.md)
-  - [第五章：使用流](./Book-Notes/Java8实战/notes/第5章-使用流.md)
-  - [第六章：用流收集数据](./Book-Notes/Java8实战/notes/第6章-用流收集数据.md)
-  - [第七章：并行数据处理与性能](./Book-Notes/Java8实战/notes/第7章-并行数据处理与性能.md)
+- [Java 8实战](./Book-Notes/Java 8实战/README.md)
+  - [第一章：Java 8的前世今生](./Book-Notes/Java 8实战/notes/第1章-Java8的前世今生.md)
+  - [第二章：通过行为参数化传递代码](./Book-Notes/Java 8实战/notes/第2章-通过行为参数化传递代码.md)
+  - [第三章：Lambda表达式](./Book-Notes/Java 8实战/notes/第3章-Lambda表达式.md)
+  - [第四章：引入流](./Book-Notes/Java 8实战/notes/第4章-引入流.md)
+  - [第五章：使用流](./Book-Notes/Java 8实战/notes/第5章-使用流.md)
+  - [第六章：用流收集数据](./Book-Notes/Java 8实战/notes/第6章-用流收集数据.md)
+  - [第七章：并行数据处理与性能](./Book-Notes/Java 8实战/notes/第7章-并行数据处理与性能.md)
+  - [第八章：重构、测试和调试](./Book-Notes/Java 8实战/notes/第8章-重构-测试-调试.md)
+  - [第九章：默认方法](./Book-Notes/Java 8实战/notes/第9章-默认方法.md)
 
 待完善...

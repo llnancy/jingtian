@@ -4,4 +4,4 @@
 #### 目录说明
 assets      ----- 静态资源目录
 [notes](./notes)       ----- 笔记目录
-[src](./src)            ----- 源码目录
+[src](./src/main/java/cn/org/lilu)            ----- 源码目录
