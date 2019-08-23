@@ -28,7 +28,7 @@ gold-road-to-Java 是一条通往Java的黄金道路  ----  Java成魔之路。
 
 | Java SE | 设计模式 | 数据结构/算法 | Java EE | 数据库 | 中间件 | 分布式 | 微服务 | 项目管理/持续集成 | 优秀书籍 |
 | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: |
-| [:coffee:](#coffee-JavaSE) | [:sunflower:](#sunflower-设计模式) | [:pencil:](#pencil-数据结构/算法) | [:baby_bottle:](#baby_bottle-JavaEE) | [:package:](#package-数据库) | [:mailbox:](#mailbox-中间件) | [:globe_with_meridians:](#globe_with_meridians-分布式) | [:cloud:](#cloud-微服务) | [:octocat:](#octocat-项目管理/持续集成) | [:books:](#books-优秀书籍) |
+| [:coffee:](#coffee-JavaSE) | [:sunflower:](#sunflower-设计模式) | [:pencil:](#pencil-数据结构-算法) | [:baby_bottle:](#baby_bottle-JavaEE) | [:package:](#package-数据库) | [:mailbox:](#mailbox-中间件) | [:globe_with_meridians:](#globe_with_meridians-分布式) | [:cloud:](#cloud-微服务) | [:octocat:](#octocat-项目管理-持续集成) | [:books:](#books-优秀书籍) |
 
 ## :coffee: [JavaSE](./JavaSE)
 - [数据类型](./JavaSE/docs/数据类型.md)
@@ -44,7 +44,7 @@ gold-road-to-Java 是一条通往Java的黄金道路  ----  Java成魔之路。
 ## :sunflower: [设计模式](./设计模式)
 待完善...
 
-## :pencil: [数据结构/算法](./数据结构-算法)
+## :pencil: [数据结构-算法](./数据结构-算法)
 #### [《剑指Offer》](./数据结构-算法/剑指Offer/README.md)
 - [实现线程安全的单例模式](./数据结构-算法/剑指Offer/docs/实现线程安全的单例模式.md)
 - [数组中重复的数（题目一）](./数据结构-算法/剑指Offer/docs/数组中重复的数（题目一）.md)
@@ -112,7 +112,7 @@ gold-road-to-Java 是一条通往Java的黄金道路  ----  Java成魔之路。
 ## :cloud: [微服务](./微服务)
 待完善...
 
-## :octocat: [项目管理/持续集成](./项目管理-持续集成)
+## :octocat: [项目管理-持续集成](./项目管理-持续集成)
 #### Linux
 - [Linux命令](./项目管理-持续集成/Linux/Linux命令.md)
 
