@@ -26,9 +26,9 @@ gold-road-to-Java 是一条通往Java的黄金道路  ----  Java成魔之路。
 
 | Java SE | 设计模式 | 数据结构/算法 | Java EE | 数据库 | 中间件 | 分布式 | 微服务 | 项目管理/持续集成 | 优秀书籍 |
 | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: |
-| [:coffee:](#coffee-Java SE) | [:sunflower:](#sunflower-设计模式) | [:pencil:](#pencil-数据结构/算法) | [:baby_bottle:](#baby_bottle-Java EE) | [:package:](#package-数据库) | [:mailbox:](#mailbox-中间件) | [:globe_with_meridians:](#globe_with_meridians-分布式) | [:cloud:](#cloud-微服务) | [:octocat:](#octocat-项目管理/持续集成) | [:books:](#books-优秀书籍) |
+| [:coffee:](#coffee-JavaSE) | [:sunflower:](#sunflower-设计模式) | [:pencil:](#pencil-数据结构/算法) | [:baby_bottle:](#baby_bottle-JavaEE) | [:package:](#package-数据库) | [:mailbox:](#mailbox-中间件) | [:globe_with_meridians:](#globe_with_meridians-分布式) | [:cloud:](#cloud-微服务) | [:octocat:](#octocat-项目管理/持续集成) | [:books:](#books-优秀书籍) |
 
-## :coffee: [Java SE](./JavaSE)
+## :coffee: [JavaSE](./JavaSE)
 - [数据类型](./JavaSE/docs/数据类型.md)
 - [类和对象](./JavaSE/docs/类和对象.md)
 - [异常](./JavaSE/docs/异常.md)
@@ -86,7 +86,7 @@ gold-road-to-Java 是一条通往Java的黄金道路  ----  Java成魔之路。
 
 待完善...
 
-## :baby_bottle: [Java EE](./JavaEE)
+## :baby_bottle: [JavaEE](./JavaEE)
 待完善...
 
 ## :package: [数据库](./数据库)
