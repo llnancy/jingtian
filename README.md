@@ -22,7 +22,9 @@ gold-road-to-Java 是一条通往Java的黄金道路  ----  Java成魔之路。
 完善中...
 ![Java成魔之路](assets/gold-road-to-java.png)
 
-<center style="color:#744DA9;"><br /><br />没有行动的梦想都是妄想。<br /><br /></center>
+<div align="center">
+<br /><br /><p style="color: #744DA9;">没有行动的梦想都是妄想。</p><br /><br />
+</div>
 
 | Java SE | 设计模式 | 数据结构/算法 | Java EE | 数据库 | 中间件 | 分布式 | 微服务 | 项目管理/持续集成 | 优秀书籍 |
 | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: |
