@@ -18,7 +18,7 @@
     <modules>
         <module>JavaSE</module>
         <module>设计模式</module>
-        <module>算法</module>
+        <module>数据结构-算法</module>
         <module>JavaEE</module>
         <module>数据库</module>
         <module>中间件</module>
