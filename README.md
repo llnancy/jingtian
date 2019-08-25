@@ -28,9 +28,9 @@ gold-road-to-Java 是一条通往Java的黄金道路  ----  Java成魔之路。
 <br /><br /><p style="color: #744DA9;">没有行动的梦想都是妄想。</p><br /><br />
 </div>
 
-| Java SE | 设计模式 | 数据结构/算法 | Java EE | 数据库 | 中间件 | 分布式 | 微服务 | 项目管理/持续集成 | 优秀书籍 |
-| :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: |
-| [:coffee:](#coffee-JavaSE) | [:sunflower:](#sunflower-设计模式) | [:pencil:](#pencil-数据结构-算法) | [:baby_bottle:](#baby_bottle-JavaEE) | [:package:](#package-数据库) | [:mailbox:](#mailbox-中间件) | [:globe_with_meridians:](#globe_with_meridians-分布式) | [:cloud:](#cloud-微服务) | [:octocat:](#octocat-项目管理-持续集成) | [:books:](#books-优秀书籍) |
+| Java SE | 算法 | Java EE | 数据库 | 中间件 | 分布式 | 微服务 | 项目管理/持续集成 | 优秀书籍 |
+| :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: |
+| [:coffee:](#coffee-JavaSE) | [:pencil:](#pencil-算法) | [:baby_bottle:](#baby_bottle-JavaEE) | [:package:](#package-数据库) | [:mailbox:](#mailbox-中间件) | [:globe_with_meridians:](#globe_with_meridians-分布式) | [:cloud:](#cloud-微服务) | [:octocat:](#octocat-项目管理-持续集成) | [:books:](#books-优秀书籍) |
 
 ## :coffee: [JavaSE](./JavaSE)
 - [数据类型](./JavaSE/docs/数据类型.md)
@@ -43,50 +43,10 @@ gold-road-to-Java 是一条通往Java的黄金道路  ----  Java成魔之路。
 - [IO](./JavaSE/docs/IO.md)
 - [JVM](./JavaSE/docs/JVM.md)
 
-## :sunflower: [设计模式](./设计模式)
-待完善...
+## :pencil: [算法](./算法)
 
-## :pencil: [数据结构-算法](./数据结构-算法)
-#### [《剑指Offer》](./数据结构-算法/剑指Offer/README.md)
-- [实现线程安全的单例模式](./数据结构-算法/剑指Offer/docs/实现线程安全的单例模式.md)
-- [数组中重复的数（题目一）](./数据结构-算法/剑指Offer/docs/数组中重复的数（题目一）.md)
-- [数组中重复的数（题目二）](./数据结构-算法/剑指Offer/docs/数组中重复的数（题目二）.md)
-- [二维数组中的查找](./数据结构-算法/剑指Offer/docs/二维数组中的查找.md)
-- [替换空格](./数据结构-算法/剑指Offer/docs/替换空格.md)
-- [面试题5（相关题目）](./数据结构-算法/剑指Offer/docs/面试题5（相关题目）.md)
-- [从尾到头打印链表](./数据结构-算法/剑指Offer/docs/从尾到头打印链表.md)
-- [重建二叉树](./数据结构-算法/剑指Offer/docs/重建二叉树.md)
-- [二叉树的下一个节点](./数据结构-算法/剑指Offer/docs/二叉树的下一个节点.md)
-- [两个栈实现一个队列](./数据结构-算法/剑指Offer/docs/两个栈实现一个队列.md)
-- [两个队列实现一个栈](./数据结构-算法/剑指Offer/docs/两个队列实现一个栈.md)
-- [斐波那楔数列](./数据结构-算法/剑指Offer/docs/斐波那楔数列.md)
-- [青蛙跳台阶问题](./数据结构-算法/剑指Offer/docs/青蛙跳台阶问题.md)
-- [青蛙跳台阶问题扩展（变态跳台阶）](./数据结构-算法/剑指Offer/docs/青蛙跳台阶问题扩展（变态跳台阶）.md)
-- [矩形覆盖](./数据结构-算法/剑指Offer/docs/矩形覆盖.md)
-- [几万个员工年龄排序](./数据结构-算法/剑指Offer/docs/几万个员工年龄排序.md)
-- [旋转数组的最小数字](./数据结构-算法/剑指Offer/docs/旋转数组的最小数字.md)
-- [矩阵中的路径](./数据结构-算法/剑指Offer/docs/矩阵中的路径.md)
-- [机器人的运动范围](./数据结构-算法/剑指Offer/docs/机器人的运动范围.md)
-- [剪绳子](./数据结构-算法/剑指Offer/docs/剪绳子.md)
-- [二进制中1的个数](./数据结构-算法/剑指Offer/docs/二进制中1的个数.md)
-- [数值的整数次方](./数据结构-算法/剑指Offer/docs/数值的整数次方.md)
-- [打印从1到最大的n位数](./数据结构-算法/剑指Offer/docs/打印从1到最大的n位数.md)
-- [在O(1)时间内删除链表节点](./数据结构-算法/剑指Offer/docs/在O(1)时间内删除链表节点.md)
-- [删除链表中重复的节点](./数据结构-算法/剑指Offer/docs/删除链表中重复的节点.md)
-- [正则表达式匹配](./数据结构-算法/剑指Offer/docs/正则表达式匹配.md)
-- [表示数值的字符串](./数据结构-算法/剑指Offer/docs/表示数值的字符串.md)
-- [链表中倒数第k个节点](./数据结构-算法/剑指Offer/docs/链表中倒数第k个节点.md)
-- [链表中环的入口节点](./数据结构-算法/剑指Offer/docs/链表中环的入口节点.md)
-- [反转链表](./数据结构-算法/剑指Offer/docs/反转链表.md)
-- [合并两个排序的链表](./数据结构-算法/剑指Offer/docs/合并两个排序的链表.md)
-
-待完善...
-
-#### [《程序员代码面试指南-IT名企算法和数据结构题目最优解》](./数据结构-算法/程序员代码面试指南-IT名企算法和数据结构题目最优解/README.md)
-待完善...
-
-#### [LeetCode题解](./数据结构-算法/LeetCode题解/README.md)
-- [（简单）两数之和](./数据结构-算法/LeetCode题解/docs/（简单）两数之和.md)
+#### [LeetCode题解](./算法/LeetCode题解/README.md)
+- [（简单）两数之和](./算法/LeetCode题解/docs/（简单）两数之和.md)
 
 待完善...
 
@@ -121,7 +81,7 @@ gold-road-to-Java 是一条通往Java的黄金道路  ----  Java成魔之路。
 #### Git
 待完善...
 
-#### Jenkins和跳板机
+#### Jenkins
 待完善...
 
 ## :books: [优秀书籍](./Book-Notes)
@@ -136,5 +96,43 @@ gold-road-to-Java 是一条通往Java的黄金道路  ----  Java成魔之路。
   - [第八章：重构、测试和调试](./Book-Notes/Java8实战/notes/第8章-重构-测试-调试.md)
   - [第九章：默认方法](./Book-Notes/Java8实战/notes/第9章-默认方法.md)
   - [第十章：用Optional取代null](./Book-Notes/Java8实战/notes/第10章-用Optional取代null.md)
+待完善...
+
+#### [《剑指Offer》](./Book-Notes/剑指Offer/README.md)
+- [实现线程安全的单例模式](./Book-Notes/剑指Offer/docs/实现线程安全的单例模式.md)
+- [数组中重复的数（题目一）](./Book-Notes/剑指Offer/docs/数组中重复的数（题目一）.md)
+- [数组中重复的数（题目二）](./Book-Notes/剑指Offer/docs/数组中重复的数（题目二）.md)
+- [二维数组中的查找](./Book-Notes/剑指Offer/docs/二维数组中的查找.md)
+- [替换空格](./Book-Notes/剑指Offer/docs/替换空格.md)
+- [面试题5（相关题目）](./Book-Notes/剑指Offer/docs/面试题5（相关题目）.md)
+- [从尾到头打印链表](./Book-Notes/剑指Offer/docs/从尾到头打印链表.md)
+- [重建二叉树](./Book-Notes/剑指Offer/docs/重建二叉树.md)
+- [二叉树的下一个节点](./Book-Notes/剑指Offer/docs/二叉树的下一个节点.md)
+- [两个栈实现一个队列](./Book-Notes/剑指Offer/docs/两个栈实现一个队列.md)
+- [两个队列实现一个栈](./Book-Notes/剑指Offer/docs/两个队列实现一个栈.md)
+- [斐波那楔数列](./Book-Notes/剑指Offer/docs/斐波那楔数列.md)
+- [青蛙跳台阶问题](./Book-Notes/剑指Offer/docs/青蛙跳台阶问题.md)
+- [青蛙跳台阶问题扩展（变态跳台阶）](./Book-Notes/剑指Offer/docs/青蛙跳台阶问题扩展（变态跳台阶）.md)
+- [矩形覆盖](./Book-Notes/剑指Offer/docs/矩形覆盖.md)
+- [几万个员工年龄排序](./Book-Notes/剑指Offer/docs/几万个员工年龄排序.md)
+- [旋转数组的最小数字](./Book-Notes/剑指Offer/docs/旋转数组的最小数字.md)
+- [矩阵中的路径](./Book-Notes/剑指Offer/docs/矩阵中的路径.md)
+- [机器人的运动范围](./Book-Notes/剑指Offer/docs/机器人的运动范围.md)
+- [剪绳子](./Book-Notes/剑指Offer/docs/剪绳子.md)
+- [二进制中1的个数](./Book-Notes/剑指Offer/docs/二进制中1的个数.md)
+- [数值的整数次方](./Book-Notes/剑指Offer/docs/数值的整数次方.md)
+- [打印从1到最大的n位数](./Book-Notes/剑指Offer/docs/打印从1到最大的n位数.md)
+- [在O(1)时间内删除链表节点](./Book-Notes/剑指Offer/docs/在O(1)时间内删除链表节点.md)
+- [删除链表中重复的节点](./Book-Notes/剑指Offer/docs/删除链表中重复的节点.md)
+- [正则表达式匹配](./Book-Notes/剑指Offer/docs/正则表达式匹配.md)
+- [表示数值的字符串](./Book-Notes/剑指Offer/docs/表示数值的字符串.md)
+- [链表中倒数第k个节点](./Book-Notes/剑指Offer/docs/链表中倒数第k个节点.md)
+- [链表中环的入口节点](./Book-Notes/剑指Offer/docs/链表中环的入口节点.md)
+- [反转链表](./Book-Notes/剑指Offer/docs/反转链表.md)
+- [合并两个排序的链表](./Book-Notes/剑指Offer/docs/合并两个排序的链表.md)
+
+待完善...
+
+#### [《程序员代码面试指南-IT名企算法和数据结构题目最优解》](./Book-Notes/程序员代码面试指南-IT名企算法和数据结构题目最优解/README.md)
 
 待完善...
