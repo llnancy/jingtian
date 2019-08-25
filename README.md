@@ -18,7 +18,7 @@ gold-road-to-Java 是一条通往Java的黄金道路  ----  Java成魔之路。
 
 本项目包含Java成魔的必备知识，内容来源于平时学习和工作中的积累沉淀。
 
-才疏学浅，难免有不足之处，欢迎指正，万分感谢。（建议使用PC端打开）
+才疏学浅，难免有错误和不足之处，欢迎指正，万分感谢。（建议使用PC端打开）
 
 ## Java成魔脑图
 完善中...
@@ -135,5 +135,6 @@ gold-road-to-Java 是一条通往Java的黄金道路  ----  Java成魔之路。
   - [第七章：并行数据处理与性能](./Book-Notes/Java8实战/notes/第7章-并行数据处理与性能.md)
   - [第八章：重构、测试和调试](./Book-Notes/Java8实战/notes/第8章-重构-测试-调试.md)
   - [第九章：默认方法](./Book-Notes/Java8实战/notes/第9章-默认方法.md)
+  - [第十章：用Optional取代null](./Book-Notes/Java8实战/notes/第10章-用Optional取代null.md)
 
 待完善...
