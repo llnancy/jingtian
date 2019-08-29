@@ -286,8 +286,15 @@ public class NewTimeAPITest {
         LocalDate date14 = date1.with(TemporalAdjusters.previousOrSame(DayOfWeek.MONDAY));
         System.out.println("date14=" + date14);
 
+        // 使用Lambda表达式定制TemporalAdjuster对象，推荐使用TemporalAdjusters类的静态工厂方法ofDateAdjuster
         // TemporalAdjuster ofDateAdjuster(UnaryOperator<LocalDate> dateBasedAdjuster)
-
+        TemporalAdjuster nextWorkingDay = TemporalAdjusters.ofDateAdjuster(temporal -> {
+            DayOfWeek dayOfWeek = DayOfWeek.of(temporal.get(ChronoField.DAY_OF_WEEK));
+            int dayToAdd = 1;
+            if (dayOfWeek == DayOfWeek.FRIDAY) dayToAdd = 3;
+            else if (dayOfWeek == DayOfWeek.SATURDAY) dayToAdd = 2;
+            return temporal.plus(dayToAdd,ChronoUnit.DAYS);
+        });
     }
 
     /**
@@ -306,6 +313,7 @@ public class NewTimeAPITest {
          */
         @Override
         public Temporal adjustInto(Temporal temporal) {
+            // 得到今天星期几
             DayOfWeek dayOfWeek = DayOfWeek.of(temporal.get(ChronoField.DAY_OF_WEEK));
             int dayToAdd = 1;
             if (dayOfWeek == DayOfWeek.FRIDAY) dayToAdd = 3;
