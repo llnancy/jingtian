@@ -14,7 +14,7 @@ import java.util.concurrent.Future;
  * @Description: 传统时间格式转换器线程安全实现演示
  */
 public class TraditionalThreadSafeSimpleDateFormat {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         // 使用线程池模拟多线程
         ExecutorService threadPool = Executors.newFixedThreadPool(10);
         // 定义解析日期字符串任务：每个任务都有一份SimpleDateFormat对象的副本
@@ -24,13 +24,16 @@ public class TraditionalThreadSafeSimpleDateFormat {
             // 执行得到解析结果
             result.add(threadPool.submit(task));
         }
-        result.forEach(f -> {
-            try {
-                System.out.println(f.get());
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
+//        result.forEach(f -> {
+//            try {
+//                System.out.println(f.get());
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//        });
+        for (Future<Date> r : result) {
+            System.out.println(r.get());
+        }
         threadPool.shutdown();
     }
 }

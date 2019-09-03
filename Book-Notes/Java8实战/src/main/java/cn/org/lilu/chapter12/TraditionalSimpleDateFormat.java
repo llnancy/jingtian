@@ -12,7 +12,7 @@ import java.util.concurrent.*;
  * @Description: 传统时间格式转换器线程安全问题演示
  */
 public class TraditionalSimpleDateFormat {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         // 使用线程池模拟多线程
         ExecutorService threadPool = Executors.newFixedThreadPool(10);
@@ -23,13 +23,16 @@ public class TraditionalSimpleDateFormat {
             // 执行得到解析结果
             result.add(threadPool.submit(task));
         }
-        result.forEach(f -> {
-            try {
-                System.out.println(f.get());
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
+//        result.forEach(f -> {
+//            try {
+//                System.out.println(f.get());
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//        });
+        for (Future<Date> r : result) {
+            System.out.println(r.get());
+        }
         threadPool.shutdown();
     }
 }

@@ -86,7 +86,7 @@ gold-road-to-Java 是一条通往Java的黄金道路  ----  Java成魔之路。
 
 ## :books: [优秀书籍](./Book-Notes)
 - [Java 8实战](./Book-Notes/Java8实战/README.md)
-  - [第一章：Java 8的前世今生](./Book-Notes/Java8实战/notes/第1章-Java8的前世今生.md)
+  - [第一章：为什么要关心Java8](./Book-Notes/Java8实战/notes/第1章-为什么要关心Java8.md)
   - [第二章：通过行为参数化传递代码](./Book-Notes/Java8实战/notes/第2章-通过行为参数化传递代码.md)
   - [第三章：Lambda表达式](./Book-Notes/Java8实战/notes/第3章-Lambda表达式.md)
   - [第四章：引入流](./Book-Notes/Java8实战/notes/第4章-引入流.md)
@@ -96,6 +96,7 @@ gold-road-to-Java 是一条通往Java的黄金道路  ----  Java成魔之路。
   - [第八章：重构、测试和调试](./Book-Notes/Java8实战/notes/第8章-重构-测试-调试.md)
   - [第九章：默认方法](./Book-Notes/Java8实战/notes/第9章-默认方法.md)
   - [第十章：用Optional取代null](./Book-Notes/Java8实战/notes/第10章-用Optional取代null.md)
+  - [第十二章：新的日期和时间API](./Book-Notes/Java8实战/notes/第12章-新的日期和时间API.md)
 
 待完善...
 

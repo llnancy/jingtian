@@ -4,7 +4,10 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.*;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 /**
  * @Auther: lilu
@@ -12,7 +15,7 @@ import java.util.concurrent.*;
  * @Description: Java 8新的日期时间转换器，不可变，线程安全。
  */
 public class NewDateTimeFormatter {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         // 按照哪种格式进行格式转换
         // DateTimeFormatter dtf = DateTimeFormatter.ISO_LOCAL_DATE;
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyyMMdd");
@@ -23,13 +26,16 @@ public class NewDateTimeFormatter {
         for (int i = 0; i < 10; i++) {
             result.add(threadPool.submit(task));
         }
-        result.forEach(f -> {
-            try {
-                System.out.println(f.get());
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
+//        result.forEach(f -> {
+//            try {
+//                System.out.println(f.get());
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//        });
+        for (Future<LocalDate> r : result) {
+            System.out.println(r.get());
+        }
         threadPool.shutdown();
     }
 }

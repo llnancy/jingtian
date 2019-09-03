@@ -7,8 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.time.*;
 import java.time.temporal.*;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Set;
 
 /**
  * @Auther: lilu
@@ -24,6 +23,8 @@ public class NewTimeAPITest {
      */
     @Test
     public void testLocalDate() {
+        // 静态工厂方法now获取当前日期
+        LocalDate now = LocalDate.now();
         // 静态工厂方法of创建一个LocalDate实例
         LocalDate date = LocalDate.of(2019,8,26);
         // 年份
@@ -40,6 +41,7 @@ public class NewTimeAPITest {
         int lengthOfMonth = date.lengthOfMonth();
         // 是否闰年
         boolean leapYear = date.isLeapYear();
+        System.out.println(now); // 2019-09-02
         System.out.println(year); // 2019
         System.out.println(month); // AUGUST
         System.out.println(dayOfMonth); // 26
@@ -67,39 +69,45 @@ public class NewTimeAPITest {
         int dayOfWeek = today.get(ChronoField.DAY_OF_WEEK);
         // 今年的第几天
         int dayOfYear = today.get(ChronoField.DAY_OF_YEAR);
+        System.out.println(today); // 2019-09-02
         System.out.println(year); // 2019
-        System.out.println(month); // 8
-        System.out.println(dayOfMonth); // 26
+        System.out.println(month); // 9
+        System.out.println(dayOfMonth); // 2
         System.out.println(dayOfWeek); // 1
-        System.out.println(dayOfYear); // 238
+        System.out.println(dayOfYear); // 245
     }
 
     /**
      * LocalTime：时分秒
      * 一天中的时间，比如：13:45:20，可以使用LocalTime类表示
-     * 可以使用of重载的两个工厂方法创建LocalTime实例
+     * 可以使用of重载的三个静态工厂方法创建LocalTime实例
      * 第一个重载方法接收小时和分钟
      * 第二个重载方法同时还接收秒
+     * 第三个重载方法同时还接收纳秒
      */
     @Test
     public void testLocalTime() {
-        LocalTime localTime = LocalTime.of(13, 45, 20);
+        LocalTime now = LocalTime.now();
+        LocalTime localTime = LocalTime.of(13, 45, 20,1);
         int hour = localTime.getHour();
         int minute = localTime.getMinute();
         int second = localTime.getSecond();
-        System.out.println(hour);
-        System.out.println(minute);
-        System.out.println(second);
+        int nano = localTime.getNano();
+        System.out.println(now); // 19:47:51.212
+        System.out.println(hour); // 13
+        System.out.println(minute); // 45
+        System.out.println(second); // 20
+        System.out.println(nano); // 1
     }
 
     /**
      * LocalDate和LocalTime都可以通过解析代表它们的字符串创建。使用静态方法parse。
-     * ，一旦传递的字符串参数无法被解析为合法的LocalDate或LocalTime对象，
+     * 一旦传递的字符串参数无法被解析为合法的LocalDate或LocalTime对象，
      * 这两个parse方法都会抛出一个继承自RuntimeException的DateTimeParseException异常。
      */
     @Test
     public void testParse() {
-        // 月份小于10必须在前面补0，否则抛出异常
+        // 小于10的必须在前面补0，否则抛出异常
         LocalDate localDate = LocalDate.parse("2019-08-26");
         LocalTime localTime = LocalTime.parse("13:45:20");
         System.out.println(localDate);
@@ -111,9 +119,10 @@ public class NewTimeAPITest {
      */
     @Test
     public void testLocalDateTime() {
+        LocalDateTime localDateTime = LocalDateTime.now();
         LocalDateTime localDateTime1 = LocalDateTime.of(2019, Month.AUGUST, 26, 10, 47, 20);
-        LocalDate localDate = LocalDate.parse("2019-08-26");
-        LocalTime localTime = LocalTime.parse("13:45:20");
+        LocalDate localDate = LocalDate.now();
+        LocalTime localTime = LocalTime.now();
         // 由LocalDate和LocalTime组合出LocalDateTime
         LocalDateTime localDateTime2 = LocalDateTime.of(localDate,localTime);
         LocalDateTime localDateTime3 = localDate.atTime(10,51,32);
@@ -123,13 +132,14 @@ public class NewTimeAPITest {
         LocalDate localDateFromLocalDateTime = localDateTime2.toLocalDate();
         LocalTime localTimeFromLocalDateTime = localDateTime2.toLocalTime();
 
-        System.out.println(localDateTime1);
-        System.out.println(localDateTime2);
-        System.out.println(localDateTime3);
-        System.out.println(localDateTime4);
-        System.out.println(localDateTime5);
-        System.out.println(localDateFromLocalDateTime);
-        System.out.println(localTimeFromLocalDateTime);
+        System.out.println(localDateTime); // 2019-09-02T19:57:16.516
+        System.out.println(localDateTime1); // 2019-08-26T10:47:20
+        System.out.println(localDateTime2); // 2019-09-02T19:57:16.517
+        System.out.println(localDateTime3); // 2019-09-02T10:51:32
+        System.out.println(localDateTime4); // 2019-09-02T19:57:16.517
+        System.out.println(localDateTime5); // 2019-09-02T19:57:16.517
+        System.out.println(localDateFromLocalDateTime); // 2019-09-02
+        System.out.println(localTimeFromLocalDateTime); // 19:57:16.517
     }
 
     /**
@@ -154,18 +164,24 @@ public class NewTimeAPITest {
         System.out.println(instant3);
         System.out.println(instant4);
 
-        Instant now = Instant.now();
+        Instant now = Instant.now(); // 默认获取UTC时区的时间
+        System.out.println(now);
+        // 时区偏移运算：获取偏移8小时的时区的时间。OffsetDateTime：带偏移量的日期时间对象
+        OffsetDateTime offsetDateTime = now.atOffset(ZoneOffset.ofHours(8));
+        System.out.println(offsetDateTime);
+        // 转化成时间戳
+        System.out.println(now.toEpochMilli());
         // java.time.temporal.UnsupportedTemporalTypeException: Unsupported field: DayOfMonth
         int day = now.get(ChronoField.DAY_OF_MONTH);
         System.out.println(day);
     }
 
     /**
-     * 机器的日期和时间格式
-     * @throws InterruptedException
+     * 计算两个时间之间的间隔：Duration
+     * 计算两个日期之间的间隔：Period
      */
     @Test
-    public void testDuration() throws InterruptedException {
+    public void testDuration() throws Exception {
         LocalTime localTime1 = LocalTime.parse("13:45:20");
         LocalTime localTime2 = LocalTime.parse("13:45:30");
         LocalDateTime localDateTime1 = LocalDateTime.now();
@@ -178,8 +194,9 @@ public class NewTimeAPITest {
         System.out.println(Duration.between(instant1,instant2)); // PT3S
 
         // 计算两个LocalDate之间的时长
-        Period periodBetween = Period.between(LocalDate.of(2019, 8, 26), LocalDate.of(2019, 8, 27));
+        Period periodBetween = Period.between(LocalDate.of(2019, 8, 26), LocalDate.of(2019, 8, 28));
         System.out.println(periodBetween); // P1D
+        System.out.println(periodBetween.getDays()); // 2
 
         // Duration和Period的静态工厂方法直接创建实例
         Duration durationOfMinutes = Duration.ofMinutes(3);
@@ -197,7 +214,7 @@ public class NewTimeAPITest {
     /**
      * 操纵、解析和格式化日期
      *
-     * LocalDate类为final类，不可变，每次操作后都返回一个新的LocalDate对象
+     * LocalDate、LocalTime和LocalDateTime类都为final类，不可变，每次操作后都返回一个新的对应对象
      */
     @Test
     public void testUpdateTime() {
@@ -226,7 +243,7 @@ public class NewTimeAPITest {
     @Test
     public void testTemporalAdjuster() {
         LocalDate date1 = LocalDate.of(2019,8,26);
-        // dayOfWeekInMonth(int ordinal, DayOfWeek dayOfWeek)
+        // TemporalAdjuster dayOfWeekInMonth(int ordinal, DayOfWeek dayOfWeek)
         // dayOfWeek表示星期几
         // 如果ordinal为0，则表示本日期所在的月的上一个月的最后一个星期几
         // 如果ordinal为正数，则以本日期所在的月从前向后数，第ordinal个星期几
@@ -320,5 +337,23 @@ public class NewTimeAPITest {
             else if (dayOfWeek == DayOfWeek.SATURDAY) dayToAdd = 2;
             return temporal.plus(dayToAdd,ChronoUnit.DAYS);
         }
+    }
+
+    /**
+     * 带时区的日期时间API
+     */
+    @Test
+    public void testZoneLocalDateTime() {
+        // 查看所有支持的时区
+        Set<String> availableZoneIds = ZoneId.getAvailableZoneIds();
+        for (String s: availableZoneIds) {
+            System.out.println(s);
+        }
+        // 通过时区构建LocalDateTime对象
+        LocalDateTime localDateTimeNow = LocalDateTime.now(ZoneId.of("Asia/Shanghai"));
+        // 指定时区构建带时区的日期时间对象
+        ZonedDateTime zonedDateTime = localDateTimeNow.atZone(ZoneId.of("Asia/Shanghai"));
+        System.out.println(localDateTimeNow); // 2019-09-03T10:35:25.677
+        System.out.println(zonedDateTime); // 2019-09-03T10:35:25.677+08:00[Asia/Shanghai] 与UTC时间相差8小时
     }
 }

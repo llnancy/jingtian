@@ -1,7 +1,6 @@
 package cn.org.lilu.chapter12;
 
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -18,7 +17,7 @@ public class TraditionalSimpleDateFormatThreadLocal {
         }
     };
 
-    public static Date convert(String source) throws ParseException {
+    public static Date convert(String source) throws Exception {
         return threadLocal.get().parse(source);
     }
 }
