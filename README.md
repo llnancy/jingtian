@@ -18,7 +18,7 @@ gold-road-to-Java 是一条通往Java的黄金道路  ----  Java成魔之路。
 
 本项目包含Java成魔的必备知识，内容来源于平时学习和工作中的积累沉淀。
 
-才疏学浅，难免有错误和不足之处，欢迎指正，万分感谢。（建议使用PC端打开）
+才疏学浅，难免有遗漏和不足之处，欢迎指正，万分感谢。
 
 ## Java成魔脑图
 完善中...
@@ -86,17 +86,12 @@ gold-road-to-Java 是一条通往Java的黄金道路  ----  Java成魔之路。
 
 ## :books: [优秀书籍](./Book-Notes)
 - [Java 8实战](./Book-Notes/Java8实战/README.md)
-  - [第一章：为什么要关心Java8](./Book-Notes/Java8实战/notes/第1章-为什么要关心Java8.md)
-  - [第二章：通过行为参数化传递代码](./Book-Notes/Java8实战/notes/第2章-通过行为参数化传递代码.md)
-  - [第三章：Lambda表达式](./Book-Notes/Java8实战/notes/第3章-Lambda表达式.md)
-  - [第四章：引入流](./Book-Notes/Java8实战/notes/第4章-引入流.md)
-  - [第五章：使用流](./Book-Notes/Java8实战/notes/第5章-使用流.md)
-  - [第六章：用流收集数据](./Book-Notes/Java8实战/notes/第6章-用流收集数据.md)
-  - [第七章：并行数据处理与性能](./Book-Notes/Java8实战/notes/第7章-并行数据处理与性能.md)
-  - [第八章：重构、测试和调试](./Book-Notes/Java8实战/notes/第8章-重构-测试-调试.md)
-  - [第九章：默认方法](./Book-Notes/Java8实战/notes/第9章-默认方法.md)
-  - [第十章：用Optional取代null](./Book-Notes/Java8实战/notes/第10章-用Optional取代null.md)
-  - [第十二章：新的日期和时间API](./Book-Notes/Java8实战/notes/第12章-新的日期和时间API.md)
+  - [第一部分：Java8基础知识](./Book-Notes/Java8实战/notes/第一部分-基础知识.md)
+  - [第二部分：StreamAPI函数式数据处理](./Book-Notes/Java8实战/notes/第二部分-函数式数据处理.md)
+  - [第三部分：高效Java 8编程（一）：接口新特性](./Book-Notes/Java8实战/notes/第三部分-高效Java 8编程（一）.md)
+  - [第三部分：高效Java 8编程（二）：使用Optional类优雅的解决NPE问题](./Book-Notes/Java8实战/notes/第三部分-高效Java 8编程（二）.md)
+  - [第三部分：高效Java 8编程（三）：从一个生产环境的事故逐步引入异步编程思想](./Book-Notes/Java8实战/notes/第三部分-高效Java 8编程（三）.md)
+  - [第三部分：高效Java 8编程（四）：新的线程安全的日期时间API](./Book-Notes/Java8实战/notes/第三部分-高效Java 8编程（四）.md)
 
 待完善...
 
