@@ -3,7 +3,7 @@ package cn.org.lilu.strategy.impl;
 import cn.org.lilu.strategy.FlyBehavior;
 
 /**
- * @Auther: lilu
+ * @Auther: Java成魔之路
  * @Date: 2019/9/12
  * @Description: 不能飞的行为
  */

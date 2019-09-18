@@ -3,7 +3,7 @@ package cn.org.lilu.chapter9.case3;
 import cn.org.lilu.chapter9.case1.InterfaceA;
 
 /**
- * @Auther: lilu
+ * @Auther: Java成魔之路
  * @Date: 2019/8/23
  * @Description: 实现类ImplClassD实现了InterfaceA接口，并重写了接口的hello方法。
  */

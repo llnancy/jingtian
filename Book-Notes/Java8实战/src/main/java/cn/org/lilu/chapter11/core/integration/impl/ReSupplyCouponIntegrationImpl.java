@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * @Auther: lilu
+ * @Auther: Java成魔之路
  * @Date: 2019/9/8
  * @Description: 模拟代码防腐层实现类，模拟调用外部服务进行用户信息查询和补发劵操作
  */

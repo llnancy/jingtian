@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.concurrent.*;
 
 /**
- * @Auther: lilu
+ * @Auther: Java成魔之路
  * @Date: 2019/8/29
  * @Description: 传统时间格式转换器线程安全问题演示
  */

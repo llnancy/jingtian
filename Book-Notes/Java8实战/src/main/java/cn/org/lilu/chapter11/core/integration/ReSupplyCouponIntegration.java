@@ -3,7 +3,7 @@ package cn.org.lilu.chapter11.core.integration;
 import cn.org.lilu.chapter11.model.UserInfoModel;
 
 /**
- * @Auther: lilu
+ * @Auther: Java成魔之路
  * @Date: 2019/9/8
  * @Description: 代码防腐层接口
  */

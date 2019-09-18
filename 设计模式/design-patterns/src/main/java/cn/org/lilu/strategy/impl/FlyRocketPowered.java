@@ -3,7 +3,7 @@ package cn.org.lilu.strategy.impl;
 import cn.org.lilu.strategy.FlyBehavior;
 
 /**
- * @Auther: lilu
+ * @Auther: Java成魔之路
  * @Date: 2019/9/12
  * @Description: 利用火箭动力的飞翔行为
  */

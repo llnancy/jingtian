@@ -8,7 +8,7 @@ import java.util.function.Supplier;
 import java.util.stream.Collector;
 
 /**
- * @Auther: lilu
+ * @Auther: Java成魔之路
  * @Date: 2019/8/20
  * @Description: 自定义收集器实现：将Stream流中的所有元素收集到List中。
  *

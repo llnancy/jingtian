@@ -6,7 +6,7 @@ import java.util.concurrent.ForkJoinTask;
 import java.util.concurrent.RecursiveTask;
 
 /**
- * @Auther: lilu
+ * @Auther: Java成魔之路
  * @Date: 2019/8/22
  * @Description: 拆分合并计算任务：求和start到end之间所有数的和。
  * ForkJoinTask类有两个子类：

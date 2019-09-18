@@ -1,7 +1,7 @@
 package cn.org.lilu.chapter5;
 
 /**
- * @Auther: lilu
+ * @Auther: Java成魔之路
  * @Date: 2019/8/17
  * @Description: 交易员实体类
  */

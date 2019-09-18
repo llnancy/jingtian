@@ -1,7 +1,7 @@
 package cn.org.lilu.chapter2;
 
 /**
- * @Auther: lilu
+ * @Auther: Java成魔之路
  * @Date: 2019/8/12
  * @Description:
  * 测验2.2：匿名类谜题

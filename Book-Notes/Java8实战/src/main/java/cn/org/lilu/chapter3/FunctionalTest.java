@@ -14,7 +14,7 @@ import java.util.function.IntPredicate;
 import java.util.function.Predicate;
 
 /**
- * @Auther: lilu
+ * @Auther: Java成魔之路
  * @Date: 2019/8/12
  * @Description: java.util.function包下的函数式接口测试
  */

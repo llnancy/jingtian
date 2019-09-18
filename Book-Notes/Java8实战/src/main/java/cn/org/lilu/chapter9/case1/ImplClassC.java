@@ -1,7 +1,7 @@
 package cn.org.lilu.chapter9.case1;
 
 /**
- * @Auther: lilu
+ * @Auther: Java成魔之路
  * @Date: 2019/8/23
  * @Description: 实现类ImplClassC实现InterfaceA接口和InterfaceB接口
  *

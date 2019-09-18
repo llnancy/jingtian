@@ -1,7 +1,7 @@
 package cn.org.lilu.strategy.traditional;
 
 /**
- * @Auther: lilu
+ * @Auther: Java成魔之路
  * @Date: 2019/9/15
  * @Description: 玩具鸭：不会嘎嘎叫、不会游泳和飞翔。
  */

@@ -4,7 +4,7 @@ import cn.org.lilu.chapter9.case1.InterfaceA;
 import cn.org.lilu.chapter9.case1.InterfaceB;
 
 /**
- * @Auther: lilu
+ * @Auther: Java成魔之路
  * @Date: 2019/8/23
  * @Description: 实现类ImplClassC继承了ImplClassD实现类，并实现了InterfaceA和InterfaceB接口
  */

@@ -1,7 +1,7 @@
 package cn.org.lilu.chapter9.case4;
 
 /**
- * @Auther: lilu
+ * @Auther: Java成魔之路
  * @Date: 2019/8/23
  * @Description: 接口A
  */

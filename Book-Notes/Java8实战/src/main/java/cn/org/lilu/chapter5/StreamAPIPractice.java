@@ -12,7 +12,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
- * @Auther: lilu
+ * @Auther: Java成魔之路
  * @Date: 2019/8/17
  * @Description: Stream API练习
  * (1) 找出2011年发生的所有交易，并按交易额排序（从低到高）。

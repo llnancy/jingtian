@@ -4,14 +4,16 @@ import cn.org.lilu.strategy.impl.FlyNoWay;
 import cn.org.lilu.strategy.impl.Squeak;
 
 /**
- * @Auther: lilu
+ * @Auther: Java成魔之路
  * @Date: 2019/9/15
  * @Description: 北京鸭：不能飞翔，吱吱叫
  */
 public class PekingDuck extends Duck {
 
     public PekingDuck() {
+        // 不能飞的行为
         flyBehavior = new FlyNoWay();
+        // 吱吱叫的行为
         quackBehavior = new Squeak();
     }
 

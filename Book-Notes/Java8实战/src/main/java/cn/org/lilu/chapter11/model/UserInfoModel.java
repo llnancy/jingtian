@@ -1,7 +1,7 @@
 package cn.org.lilu.chapter11.model;
 
 /**
- * @Auther: lilu
+ * @Auther: Java成魔之路
  * @Date: 2019/9/8
  * @Description:
  */
