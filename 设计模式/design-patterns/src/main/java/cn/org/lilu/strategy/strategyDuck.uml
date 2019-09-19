@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>cn.org.lilu.strategy.impl.FlyNoWay</OriginalElement>
+  <nodes>
+    <node x="497.0" y="226.0">cn.org.lilu.strategy.FlyBehavior</node>
+    <node x="341.0" y="329.0">cn.org.lilu.strategy.impl.FlyNoWay</node>
+    <node x="337.0" y="119.0">cn.org.lilu.strategy.impl.Quack</node>
+    <node x="479.0" y="329.0">cn.org.lilu.strategy.impl.FlyRocketPowered</node>
+    <node x="-249.0" y="244.0">cn.org.lilu.strategy.PekingDuck</node>
+    <node x="-81.0" y="244.0">cn.org.lilu.strategy.ToyDuck</node>
+    <node x="85.0" y="244.0">cn.org.lilu.strategy.WildDuck</node>
+    <node x="-123.0" y="25.0">cn.org.lilu.strategy.Duck</node>
+    <node x="657.0" y="119.0">cn.org.lilu.strategy.impl.Squeak</node>
+    <node x="497.0" y="119.0">cn.org.lilu.strategy.impl.MuteQuack</node>
+    <node x="497.0" y="16.0">cn.org.lilu.strategy.QuackBehavior</node>
+    <node x="653.0" y="329.0">cn.org.lilu.strategy.impl.FlyWithWings</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="cn.org.lilu.strategy.WildDuck" target="cn.org.lilu.strategy.Duck">
+      <point x="0.0" y="-38.5" />
+      <point x="158.0" y="219.0" />
+      <point x="68.66666666666669" y="219.0" />
+      <point x="76.66666666666669" y="84.5" />
+    </edge>
+    <edge source="cn.org.lilu.strategy.impl.MuteQuack" target="cn.org.lilu.strategy.QuackBehavior">
+      <point x="0.0" y="-26.5" />
+      <point x="0.0" y="26.5" />
+    </edge>
+    <edge source="cn.org.lilu.strategy.ToyDuck" target="cn.org.lilu.strategy.Duck">
+      <point x="0.0" y="-38.5" />
+      <point x="0.0" y="84.5" />
+    </edge>
+    <edge source="cn.org.lilu.strategy.impl.Quack" target="cn.org.lilu.strategy.QuackBehavior">
+      <point x="0.0" y="-26.5" />
+      <point x="407.0" y="94.0" />
+      <point x="520.3333333333334" y="94.0" />
+      <point x="-46.66666666666666" y="26.5" />
+    </edge>
+    <edge source="cn.org.lilu.strategy.impl.FlyNoWay" target="cn.org.lilu.strategy.FlyBehavior">
+      <point x="0.0" y="-26.5" />
+      <point x="400.0" y="304.0" />
+      <point x="516.6666666666666" y="304.0" />
+      <point x="-39.33333333333334" y="26.5" />
+    </edge>
+    <edge source="cn.org.lilu.strategy.impl.FlyRocketPowered" target="cn.org.lilu.strategy.FlyBehavior">
+      <point x="0.0" y="-26.5" />
+      <point x="0.0" y="26.5" />
+    </edge>
+    <edge source="cn.org.lilu.strategy.impl.FlyWithWings" target="cn.org.lilu.strategy.FlyBehavior">
+      <point x="0.0" y="-26.5" />
+      <point x="715.5" y="304.0" />
+      <point x="595.3333333333334" y="304.0" />
+      <point x="39.33333333333334" y="26.5" />
+    </edge>
+    <edge source="cn.org.lilu.strategy.impl.Squeak" target="cn.org.lilu.strategy.QuackBehavior">
+      <point x="0.0" y="-26.5" />
+      <point x="727.0" y="94.0" />
+      <point x="613.6666666666666" y="94.0" />
+      <point x="46.66666666666663" y="26.5" />
+    </edge>
+    <edge source="cn.org.lilu.strategy.PekingDuck" target="cn.org.lilu.strategy.Duck">
+      <point x="0.0" y="-38.5" />
+      <point x="-175.0" y="219.0" />
+      <point x="-84.66666666666669" y="219.0" />
+      <point x="-76.66666666666669" y="84.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="379.0" y="210.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
