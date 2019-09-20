@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>Java EE</artifactId>
+    <packaging>pom</packaging>
     <description>
         Java Web
         Spring
@@ -18,5 +19,9 @@
         Spring Boot 2.x
         Maven
     </description>
+    <modules>
+        <module>springboot</module>
+        <module>spring-statemachine</module>
+    </modules>
 
 </project>
