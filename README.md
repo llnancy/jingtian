@@ -28,9 +28,9 @@ gold-road-to-Java 是一条通往Java的黄金道路  ----  Java成魔之路。
 <br /><br /><p style="color: #744DA9;">没有行动的梦想都是妄想。</p><br /><br />
 </div>
 
-| Java SE | 数据结构/算法 | Java EE | 数 据 库 | 中 间 件 | 分 布 式 | 微 服 务 | 项目管理/持续集成 | 优秀书籍 |
+| Java SE | 设计模式 | 算法 | Java EE | 数 据 库 | 中 间 件 | 分 布 式 | 微 服 务 | 项目管理 | 优秀书籍 |
 | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: |
-| [:coffee:](#coffee-JavaSE) | [:pencil:](#pencil-数据结构-算法) | [:baby_bottle:](#baby_bottle-JavaEE) | [:package:](#package-数据库) | [:mailbox:](#mailbox-中间件) | [:globe_with_meridians:](#globe_with_meridians-分布式) | [:cloud:](#cloud-微服务) | [:octocat:](#octocat-项目管理-持续集成) | [:books:](#books-优秀书籍) |
+| [:coffee:](#coffee-JavaSE) | [](#) | [:pencil:](#pencil-算法) | [:baby_bottle:](#baby_bottle-JavaEE) | [:package:](#package-数据库) | [:mailbox:](#mailbox-中间件) | [:globe_with_meridians:](#globe_with_meridians-分布式) | [:cloud:](#cloud-微服务) | [:octocat:](#octocat-项目管理) | [:books:](#books-优秀书籍) |
 
 ## :coffee: [JavaSE](./JavaSE)
 - [数据类型](./JavaSE/docs/数据类型.md)
@@ -43,7 +43,7 @@ gold-road-to-Java 是一条通往Java的黄金道路  ----  Java成魔之路。
 - [IO](./JavaSE/docs/IO.md)
 - [JVM](./JavaSE/docs/JVM.md)
 
-## :pencil: [数据结构-算法](./数据结构-算法)
+## :pencil: [算法](./算法)
 
 #### [LeetCode题解](./数据结构-算法/LeetCode题解/README.md)
 - [（简单）两数之和](./数据结构-算法/LeetCode题解/docs/（简单）两数之和.md)
@@ -74,9 +74,9 @@ gold-road-to-Java 是一条通往Java的黄金道路  ----  Java成魔之路。
 ## :cloud: [微服务](./微服务)
 待完善...
 
-## :octocat: [项目管理-持续集成](./项目管理-持续集成)
+## :octocat: [项目管理](./项目管理)
 #### Linux
-- [Linux命令](./项目管理-持续集成/Linux/Linux命令.md)
+- [Linux命令](./项目管理/Linux/Linux命令.md)
 
 #### Git
 待完善...

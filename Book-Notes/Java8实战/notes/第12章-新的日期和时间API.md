@@ -61,9 +61,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * @Auther: Java成魔之路
- * @Date: 2019/8/29
- * @Description: 传统时间格式转换器线程安全问题解决方案：使用ThreadLocal进行线程封闭
+ * @author: sunchaser
+ * @date: 2019/8/29
+ * @description: 传统时间格式转换器线程安全问题解决方案：使用ThreadLocal进行线程封闭
  */
 public class TraditionalSimpleDateFormatThreadLocal {
     private static final ThreadLocal<DateFormat> threadLocal = new ThreadLocal<DateFormat>() {
