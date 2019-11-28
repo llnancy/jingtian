@@ -14,9 +14,9 @@
 package cn.org.lilu.strategy.traditional;
 
 /**
- * @author: sunchaser
- * @date: 2019/9/15
- * @description: 传统鸭子问题
+ * @author sunchaser
+ * @date 2019/9/15
+ * @description 传统鸭子问题
  *
  * 1. 其它鸭子都继承了Duck类，所以fly方法让所有的子类鸭子都会飞，但并不是所有鸭子都会飞。
  * 2. 实际上这是继承带来的问题，对父类的局部改动，会影响所有子类。称为溢出效应。
@@ -58,9 +58,9 @@ public abstract class Duck {
 package cn.org.lilu.strategy.traditional;
 
 /**
- * @author: sunchaser
- * @date: 2019/9/15
- * @description: 野鸭：嘎嘎叫、会游泳和飞翔
+ * @author sunchaser
+ * @date 2019/9/15
+ * @description 野鸭：嘎嘎叫、会游泳和飞翔
  */
 public class WildDuck extends Duck {
     @Override
@@ -75,9 +75,9 @@ public class WildDuck extends Duck {
 package cn.org.lilu.strategy.traditional;
 
 /**
- * @author: sunchaser
- * @date: 2019/9/15
- * @description: 北京鸭：不会飞翔
+ * @author sunchaser
+ * @date 2019/9/15
+ * @description 北京鸭：不会飞翔
  */
 public class PekingDuck extends Duck {
     @Override
@@ -97,9 +97,9 @@ public class PekingDuck extends Duck {
 package cn.org.lilu.strategy.traditional;
 
 /**
- * @author: sunchaser
- * @date: 2019/9/15
- * @description: 玩具鸭：不会嘎嘎叫、不会游泳和飞翔。
+ * @author sunchaser
+ * @date 2019/9/15
+ * @description 玩具鸭：不会嘎嘎叫、不会游泳和飞翔。
  */
 public class ToyDuck extends Duck {
     @Override
@@ -161,9 +161,9 @@ public class ToyDuck extends Duck {
 package cn.org.lilu.strategy;
 
 /**
- * @author: sunchaser
- * @date: 2019/9/12
- * @description: 飞翔行为接口
+ * @author sunchaser
+ * @date 2019/9/12
+ * @description 飞翔行为接口
  */
 public interface FlyBehavior {
     /**
@@ -181,9 +181,9 @@ package cn.org.lilu.strategy.impl;
 import FlyBehavior;
 
 /**
- * @author: sunchaser
- * @date: 2019/9/12
- * @description: 可以飞的行为
+ * @author sunchaser
+ * @date 2019/9/12
+ * @description 可以飞的行为
  */
 public class FlyWithWings implements FlyBehavior {
     @Override
@@ -201,9 +201,9 @@ package cn.org.lilu.strategy.impl;
 import FlyBehavior;
 
 /**
- * @author: sunchaser
- * @date: 2019/9/12
- * @description: 不能飞的行为
+ * @author sunchaser
+ * @date 2019/9/12
+ * @description 不能飞的行为
  */
 public class FlyNoWay implements FlyBehavior {
     @Override
@@ -221,9 +221,9 @@ package cn.org.lilu.strategy.impl;
 import FlyBehavior;
 
 /**
- * @author: sunchaser
- * @date: 2019/9/12
- * @description: 利用火箭动力的飞翔行为
+ * @author sunchaser
+ * @date 2019/9/12
+ * @description 利用火箭动力的飞翔行为
  */
 public class FlyRocketPowered implements FlyBehavior {
     @Override
@@ -239,9 +239,9 @@ public class FlyRocketPowered implements FlyBehavior {
 package cn.org.lilu.strategy;
 
 /**
- * @author: sunchaser
- * @date: 2019/9/12
- * @description: 鸭子叫行为接口
+ * @author sunchaser
+ * @date 2019/9/12
+ * @description 鸭子叫行为接口
  */
 public interface QuackBehavior {
     /**
@@ -259,9 +259,9 @@ package cn.org.lilu.strategy.impl;
 import QuackBehavior;
 
 /**
- * @author: sunchaser
- * @date: 2019/9/12
- * @description: 嘎嘎叫的行为
+ * @author sunchaser
+ * @date 2019/9/12
+ * @description 嘎嘎叫的行为
  */
 public class Quack implements QuackBehavior {
     @Override
@@ -279,9 +279,9 @@ package cn.org.lilu.strategy.impl;
 import QuackBehavior;
 
 /**
- * @author: sunchaser
- * @date: 2019/9/12
- * @description: 吱吱叫的行为
+ * @author sunchaser
+ * @date 2019/9/12
+ * @description 吱吱叫的行为
  */
 public class Squeak implements QuackBehavior {
     @Override
@@ -299,9 +299,9 @@ package cn.org.lilu.strategy.impl;
 import QuackBehavior;
 
 /**
- * @author: sunchaser
- * @date: 2019/9/12
- * @description: 不会叫的行为
+ * @author sunchaser
+ * @date 2019/9/12
+ * @description 不会叫的行为
  */
 public class MuteQuack implements QuackBehavior {
     @Override
@@ -317,9 +317,9 @@ public class MuteQuack implements QuackBehavior {
 package cn.org.lilu.strategy;
 
 /**
- * @author: sunchaser
- * @date: 2019/9/12
- * @description: 使用策略模式的鸭子类
+ * @author sunchaser
+ * @date 2019/9/12
+ * @description 使用策略模式的鸭子类
  */
 public abstract class Duck {
 
@@ -390,9 +390,9 @@ import FlyWithWings;
 import Quack;
 
 /**
- * @author: sunchaser
- * @date: 2019/9/15
- * @description: 野鸭：具有可以飞的行为和嘎嘎叫的行为。
+ * @author sunchaser
+ * @date 2019/9/15
+ * @description 野鸭：具有可以飞的行为和嘎嘎叫的行为。
  */
 public class WildDuck extends Duck {
 
@@ -419,9 +419,9 @@ import FlyNoWay;
 import Squeak;
 
 /**
- * @author: sunchaser
- * @date: 2019/9/15
- * @description: 北京鸭：不能飞翔，吱吱叫
+ * @author sunchaser
+ * @date 2019/9/15
+ * @description 北京鸭：不能飞翔，吱吱叫
  */
 public class PekingDuck extends Duck {
 
@@ -448,9 +448,9 @@ import FlyNoWay;
 import MuteQuack;
 
 /**
- * @author: sunchaser
- * @date: 2019/9/15
- * @description: 玩具鸭：不会飞也不会叫
+ * @author sunchaser
+ * @date 2019/9/15
+ * @description 玩具鸭：不会飞也不会叫
  */
 public class ToyDuck extends Duck {
 
@@ -475,9 +475,9 @@ package cn.org.lilu.strategy;
 import FlyRocketPowered;
 
 /**
- * @author: sunchaser
- * @date: 2019/9/12
- * @description: for test
+ * @author sunchaser
+ * @date 2019/9/12
+ * @description for test
  */
 public class TestStrategy {
     public static void main(String[] args) {

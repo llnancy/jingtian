@@ -22,13 +22,13 @@
         </javaTypeResolver>
 
         <!-- 指定pojo类生成的位置 -->
-        <javaModelGenerator targetPackage="com.sunchaser.generate.entity" targetProject="./src/main/java">
+        <javaModelGenerator targetPackage="com.sunchaser.mybatisgenerate.entity" targetProject="./src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
         <!-- 指定mapper接口生成的位置 -->
-        <javaClientGenerator type="ANNOTATEDMAPPER" targetPackage="com.sunchaser.generate.mapper" targetProject="./src/main/java">
+        <javaClientGenerator type="ANNOTATEDMAPPER" targetPackage="com.sunchaser.mybatisgenerate.mapper" targetProject="./src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
