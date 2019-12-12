@@ -40,7 +40,7 @@ public interface OrderMapper {
     List<OrderEntity> selectByAnnotation(@Param("orderIds") List<Long> orderIds);
 
     /**
-     * xml
+     * xml 实现
      * @param orderIds
      * @return
      */

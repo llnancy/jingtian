@@ -9,28 +9,18 @@ spring:
     # 重复的bean会进行覆盖
     allow-bean-definition-overriding: true
   # 数据源配置
-#  datasource:
-#    type: com.alibaba.druid.pool.DruidDataSource
-#    druid:
-#      driver-class-name: com.mysql.cj.jdbc.Driver
-#      url: jdbc:mysql://172.31.3.14:3306/gygoodsinvcoredb?serverTimezone=Asia/Shanghai
-#      username: root
-#      password: 123456
-#      initial-size: 5
-#      max-active: 100
-#      min-idle: 5
-#      max-wait: 60000
-  # sharding-jdbc分片规则配置
   shardingsphere:
-    # 数据源
     datasource:
+      # 数据源名称，多数据源以逗号分隔
       names: ds1
+      # 数据源ds1详情配置
       ds1:
         type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver
         url: jdbc:mysql://127.0.0.1:3306/sharding_jdbc_db?useUnicode=true&serverTimezone=Asia/Shanghai
         username: root
         password: ll970722
+    # sharding-jdbc分片规则配置
     sharding:
       tables:
         t_order:
@@ -47,9 +37,9 @@ spring:
               sharding-column: order_id
               # 分片算法：生成的ID为奇数，插入到t_order_2中，偶数则插入到t_order_1中
               algorithm-expression: t_order_$->{order_id % 2 + 1}
-    # 打印sql日志
     props:
       sql:
+        # 打印sharding-jdbc的真实执行sql日志
         show: true
 mybatis:
   mapper-locations: classpath:mapper/**/*.xml

@@ -27,7 +27,7 @@ public class OrderMapperTest {
     @Test
     public void insert() {
         for (int i = 0; i < 20; i++) {
-            OrderEntity orderEntity = OrderEntity.newBuilder()
+            OrderEntity orderEntity = OrderEntity.builder()
                     .price(new BigDecimal("1.11"))
                     .userId("2019xxxxxxxx")
                     .status("SUCCESS")

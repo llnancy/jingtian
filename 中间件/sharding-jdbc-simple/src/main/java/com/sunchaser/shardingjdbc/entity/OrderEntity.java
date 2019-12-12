@@ -1,6 +1,7 @@
 package com.sunchaser.shardingjdbc.entity;
 
-import com.google.common.base.MoreObjects;
+import lombok.Builder;
+import lombok.Data;
 
 import java.math.BigDecimal;
 
@@ -10,103 +11,27 @@ import java.math.BigDecimal;
  * @description
  * @since 1.0
  */
+@Data
+@Builder
 public class OrderEntity {
+
+    /**
+     * 订单id：雪花算法生成的分布式唯一ID
+     */
     private Long orderId;
+
+    /**
+     * 订单价格
+     */
     private BigDecimal price;
+
+    /**
+     * 用户id
+     */
     private String userId;
+
+    /**
+     * 订单状态
+     */
     private String status;
-
-    public OrderEntity() {
-    }
-
-    public OrderEntity(Builder builder) {
-        setOrderId(builder.orderId);
-        setPrice(builder.price);
-        setUserId(builder.userId);
-        setStatus(builder.status);
-    }
-
-    public static Builder newBuilder() {
-        return new Builder();
-    }
-
-    public Long getOrderId() {
-        return orderId;
-    }
-
-    public OrderEntity setOrderId(Long orderId) {
-        this.orderId = orderId;
-        return this;
-    }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public OrderEntity setPrice(BigDecimal price) {
-        this.price = price;
-        return this;
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public OrderEntity setUserId(String userId) {
-        this.userId = userId;
-        return this;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public OrderEntity setStatus(String status) {
-        this.status = status;
-        return this;
-    }
-
-    @Override
-    public String toString() {
-        return MoreObjects.toStringHelper(this)
-                .add("orderId", orderId)
-                .add("price", price)
-                .add("userId", userId)
-                .add("status", status)
-                .toString();
-    }
-
-    public static final class Builder {
-        private Long orderId;
-        private BigDecimal price;
-        private String userId;
-        private String status;
-
-        private Builder() {
-        }
-
-        public Builder orderId(Long orderId) {
-            this.orderId = orderId;
-            return this;
-        }
-
-        public Builder price(BigDecimal price) {
-            this.price = price;
-            return this;
-        }
-
-        public Builder userId(String userId) {
-            this.userId = userId;
-            return this;
-        }
-
-        public Builder status(String status) {
-            this.status = status;
-            return this;
-        }
-
-        public OrderEntity build() {
-            return new OrderEntity(this);
-        }
-    }
 }
