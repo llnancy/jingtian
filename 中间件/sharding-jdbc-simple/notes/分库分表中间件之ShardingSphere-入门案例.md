@@ -581,7 +581,9 @@ select * from t_order_2 t where t.order_id in   (    ?   ,   ?   ) ::: [40690771
 
 结果归并，真实的SQL执行后会返回多个结果集，归并引擎从各个数据节点拿到结果集后组合成一个结果集并返回给客户端。
 
-至此，入门案例就演示结束。下篇文章将对Sharding-JDBC中的一些核心概念进行具体的解释。
+至此，入门案例就演示结束。源码地址：[传送门](https://github.com/sunchaser-lilu/gold-road-to-Java/tree/master/%E4%B8%AD%E9%97%B4%E4%BB%B6/sharding-jdbc-simple)
+
+下一篇文章将对Sharding-JDBC中的一些核心概念进行具体的解释。
 
 ### 小结
 这篇文章主要是对Apache ShardingSphere 4.x与Spring Boot 2.1.x进行整合，使用了内置的SNOWFLAKE雪花算法生成分布式全局唯一ID和使用默认的inline表达式配置分片策略，完成了最简单的一库两表的分库分表，并对新增和查询操作进行了测试。
