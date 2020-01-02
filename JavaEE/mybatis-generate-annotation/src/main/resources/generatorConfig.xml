@@ -38,7 +38,7 @@
                enableDeleteByExample="false"
                enableSelectByExample="false"
                selectByExampleQueryId="false"
-               tableName="goods"
-               domainObjectName="Goods"></table>
+               tableName="settle_task"
+               domainObjectName="SettleTaskDo"></table>
     </context>
 </generatorConfiguration>

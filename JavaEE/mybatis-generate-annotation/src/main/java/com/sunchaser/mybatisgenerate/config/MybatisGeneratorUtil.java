@@ -21,7 +21,7 @@ public class MybatisGeneratorUtil {
     public static void mybatisGenerate() throws Exception {
         ArrayList<String> warnings = new ArrayList<String>();
         boolean overwrite = true;
-        File configFile = new File("H:\\projects\\IdeaProjects\\gold-road-to-Java\\JavaEE\\mybatis-mybatisgenerate-annotation\\src\\main\\resources\\generatorConfig.xml");
+        File configFile = new File("H:\\projects\\IdeaProjects\\gold-road-to-Java\\JavaEE\\mybatis-generate-annotation\\src\\main\\resources\\generatorConfig.xml");
         ConfigurationParser cp = new ConfigurationParser(warnings);
         Configuration config = cp.parseConfiguration(configFile);
         DefaultShellCallback callback = new DefaultShellCallback(overwrite);
