@@ -13,32 +13,6 @@
 
     <description>网关服务</description>
 
-    <properties>
-        <springboot.version>2.1.6.RELEASE</springboot.version>
-        <spring.cloud.version>Greenwich.SR3</spring.cloud.version>
-    </properties>
-
-    <!-- 预定义依赖 -->
-    <dependencyManagement>
-        <dependencies>
-            <!-- spring cloud依赖 -->
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring.cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${springboot.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
     <dependencies>
         <!-- springboot-web依赖 -->
         <dependency>

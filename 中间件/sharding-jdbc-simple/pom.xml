@@ -11,18 +11,6 @@
 
     <artifactId>sharding-jdbc-simple</artifactId>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>com.sunchaser.boot</groupId>
-                <artifactId>sunchaser-boot-dependencies</artifactId>
-                <version>1.0-SNAPSHOT</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
     <dependencies>
         <!-- sharding-jdbc依赖 -->
         <dependency>

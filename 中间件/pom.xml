@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>sharding-jdbc-simple</module>
+        <module>elastic-job-simple</module>
     </modules>
 
 

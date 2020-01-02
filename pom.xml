@@ -21,4 +21,160 @@
         <module>Book-Notes</module>
         <module>design-patterns</module>
     </modules>
+
+    <properties>
+        <spring.boot.version>2.1.6.RELEASE</spring.boot.version>
+        <spring.cloud.version>Greenwich.SR3</spring.cloud.version>
+        <spring.cloud.alibaba.version>2.1.0.RELEASE</spring.cloud.alibaba.version>
+        <lombok.version>1.18.10</lombok.version>
+        <google.guava.version>28.1-jre</google.guava.version>
+        <apache.commons.lang3>3.9</apache.commons.lang3>
+        <mybatis.starter.version>2.1.0</mybatis.starter.version>
+        <mybatis.generator.version>1.3.7</mybatis.generator.version>
+        <mysql.driver.version>8.0.13</mysql.driver.version>
+        <pagehelper.starter.version>1.2.10</pagehelper.starter.version>
+        <druid.starter.version>1.1.10</druid.starter.version>
+        <alibaba.fastjson.version>1.2.60</alibaba.fastjson.version>
+        <okhttp.version>3.11.0</okhttp.version>
+        <guava.retrying.version>2.0.0</guava.retrying.version>
+        <curator.framework.version>4.1.0</curator.framework.version>
+        <zookeeper.version>3.4.8</zookeeper.version>
+        <apache.shardingsphere.starter.version>4.0.0-RC1</apache.shardingsphere.starter.version>
+        <spring.statemachine.version>2.1.3.RELEASE</spring.statemachine.version>
+        <elastic.job.core.version>3.0.0.M1-SNAPSHOT</elastic.job.core.version>
+        <elastic.job.spring.version>3.0.0.M1-SNAPSHOT</elastic.job.spring.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- spring boot -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- spring cloud -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- spring cloud alibaba -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring.cloud.alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- lombok -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <!-- guava -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${google.guava.version}</version>
+            </dependency>
+            <!-- apache lang3 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${apache.commons.lang3}</version>
+            </dependency>
+            <!-- mybatis starter -->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.starter.version}</version>
+            </dependency>
+            <!-- generator core -->
+            <dependency>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-core</artifactId>
+                <version>${mybatis.generator.version}</version>
+            </dependency>
+            <!-- mysql驱动 -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <scope>runtime</scope>
+                <version>${mysql.driver.version}</version>
+            </dependency>
+            <!-- pageHelper分页插件 -->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper.starter.version}</version>
+            </dependency>
+            <!-- druid连接池 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.starter.version}</version>
+            </dependency>
+            <!-- okhttp rest -->
+            <dependency>
+                <groupId>com.squareup.okhttp3</groupId>
+                <artifactId>okhttp</artifactId>
+                <version>${okhttp.version}</version>
+            </dependency>
+            <!-- guava 重试包 -->
+            <dependency>
+                <groupId>com.github.rholder</groupId>
+                <artifactId>guava-retrying</artifactId>
+                <version>${guava.retrying.version}</version>
+            </dependency>
+            <!-- zookeeper客户端 -->
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-framework</artifactId>
+                <version>${curator.framework.version}</version>
+            </dependency>
+            <!-- zookeeper -->
+            <dependency>
+                <groupId>org.apache.zookeeper</groupId>
+                <artifactId>zookeeper</artifactId>
+                <version>${zookeeper.version}</version>
+            </dependency>
+            <!-- fastjson -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${alibaba.fastjson.version}</version>
+            </dependency>
+            <!-- apache shardingsphere starter -->
+            <dependency>
+                <groupId>org.apache.shardingsphere</groupId>
+                <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
+                <version>${apache.shardingsphere.starter.version}</version>
+            </dependency>
+            <!-- spring statemachine -->
+            <dependency>
+                <groupId>org.springframework.statemachine</groupId>
+                <artifactId>spring-statemachine-core</artifactId>
+                <version>${spring.statemachine.version}</version>
+            </dependency>
+            <!-- elasticjob core, contains google guava of version 16.0.1. can't be replaced -->
+            <dependency>
+                <groupId>io.elasticjob</groupId>
+                <artifactId>elastic-job-lite-core</artifactId>
+                <version>${elastic.job.core.version}</version>
+            </dependency>
+            <!-- elasticjob spring -->
+            <dependency>
+                <groupId>io.elasticjob</groupId>
+                <artifactId>elastic-job-lite-spring</artifactId>
+                <version>${elastic.job.spring.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>

@@ -11,22 +11,6 @@
     <artifactId>Java8实战</artifactId>
     <description>《Java8实战》书中代码及其它Java8相关测试代码</description>
 
-    <properties>
-        <springboot.version>2.1.6.RELEASE</springboot.version>
-    </properties>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${springboot.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
