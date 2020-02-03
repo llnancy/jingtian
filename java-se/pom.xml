@@ -8,21 +8,17 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+    <artifactId>java-se</artifactId>
+    <description>Java SE相关知识</description>
 
-    <artifactId>Java EE</artifactId>
-    <packaging>pom</packaging>
-    <description>
-        Java Web
-        Spring
-        Spring MVC
-        Mybatis
-        Spring Boot 2.x
-        Maven
-    </description>
-    <modules>
-        <module>springboot</module>
-        <module>spring-statemachine</module>
-        <module>mybatis-generate-annotation</module>
-    </modules>
-
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+    </dependencies>
 </project>

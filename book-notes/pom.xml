@@ -14,7 +14,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>Java8实战</module>
+        <module>java8-in-action</module>
         <module>剑指Offer</module>
         <module>程序员代码面试指南-IT名企算法和数据结构题目最优解</module>
         <module>thinking-in-java</module>
