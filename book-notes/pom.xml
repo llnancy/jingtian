@@ -8,12 +8,15 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
-    <artifactId>微服务</artifactId>
+    <artifactId>book-notes</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <description>优秀书籍-读书笔记</description>
     <packaging>pom</packaging>
+
     <modules>
-        <module>spring-cloud</module>
-        <module>spring-cloud-alibaba</module>
-        <module>dubbo</module>
+        <module>Java8实战</module>
+        <module>剑指Offer</module>
+        <module>程序员代码面试指南-IT名企算法和数据结构题目最优解</module>
+        <module>thinking-in-java</module>
     </modules>
 </project>

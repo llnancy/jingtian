@@ -9,17 +9,16 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>JavaSE</module>
+        <module>book-notes</module>
         <module>design-patterns</module>
-        <module>算法</module>
         <module>JavaEE</module>
+        <module>JavaSE</module>
+        <module>算法</module>
         <module>数据库</module>
         <module>中间件</module>
         <module>分布式</module>
         <module>微服务</module>
         <module>项目管理</module>
-        <module>Book-Notes</module>
-        <module>design-patterns</module>
     </modules>
 
     <properties>
@@ -43,6 +42,7 @@
         <spring.statemachine.version>2.1.3.RELEASE</spring.statemachine.version>
         <elastic.job.core.version>3.0.0.M1-SNAPSHOT</elastic.job.core.version>
         <elastic.job.spring.version>3.0.0.M1-SNAPSHOT</elastic.job.spring.version>
+        <dubbo.version>2.7.5</dubbo.version>
     </properties>
 
     <dependencyManagement>
@@ -174,6 +174,18 @@
                 <groupId>io.elasticjob</groupId>
                 <artifactId>elastic-job-lite-spring</artifactId>
                 <version>${elastic.job.spring.version}</version>
+            </dependency>
+            <!-- apache dubbo -->
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-dependencies-zookeeper</artifactId>
+                <version>${dubbo.version}</version>
+                <type>pom</type>
             </dependency>
         </dependencies>
     </dependencyManagement>

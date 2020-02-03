@@ -14,6 +14,7 @@
     <modules>
         <module>sharding-jdbc-simple</module>
         <module>elastic-job-simple</module>
+        <module>xxl-job-sample</module>
     </modules>
 
 
