@@ -4,6 +4,8 @@ package com.sunchaser.thinkingInJava.chapter05;
  * @author sunchaser
  * @date 2020/2/2
  * @description
+ * 练习21：创建一个enum，它包含纸币中最小面值的6种类型，通过values()循环并打印每一个值及其ordinal()。
+ * 练习22：在前面的例子中，为enum写一个switch语句，对于每一个case，输出该特定货币的描述。
  * @since 1.0
  */
 public class Exercise21_22 {
