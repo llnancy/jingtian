@@ -6,15 +6,11 @@
         <artifactId>gold-road-to-java</artifactId>
         <groupId>com.sunchaser</groupId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>book-notes</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <description>优秀书籍-读书笔记</description>
-    <packaging>pom</packaging>
 
-    <modules>
-        <module>java8-in-action</module>
-        <module>thinking-in-java</module>
-    </modules>
+    <artifactId>coding-interview-guide</artifactId>
+
+    <description>《程序员代码面试指南-IT名企算法与数据结构最优解》-左程云著</description>
 </project>

@@ -8,13 +8,11 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>book-notes</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <description>优秀书籍-读书笔记</description>
-    <packaging>pom</packaging>
-
-    <modules>
-        <module>java8-in-action</module>
-        <module>thinking-in-java</module>
-    </modules>
+    <artifactId>project-management</artifactId>
+    <description>
+        此部分是项目管理和持续集成内容
+        包含Linux基础知识
+        Git
+        Jenkins
+    </description>
 </project>

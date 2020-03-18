@@ -9,16 +9,16 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
+        <module>algorithm</module>
         <module>book-notes</module>
         <module>design-patterns</module>
         <module>java-ee</module>
         <module>java-se</module>
-        <module>算法</module>
-        <module>数据库</module>
-        <module>中间件</module>
-        <module>分布式</module>
-        <module>微服务</module>
-        <module>项目管理</module>
+        <module>database</module>
+        <module>middleware</module>
+        <module>distributed</module>
+        <module>microservice</module>
+        <module>project-management</module>
     </modules>
 
     <properties>
@@ -189,4 +189,18 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
