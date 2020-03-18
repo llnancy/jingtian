@@ -20,14 +20,14 @@ gold-road-to-Java 是一条通往Java的黄金道路  ----  Java成魔之路。
 
 ## Java从入门到成魔
 完善中...
-![Java成魔之路](assets/gold-road-to-java.png)
+![Java成魔之路](./assets/gold-road-to-java.png)
 
 <div align="center">
 <br /><br /><p style="color: #744DA9;">没有行动的梦想都是妄想。</p><br /><br />
 </div>
 
 | Java SE | Java EE | 设计模式 | 算法 | 数 据 库 | 中 间 件 | 分 布 式 | 微 服 务 | 项目管理 | 优秀书籍 |
-| :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: |
+| :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: |
 | [:coffee:](#coffee-JavaSE) | [:baby_bottle:](#baby_bottle-JavaEE) | [:shell:](#shell-设计模式) | [:pencil:](#pencil-算法) | [:package:](#package-数据库) | [:mailbox:](#mailbox-中间件) | [:globe_with_meridians:](#globe_with_meridians-分布式) | [:cloud:](#cloud-微服务) | [:octocat:](#octocat-项目管理) | [:books:](#books-优秀书籍) |
 
 ## :coffee: [JavaSE](./java-se)
