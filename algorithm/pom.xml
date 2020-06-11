@@ -16,5 +16,6 @@
         <module>leetcode-problem-solution</module>
         <module>coding-interview-guide</module>
         <module>sword-finger-offer</module>
+        <module>algorithm-base</module>
     </modules>
 </project>
