@@ -1,4 +1,4 @@
-package com.sunchaser.eurekaservercenter;
+package com.sunchaser.eureka.server;
 
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,9 +6,8 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 /**
- * @auther: sunchaser
- * @date 2019/11/25
- * @description
+ * @author sunchaser
+ * @date 2020/6/17
  * @since 1.0
  */
 @SpringBootApplication
