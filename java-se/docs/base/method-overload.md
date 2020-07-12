@@ -378,7 +378,7 @@ public class SmallToBigDataTypeOverloadTest {
 
 对于char类型的'x'，foo1方法包含对应类型的重载，剩余6种方法不包含char类型的重载，但foo2/foo3/foo4直接将char类型自动类型转换成了int类型。foo5/foo6/foo7分别将char类型隐式转换成了long/float/double类型。
 
-> char类型是不会被自动类型转换成byte/short类型的。其原因可查看这篇文章：[传送门](/2020/01/09/javase/base/why-char-cannot-be-converted-to-byte-or-short/)
+> char类型是不会被自动类型转换成byte/short类型的。其原因可查看这篇文章：[传送门](./why-char-cannot-be-converted-to-byte-or-short.md)
 
 对于byte类型的1，foo1/foo2方法包含对应类型的重载；剩余5种方法不包含char类型的重载，被分别隐式转换成了short/int/long/float/double类型。
 
