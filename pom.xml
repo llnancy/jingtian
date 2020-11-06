@@ -3,11 +3,12 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.sunchaser</groupId>
-    <artifactId>gold-road-to-java</artifactId>
-    <description>Java成魔之路</description>
+    <groupId>com.sunchaser.hikari</groupId>
+    <artifactId>sunchaser-hikari</artifactId>
+    <description>SunChaser Hikari：SunChaser发出的光</description>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+
     <modules>
         <module>algorithm</module>
         <module>book-notes</module>
@@ -21,6 +22,7 @@
         <module>project-management</module>
     </modules>
 
+    <!-- version -->
     <properties>
         <spring.boot.version>2.1.6.RELEASE</spring.boot.version>
         <spring.cloud.version>Greenwich.SR3</spring.cloud.version>
@@ -121,18 +123,6 @@
                 <artifactId>druid-spring-boot-starter</artifactId>
                 <version>${druid.starter.version}</version>
             </dependency>
-            <!-- okhttp rest -->
-            <dependency>
-                <groupId>com.squareup.okhttp3</groupId>
-                <artifactId>okhttp</artifactId>
-                <version>${okhttp.version}</version>
-            </dependency>
-            <!-- guava 重试包 -->
-            <dependency>
-                <groupId>com.github.rholder</groupId>
-                <artifactId>guava-retrying</artifactId>
-                <version>${guava.retrying.version}</version>
-            </dependency>
             <!-- zookeeper客户端 -->
             <dependency>
                 <groupId>org.apache.curator</groupId>
@@ -162,18 +152,6 @@
                 <groupId>org.springframework.statemachine</groupId>
                 <artifactId>spring-statemachine-core</artifactId>
                 <version>${spring.statemachine.version}</version>
-            </dependency>
-            <!-- elasticjob core, contains google guava of version 16.0.1. can't be replaced -->
-            <dependency>
-                <groupId>io.elasticjob</groupId>
-                <artifactId>elastic-job-lite-core</artifactId>
-                <version>${elastic.job.core.version}</version>
-            </dependency>
-            <!-- elasticjob spring -->
-            <dependency>
-                <groupId>io.elasticjob</groupId>
-                <artifactId>elastic-job-lite-spring</artifactId>
-                <version>${elastic.job.spring.version}</version>
             </dependency>
             <!-- apache dubbo -->
             <dependency>

@@ -1,22 +1,24 @@
-<div align="center">
-    <img src="assets/LOGO_gezisan.png" style="width:100px;border-radius:50px;">
+<div style="text-align: center">
+    SunChaser Hikari 🌻<br /><br />
+    <img alt="SunChaser Hikari" src="https://img.shields.io/badge/SunChaser-Hikari-blueviolet?logo=Java&logoColor=violet" />
     <br /><br />
-    一把为你遮风挡雨的伞🌻。
-    <br /><br />
-    <a title="GitHub Watchers" target="_blank" href="https://github.com/tclilu/gold-road-to-Java/watchers">
-    <img src="https://img.shields.io/github/watchers/tclilu/gold-road-to-Java?color=violet&logoColor=violet&style=social" /></a>
-    <a title="GitHub stars" target="_blank" href="https://github.com/tclilu/gold-road-to-Java/stargazers">
-    <img alt="GitHub stars" src="https://img.shields.io/github/stars/tclilu/gold-road-to-Java?color=violet&logoColor=violet&style=social" /></a>
-    <a title="GitHub forks" target="_blank" href="https://github.com/tclilu/gold-road-to-Java/network">
-    <img alt="GitHub forks" src="https://img.shields.io/github/forks/tclilu/gold-road-to-Java?color=violet&logoColor=violet&style=social" /></a>
-    <a title="Author GitHub Followers" target="_blank" href="https://github.com/tclilu">
-    <img alt="Author GitHub Followers" src="https://img.shields.io/github/followers/tclilu?label=Followers&color=violet&logoColor=violet&style=social" /></a>
+    <a title="GitHub Watchers" target="_blank" href="https://github.com/sunchaser-lilu/sunchaser-hikari/watchers">
+    <img src="https://img.shields.io/github/watchers/sunchaser-lilu/sunchaser-hikari/?color=blueviolet&logoColor=blueviolet&style=social" /></a>
+    <a title="GitHub stars" target="_blank" href="https://github.com/sunchaser-lilu/sunchaser-hikari/stargazers">
+    <img alt="GitHub stars" src="https://img.shields.io/github/stars/sunchaser-lilu/sunchaser-hikari?color=violet&logoColor=violet&style=social" /></a>
+    <a title="GitHub forks" target="_blank" href="https://github.com/sunchaser-lilu/sunchaser-hikari/network">
+    <img alt="GitHub forks" src="https://img.shields.io/github/forks/sunchaser-lilu/sunchaser-hikari?color=violet&logoColor=violet&style=social" /></a>
+    <a title="Author GitHub Followers" target="_blank" href="https://github.com/sunchaser-lilu">
+    <img alt="Author GitHub Followers" src="https://img.shields.io/github/followers/sunchaser-lilu?label=Followers&color=violet&logoColor=violet&style=social" /></a>
 </div> 
 
 ## 简介
-gold-road-to-Java 是一条通往Java的黄金道路  ----  Java成魔之路。
 
-本项目包含Java从入门到成魔的必备知识，内容来源于平时学习和工作中的积累沉淀。
+```
+SunChaser：追逐太阳（向日葵）
+
+Hikari：光（太阳散发的光）
+```
 
 ## Java从入门到成魔
 完善中...
