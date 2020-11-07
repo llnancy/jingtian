@@ -1,15 +1,16 @@
-<div style="text-align: center">
-    SunChaser Hikari 🌻<br /><br />
+<div align="center">
+    <br />SunChaser Hikari 🌻<br /><br />
     <img alt="SunChaser Hikari" src="https://img.shields.io/badge/SunChaser-Hikari-blueviolet?logo=Java&logoColor=violet" />
     <br /><br />
-    <a title="GitHub Watchers" target="_blank" href="https://github.com/sunchaser-lilu/sunchaser-hikari/watchers">
-    <img src="https://img.shields.io/github/watchers/sunchaser-lilu/sunchaser-hikari/?color=blueviolet&logoColor=blueviolet&style=social" /></a>
-    <a title="GitHub stars" target="_blank" href="https://github.com/sunchaser-lilu/sunchaser-hikari/stargazers">
-    <img alt="GitHub stars" src="https://img.shields.io/github/stars/sunchaser-lilu/sunchaser-hikari?color=violet&logoColor=violet&style=social" /></a>
-    <a title="GitHub forks" target="_blank" href="https://github.com/sunchaser-lilu/sunchaser-hikari/network">
-    <img alt="GitHub forks" src="https://img.shields.io/github/forks/sunchaser-lilu/sunchaser-hikari?color=violet&logoColor=violet&style=social" /></a>
-    <a title="Author GitHub Followers" target="_blank" href="https://github.com/sunchaser-lilu">
-    <img alt="Author GitHub Followers" src="https://img.shields.io/github/followers/sunchaser-lilu?label=Followers&color=violet&logoColor=violet&style=social" /></a>
+    <a title="sunchaser-hikari watchers" target="_blank" href="https://github.com/sunchaser-lilu/sunchaser-hikari/watchers">
+        <img alt="GitHub watchers" src="https://img.shields.io/github/watchers/sunchaser-lilu/sunchaser-hikari?color=%5D&logoColor=blueviolet&style=social" />
+    </a>  
+    <a title="sunchaser-hikari stars" target="_blank" href="https://github.com/sunchaser-lilu/sunchaser-hikari/stargazers">
+        <img alt="GitHub stars" src="https://img.shields.io/github/stars/sunchaser-lilu/sunchaser-hikari?color=%5D&logoColor=blueviolet&style=social" />
+    </a>  
+    <a title="sunchaser-hikari forks" target="_blank" href="https://github.com/sunchaser-lilu/sunchaser-hikari/network/members">
+        <img alt="GitHub forks" src="https://img.shields.io/github/forks/sunchaser-lilu/sunchaser-hikari?color=%5D&logoColor=blueviolet&style=social" />
+    </a>
 </div> 
 
 ## 简介
@@ -20,13 +21,7 @@ SunChaser：追逐太阳（向日葵）
 Hikari：光（太阳散发的光）
 ```
 
-## Java从入门到成魔
-完善中...
-![Java成魔之路](./assets/gold-road-to-java.png)
-
-<div align="center">
-<br /><br /><p style="color: #744DA9;">没有行动的梦想都是妄想。</p><br /><br />
-</div>
+## Skill
 
 | Java SE | Java EE | 设计模式 | 算法 | 数 据 库 | 中 间 件 | 分 布 式 | 微 服 务 | 项目管理 | 优秀书籍 |
 | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: |
