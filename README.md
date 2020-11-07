@@ -16,9 +16,9 @@
 ## 简介
 
 ```
-SunChaser：追逐太阳（向日葵）
+SunChaser：追逐太阳
 
-Hikari：光（太阳散发的光）
+Hikari：光
 ```
 
 ## Skill
