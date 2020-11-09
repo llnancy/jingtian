@@ -105,9 +105,9 @@ public class SqlGenerateTest {
             }
         },
         ;
-        private Integer argCount;
-        private String action;
-        private String template;
+        private final Integer argCount;
+        private final String action;
+        private final String template;
 
         private static final Map<String,ActionEnum> enumMap = Maps.newHashMap();
 
