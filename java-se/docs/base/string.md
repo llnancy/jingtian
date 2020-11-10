@@ -22,9 +22,9 @@ System.out.println("Hello World!");
 
 ```java
 public static void main(String[] args) {
-	String a = "Hello" + " World" + "!";
-	String b = "Hello World!";
-	System.out.println(a == b);
+    String a = "Hello" + " World" + "!";
+    String b = "Hello World!";
+    System.out.println(a == b);
 }
 ```
 
@@ -59,9 +59,9 @@ public static void main(String[] args) {
 而在`java.lang.Object`类中，`equals()`方法的实现是这样的：
 
 ```java
-    public boolean equals(Object obj) {
-        return (this == obj);
-    }
+public boolean equals(Object obj) {
+    return (this == obj);
+}
 ```
 
 直接使用了`==`运算符比较。这意味着：如果调用`equals()`方法进行比较的类及其显式使用`extends`关键字继承的父类列表中都没有重写过`equals()`方法，那么调用`equals()`方法就等同于使用`==`运算符进行比较。
@@ -101,21 +101,21 @@ public static void main(String[] args) {
 我们再来看下面这段代码：
 
 ```java
-    public static void main(String[] args) {
-        String m = "a";
-        final String n = "a";
-        String x = m + "b";
-        String y = n + "b";
-        String z = getA() + "b";
-        String compare = "ab";
-        System.out.println(x == compare);
-        System.out.println(y == compare);
-        System.out.println(z == compare);
-    }
+public static void main(String[] args) {
+    String m = "a";
+    final String n = "a";
+    String x = m + "b";
+    String y = n + "b";
+    String z = getA() + "b";
+    String compare = "ab";
+    System.out.println(x == compare);
+    System.out.println(y == compare);
+    System.out.println(z == compare);
+}
 
-    public static String getA() {
-        return "a";
-    }
+public static String getA() {
+    return "a";
+}
 ```
 
 你心中有答案吗？知道每个答案的原理吗？
@@ -134,7 +134,8 @@ false
 
 ```java
 StringBuilder temp = new StringBuilder();
-temp.append(m).append("b");
+temp.append(m)
+    .append("b");
 String x = temp.toString();
 ```
 
@@ -153,16 +154,16 @@ String x = temp.toString();
 有了上面的知识后，我们再来看以下代码：
 
 ```java
-    public static void main(String[] args) {
-        String a = "a";
-        String b = a + "b";
-        String c = "ab";
-        String d = new String(b);
-        System.out.println(b == c);
-        System.out.println(c == d);
-        System.out.println(c == d.intern());
-        System.out.println(b.intern() == d.intern());
-    }
+public static void main(String[] args) {
+    String a = "a";
+    String b = a + "b";
+    String c = "ab";
+    String d = new String(b);
+    System.out.println(b == c);
+    System.out.println(c == d);
+    System.out.println(c == d.intern());
+    System.out.println(b.intern() == d.intern());
+}
 ```
 
 这段代码增加了`intern()`方法的调用，其输出结果为：
@@ -193,7 +194,7 @@ true
 ```java
 String str = "start";
 for (int i = 0;i < 100;i++) {
-	str = str + "hello";
+    str = str + "hello";
 }
 ```
 
@@ -205,7 +206,7 @@ for (int i = 0;i < 100;i++) {
     StringBuilder sb = new StringBuilder();
     sb.append(str)
       .append("hello");
-	str = sb.toString();
+    str = sb.toString();
 }
 ```
 
@@ -220,7 +221,7 @@ StringBuilder sb = new StringBuilder();
 String str = "start";
 sb.append(str);
 for (int i = 0;i < 100;i++) {
-	sb.append("hello");
+    sb.append("hello");
 }
 str = sb.toString();
 ```
