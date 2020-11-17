@@ -1,6 +1,6 @@
 <div align="center">
-    <br />SunChaser Hikari 🌻<br /><br />
-    <img alt="SunChaser Sparrow" src="https://img.shields.io/badge/SunChaser-Hikari-blueviolet?logo=Java&logoColor=violet" />
+    <br />SunChaser Sparrow 🌻<br /><br />
+    <img alt="SunChaser Sparrow" src="https://img.shields.io/badge/SunChaser-Sparrow-blueviolet?logo=Java&logoColor=violet" />
     <br /><br />
     <a title="sunchaser-sparrow watchers" target="_blank" href="https://github.com/sunchaser-lilu/sunchaser-sparrow/watchers">
         <img alt="GitHub watchers" src="https://img.shields.io/github/watchers/sunchaser-lilu/sunchaser-sparrow?color=%5D&logoColor=blueviolet&style=social" />
