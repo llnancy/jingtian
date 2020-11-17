@@ -1,15 +1,15 @@
 <div align="center">
     <br />SunChaser Hikari 🌻<br /><br />
-    <img alt="SunChaser Hikari" src="https://img.shields.io/badge/SunChaser-Hikari-blueviolet?logo=Java&logoColor=violet" />
+    <img alt="SunChaser Sparrow" src="https://img.shields.io/badge/SunChaser-Hikari-blueviolet?logo=Java&logoColor=violet" />
     <br /><br />
-    <a title="sunchaser-hikari watchers" target="_blank" href="https://github.com/sunchaser-lilu/sunchaser-hikari/watchers">
-        <img alt="GitHub watchers" src="https://img.shields.io/github/watchers/sunchaser-lilu/sunchaser-hikari?color=%5D&logoColor=blueviolet&style=social" />
+    <a title="sunchaser-sparrow watchers" target="_blank" href="https://github.com/sunchaser-lilu/sunchaser-sparrow/watchers">
+        <img alt="GitHub watchers" src="https://img.shields.io/github/watchers/sunchaser-lilu/sunchaser-sparrow?color=%5D&logoColor=blueviolet&style=social" />
     </a>  
-    <a title="sunchaser-hikari stars" target="_blank" href="https://github.com/sunchaser-lilu/sunchaser-hikari/stargazers">
-        <img alt="GitHub stars" src="https://img.shields.io/github/stars/sunchaser-lilu/sunchaser-hikari?color=%5D&logoColor=blueviolet&style=social" />
+    <a title="sunchaser-sparrow stars" target="_blank" href="https://github.com/sunchaser-lilu/sunchaser-sparrow/stargazers">
+        <img alt="GitHub stars" src="https://img.shields.io/github/stars/sunchaser-lilu/sunchaser-sparrow?color=%5D&logoColor=blueviolet&style=social" />
     </a>  
-    <a title="sunchaser-hikari forks" target="_blank" href="https://github.com/sunchaser-lilu/sunchaser-hikari/network/members">
-        <img alt="GitHub forks" src="https://img.shields.io/github/forks/sunchaser-lilu/sunchaser-hikari?color=%5D&logoColor=blueviolet&style=social" />
+    <a title="sunchaser-sparrow forks" target="_blank" href="https://github.com/sunchaser-lilu/sunchaser-sparrow/network/members">
+        <img alt="GitHub forks" src="https://img.shields.io/github/forks/sunchaser-lilu/sunchaser-sparrow?color=%5D&logoColor=blueviolet&style=social" />
     </a>
 </div> 
 
@@ -18,7 +18,7 @@
 ```
 SunChaser：追逐太阳
 
-Hikari：光
+Sparrow：麻雀
 ```
 
 ## Skill

@@ -154,7 +154,7 @@ SerializableClass{name='序列化', age=10}
 主要异常堆栈信息如下：
 
 ```
-java.io.InvalidClassException: com.sunchaser.javase.base.serizlizable.SerializableClass; 
+java.io.InvalidClassException: SerializableClass; 
 
 local class incompatible: stream classdesc serialVersionUID = 5135632042912401553, local class serialVersionUID = 5135631042912401553
 ```
