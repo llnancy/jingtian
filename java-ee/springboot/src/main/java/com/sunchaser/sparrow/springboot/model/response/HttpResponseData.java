@@ -1,9 +1,9 @@
 package com.sunchaser.sparrow.springboot.model.response;
 
 /**
+ * HTTP请求统一响应包含data数据域的实体。供需要返回数据的HTTP请求使用。
  * @author lilu
- * @date 2019/9/4
- * @description HTTP请求统一响应包含data数据域的实体。供需要返回数据的HTTP请求使用。
+ * @since JDK8 2019/9/4
  */
 public class HttpResponseData<T> {
 

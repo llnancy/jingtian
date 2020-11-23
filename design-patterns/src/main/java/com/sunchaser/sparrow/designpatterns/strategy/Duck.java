@@ -1,9 +1,9 @@
 package com.sunchaser.sparrow.designpatterns.strategy;
 
 /**
+ * 使用策略模式的鸭子类
  * @author sunchaser
- * @date 2019/9/12
- * @description 使用策略模式的鸭子类
+ * @since JDK8 2019/9/12
  */
 public abstract class Duck {
 

@@ -3,9 +3,7 @@ package com.sunchaser.sparrow.javase.base.overload;
 import org.junit.Test;
 
 /**
- * @author sunchaser
- * @date 2020/1/8
- * @description
+ *
  * 基本数据类型重载的测试：基本数据类型范围较小的会被自动类型转换（隐式转换）成范围较大的类型。
  *
  * 基本数据类型（除去boolean）范围如下：
@@ -19,7 +17,8 @@ import org.junit.Test;
  * double | 64 bits | IEEE754范围
  * long   | 64 bits | [-2^63, +2^63 - 1]
  *
- * @since 1.0
+ * @author sunchaser
+ * @since JDK8 2020/1/8
  */
 public class SmallToBigDataTypeOverloadTest {
 

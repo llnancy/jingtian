@@ -1,9 +1,9 @@
 package com.sunchaser.sparrow.designpatterns.strategy;
 
 /**
+ * 鸭子叫行为接口
  * @author sunchaser
- * @date 2019/9/12
- * @description 鸭子叫行为接口
+ * @since JDK8 2019/9/12
  */
 public interface QuackBehavior {
     /**

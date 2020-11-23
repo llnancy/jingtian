@@ -6,9 +6,9 @@ import com.sunchaser.sparrow.designpatterns.observer.observer.Observer;
 import java.util.List;
 
 /**
+ * 主播主题
  * @author sunchaser
- * @date 2019/10/17
- * @description 主播主题
+ * @since JDK8 2019/10/17
  */
 public class AnchorSubject implements Subject {
 

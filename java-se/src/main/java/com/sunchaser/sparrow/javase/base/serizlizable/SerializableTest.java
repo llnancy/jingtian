@@ -4,9 +4,9 @@ import java.io.*;
 
 /**
  * 序列化测试
+ *
  * @author sunchaser
- * @date 2020/3/19
- * @since 1.0
+ * @since JDK8 2020/3/19
  */
 public class SerializableTest {
     public static void main(String[] args) {

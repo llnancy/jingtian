@@ -1,9 +1,6 @@
 package com.sunchaser.sparrow.thinkinginjava.chapter05;
 
 /**
- * @author sunchaser
- * @date 2020/1/8
- * @description
  * 练习2：创建一个类，它包含一个在定义时就被初始化了的String域，以及另一个通过构造器初始化的String域。
  * 这两种方式有何差异？
  *
@@ -11,7 +8,8 @@ package com.sunchaser.sparrow.thinkinginjava.chapter05;
  * 通过构造器初始化的String域str2是从null值变成构造器中传入的str2的值，可传入不同的值。
  * 而在定义时就被初始化了的String域str1，在调用构造器初始化之前就已被赋值。
  * 即str1初始化在str2之前。
- * @since 1.0
+ * @author sunchaser
+ * @since JDK8 2020/1/8
  */
 public class Exercise02 {
     private String str1 = "pre-init";

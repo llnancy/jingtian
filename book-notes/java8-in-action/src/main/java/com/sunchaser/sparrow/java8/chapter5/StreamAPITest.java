@@ -19,9 +19,9 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
+ * 第五章：使用流。书中代码测试。
  * @author sunchaser
- * @date 2019/8/16
- * @description 第五章：使用流。书中代码测试。
+ * @since JDK8 2019/8/16
  */
 @SpringBootTest
 @RunWith(SpringRunner.class)

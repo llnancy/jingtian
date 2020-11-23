@@ -1,9 +1,9 @@
 package com.sunchaser.sparrow.java8.chapter5;
 
 /**
+ * 交易员实体类
  * @author sunchaser
- * @date 2019/8/17
- * @description 交易员实体类
+ * @since JDK8 2019/8/17
  */
 public class Trader {
     private final String name;

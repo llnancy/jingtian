@@ -3,9 +3,9 @@ package com.sunchaser.sparrow.designpatterns.strategy;
 import com.sunchaser.sparrow.designpatterns.strategy.impl.FlyRocketPowered;
 
 /**
+ * for test
  * @author sunchaser
- * @date 2019/9/12
- * @description for test
+ * @since JDK8 2019/9/12
  */
 public class TestStrategy {
     public static void main(String[] args) {

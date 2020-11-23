@@ -9,9 +9,9 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 /**
+ * 传统时间格式转换器线程安全实现演示
  * @author sunchaser
- * @date 2019/8/29
- * @description 传统时间格式转换器线程安全实现演示
+ * @since JDK8 2019/8/29
  */
 public class TraditionalThreadSafeSimpleDateFormat {
     public static void main(String[] args) throws Exception {

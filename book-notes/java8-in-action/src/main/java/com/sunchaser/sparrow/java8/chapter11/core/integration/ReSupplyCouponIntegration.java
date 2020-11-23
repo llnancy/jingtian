@@ -3,9 +3,9 @@ package com.sunchaser.sparrow.java8.chapter11.core.integration;
 import com.sunchaser.sparrow.java8.chapter11.model.UserInfoModel;
 
 /**
+ * 代码防腐层接口
  * @author sunchaser
- * @date 2019/9/8
- * @description 代码防腐层接口
+ * @since JDK8 2019/9/8
  */
 public interface ReSupplyCouponIntegration {
 

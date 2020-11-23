@@ -12,9 +12,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
- * @author sunchaser
- * @date 2019/8/17
- * @description Stream API练习
+ * Stream API练习
  * (1) 找出2011年发生的所有交易，并按交易额排序（从低到高）。
  * (2) 交易员都在哪些不同的城市工作过？
  * (3) 查找所有来自于剑桥（Cambridge）的交易员，并按姓名排序。
@@ -23,6 +21,9 @@ import java.util.stream.Collectors;
  * (6) 打印生活在剑桥的交易员的所有交易额。
  * (7) 所有交易中，最高的交易额是多少？
  * (8) 找到交易额最小的交易。
+ *
+ * @author sunchaser
+ * @since JDK8 2019/8/17
  */
 @SpringBootTest
 @RunWith(SpringRunner.class)

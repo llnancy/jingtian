@@ -17,8 +17,7 @@ import java.util.List;
  * 双向循环链表：综合了循环链表和双向链表。头节点的前驱节点指向尾节点，尾节点的后继节点指向头节点。
  *
  * @author sunchaser
- * @date 2020/6/2
- * @since 1.0
+ * @since JDK8 2020/6/2
  */
 public class LinkedTest {
     public static void main(String[] args) {

@@ -1,9 +1,9 @@
 package com.sunchaser.sparrow.java8.chapter9.case5;
 
 /**
+ * 实现类ImplClassD同时实现InterfaceB和InterfaceC接口
  * @author sunchaser
- * @date 2019/8/23
- * @description 实现类ImplClassD同时实现InterfaceB和InterfaceC接口
+ * @since JDK8 2019/8/23
  */
 public class ImplClassD implements InterfaceB,InterfaceC {
 

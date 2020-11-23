@@ -5,8 +5,7 @@ import java.util.LinkedList;
 /**
  * 深浅拷贝测试
  * @author sunchaser
- * @date 2020/4/7
- * @since 1.0
+ * @since JDK8 2020/4/7
  */
 @SuppressWarnings("unchecked")
 public class DepthCopyTest {

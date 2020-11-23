@@ -14,9 +14,9 @@ import java.util.concurrent.*;
 import java.util.stream.Collectors;
 
 /**
+ * 业务Service接口实现类
  * @author sunchaser
- * @date 2019/9/8
- * @description 业务Service接口实现类
+ * @since JDK8 2019/9/8
  */
 @Service
 public class ReSupplyCouponBizServiceImpl implements ReSupplyCouponBizService {

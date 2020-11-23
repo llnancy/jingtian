@@ -1,9 +1,9 @@
 package com.sunchaser.sparrow.statemachine.states;
 
 /**
+ * 状态枚举
  * @author sunchaser
- * @date 2019/9/20
- * @description 状态枚举
+ * @since JDK8 2019/9/20
  */
 public enum OrderStates {
     /**

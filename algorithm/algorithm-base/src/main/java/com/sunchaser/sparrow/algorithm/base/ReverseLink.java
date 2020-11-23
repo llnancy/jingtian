@@ -3,8 +3,7 @@ package com.sunchaser.sparrow.algorithm.base;
 /**
  * 递归法拿下反转链表的三杀
  * @author sunchaser
- * @date 2020/6/3
- * @since 1.0
+ * @since JDK8 2020/6/3
  */
 public class ReverseLink {
     public static void main(String[] args) {

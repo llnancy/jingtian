@@ -1,11 +1,10 @@
 package com.sunchaser.sparrow.java8.chapter2;
 
 /**
- * @author sunchaser
- * @date 2019/8/12
- * @description
  * 测验2.2：匿名类谜题
  * 代码执行时会有什么样的输出呢，4、5、6还是42？
+ * @author sunchaser
+ * @since JDK8 2019/8/12
  */
 public class MeaningOfThis {
     public final int value = 4;

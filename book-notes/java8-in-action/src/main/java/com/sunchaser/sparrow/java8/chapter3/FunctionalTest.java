@@ -14,9 +14,9 @@ import java.util.function.IntPredicate;
 import java.util.function.Predicate;
 
 /**
+ * java.util.function包下的函数式接口测试
  * @author sunchaser
- * @date 2019/8/12
- * @description java.util.function包下的函数式接口测试
+ * @since JDK8 2019/8/12
  */
 @SpringBootTest
 @RunWith(SpringRunner.class)

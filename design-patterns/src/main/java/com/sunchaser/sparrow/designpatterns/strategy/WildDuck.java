@@ -4,9 +4,9 @@ import com.sunchaser.sparrow.designpatterns.strategy.impl.FlyWithWings;
 import com.sunchaser.sparrow.designpatterns.strategy.impl.Quack;
 
 /**
+ * 野鸭：具有可以飞的行为和嘎嘎叫的行为。
  * @author sunchaser
- * @date 2019/9/15
- * @description 野鸭：具有可以飞的行为和嘎嘎叫的行为。
+ * @since JDK8 2019/9/15
  */
 public class WildDuck extends Duck {
 

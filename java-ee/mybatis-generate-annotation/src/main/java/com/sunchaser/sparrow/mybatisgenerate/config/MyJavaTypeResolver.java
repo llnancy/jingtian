@@ -5,10 +5,9 @@ import org.mybatis.generator.internal.types.JavaTypeResolverDefaultImpl;
 import org.springframework.stereotype.Service;
 
 /**
- * @auther: sunchaser
- * @date 2019/10/28
- * @description 指定mysql中的tinyInt类型映射成java.lang.Integer类
- * @since 1.0
+ * 指定mysql中的tinyInt类型映射成java.lang.Integer类
+ * @author sunchaser
+ * @since JDK8 2019/10/28
  */
 @Service
 public class MyJavaTypeResolver extends JavaTypeResolverDefaultImpl {

@@ -14,8 +14,7 @@ import java.util.EnumSet;
 
 /**
  * @author sunchaser
- * @date 2019/9/23
- * @description
+ * @since JDK8 2019/9/23
  */
 @Component
 public class ControllerRequestStateMachineBuilder {

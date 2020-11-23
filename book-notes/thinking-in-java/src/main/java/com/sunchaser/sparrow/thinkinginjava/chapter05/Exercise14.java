@@ -1,12 +1,10 @@
 package com.sunchaser.sparrow.thinkinginjava.chapter05;
 
 /**
- * @author sunchaser
- * @date 2020/2/2
- * @description
  * 练习14：编写一个类，拥有两个静态字符串域，其中一个在定义处初始化，另一个在静态块中初始化。
  * 现在，加入一个静态方法用以打印出两个字段的值。请证明它们都会在被使用之前完成初始化动作。
- * @since 1.0
+ * @author sunchaser
+ * @since JDK8 2020/2/2
  */
 public class Exercise14 {
     private static String str1 = "str1初始化";

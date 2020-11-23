@@ -8,9 +8,7 @@ import java.util.function.Supplier;
 import java.util.stream.Collector;
 
 /**
- * @author sunchaser
- * @date 2019/8/20
- * @description 自定义收集器实现：将Stream流中的所有元素收集到List中。
+ * 自定义收集器实现：将Stream流中的所有元素收集到List中。
  *
  * Collector<T,List<T>, List<T>>接口定义如下：
  * public interface Collector<T, A, R> {
@@ -25,6 +23,8 @@ import java.util.stream.Collector;
  * A：累加器的类型，累加器是在收集过程中用于累计部分结果的对象。
  * R：收集操作得到的对象类型（通常但不一定是集合）。
  *
+ * @author sunchaser
+ * @since JDK8 2019/8/20
  */
 public class ToListCollector<T> implements Collector<T,List<T>, List<T>> {
 

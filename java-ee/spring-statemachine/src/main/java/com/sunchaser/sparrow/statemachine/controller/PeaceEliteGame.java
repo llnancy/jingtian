@@ -4,8 +4,7 @@ import com.sunchaser.sparrow.statemachine.pojo.Person;
 
 /**
  * @author sunchaser
- * @date 2019/9/24
- * @description
+ * @since JDK8 2019/9/24
  */
 public class PeaceEliteGame {
     public static void main(String[] args) throws Exception {

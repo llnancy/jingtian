@@ -2,9 +2,7 @@ package com.sunchaser.sparrow.thinkinginjava.chapter06.access;// package com.sun
 
 /**
  * @author sunchaser
- * @date 2020/2/3
- * @description
- * @since 1.0
+ * @since JDK8 2020/2/3
  */
 public class Pie {
     void f() {

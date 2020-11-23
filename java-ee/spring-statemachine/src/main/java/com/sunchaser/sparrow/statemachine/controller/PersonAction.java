@@ -7,8 +7,7 @@ import java.util.Objects;
 
 /**
  * @author sunchaser
- * @date 2019/9/24
- * @description
+ * @since JDK8 2019/9/24
  */
 public class PersonAction {
     private PersonAction() {

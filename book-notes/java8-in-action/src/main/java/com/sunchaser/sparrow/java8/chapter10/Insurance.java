@@ -1,9 +1,9 @@
 package com.sunchaser.sparrow.java8.chapter10;
 
 /**
+ * 车保险 类
  * @author sunchaser
- * @date 2019/8/25
- * @description 车保险 类
+ * @since JDK8 2019/8/25
  */
 public class Insurance {
     private String name;

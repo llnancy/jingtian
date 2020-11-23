@@ -10,8 +10,7 @@ import java.util.Set;
 /**
  * 集合的交差并集
  * @author sunchaser
- * @date 2020/4/22
- * @since 1.0
+ * @since JDK8 2020/4/22
  */
 public class CrossAndMerge {
     public static void main(String[] args) {

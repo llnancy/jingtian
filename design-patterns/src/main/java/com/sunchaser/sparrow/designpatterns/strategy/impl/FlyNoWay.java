@@ -3,9 +3,9 @@ package com.sunchaser.sparrow.designpatterns.strategy.impl;
 import com.sunchaser.sparrow.designpatterns.strategy.FlyBehavior;
 
 /**
+ * 不能飞的行为
  * @author sunchaser
- * @date 2019/9/12
- * @description 不能飞的行为
+ * @since JDK8 2019/9/12
  */
 public class FlyNoWay implements FlyBehavior {
     @Override

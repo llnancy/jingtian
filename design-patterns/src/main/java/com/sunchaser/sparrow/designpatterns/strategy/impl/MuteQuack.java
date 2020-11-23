@@ -3,9 +3,9 @@ package com.sunchaser.sparrow.designpatterns.strategy.impl;
 import com.sunchaser.sparrow.designpatterns.strategy.QuackBehavior;
 
 /**
+ * 不会叫的行为
  * @author sunchaser
- * @date 2019/9/12
- * @description 不会叫的行为
+ * @since JDK8 2019/9/12
  */
 public class MuteQuack implements QuackBehavior {
     @Override

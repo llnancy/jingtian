@@ -8,8 +8,7 @@ import java.util.List;
  * 普通数组：创建时就固定了容量，无法在后续操作中进行元素添加。
  * 动态数组：ArrayList，可动态进行容量的扩充。需要保证内存的连续性。
  * @author sunchaser
- * @date 2020/6/2
- * @since 1.0
+ * @since JDK8 2020/6/2
  */
 public class ArrayTest {
     public static void main(String[] args) {

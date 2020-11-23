@@ -7,8 +7,7 @@ import java.util.ArrayList;
 /**
  * 将一个ArrayList集合的数据克隆至另一个新的集合
  * @author sunchaser
- * @date 2020/4/1
- * @since 1.0
+ * @since JDK8 2020/4/1
  */
 public class ArrayListCloneTest {
     public static void main(String[] args) {

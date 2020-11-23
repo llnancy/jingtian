@@ -1,9 +1,9 @@
 package com.sunchaser.sparrow.statemachine.events;
 
 /**
+ * 控制器层请求事件
  * @author sunchaser
- * @date 2019/9/23
- * @description 控制器层请求事件
+ * @since JDK8 2019/9/23
  */
 public enum ControllerRequestEvents {
     /**

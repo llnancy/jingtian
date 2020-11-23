@@ -1,9 +1,9 @@
 package com.sunchaser.sparrow.java8.chapter9.case4;
 
 /**
+ * 实现类ImplClassC实现InterfaceA和InterfaceB接口
  * @author sunchaser
- * @date 2019/8/23
- * @description 实现类ImplClassC实现InterfaceA和InterfaceB接口
+ * @since JDK8 2019/8/23
  */
 public class ImplClassC implements InterfaceA, InterfaceB {
     // ImplClassC inherits unrelated defaults for hello() from types InterfaceA and InterfaceB

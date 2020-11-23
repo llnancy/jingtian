@@ -3,12 +3,10 @@ package com.sunchaser.sparrow.thinkinginjava.chapter05;
 import static com.sunchaser.sparrow.thinkinginjava.chapter05.TankStatusEnum.*;
 
 /**
- * @author sunchaser
- * @date 2020/1/13
- * @description
  * 练习12：编写名为Tank的类，此类的状态可以是“满的”或“空的”。其终结条件是：对象被清理时必须处于空状态。
  * 请编写finalize()以检验终结条件是否成立。在main()方法中测试Tank可能发生的几种使用方式。
- * @since 1.0
+ * @author sunchaser
+ * @since JDK8 2020/1/13
  */
 public class Exercise12 {
     public static void main(String[] args) {

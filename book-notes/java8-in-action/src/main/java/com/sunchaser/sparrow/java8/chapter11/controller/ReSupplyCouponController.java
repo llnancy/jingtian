@@ -11,9 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 用单元测试模拟控制器层的请求
  * @author sunchaser
- * @date 2019/9/8
- * @description 用单元测试模拟控制器层的请求
+ * @since JDK8 2019/9/8
  */
 @SpringBootTest
 @RunWith(SpringRunner.class)

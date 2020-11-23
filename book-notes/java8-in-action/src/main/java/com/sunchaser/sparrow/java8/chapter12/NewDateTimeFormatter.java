@@ -10,9 +10,9 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 /**
+ * Java 8新的日期时间转换器，不可变，线程安全。
  * @author sunchaser
- * @date 2019/8/29
- * @description Java 8新的日期时间转换器，不可变，线程安全。
+ * @since JDK8 2019/8/29
  */
 public class NewDateTimeFormatter {
     public static void main(String[] args) throws Exception {

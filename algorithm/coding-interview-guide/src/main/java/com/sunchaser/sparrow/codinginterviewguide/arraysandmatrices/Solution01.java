@@ -35,8 +35,7 @@ import java.util.Scanner;
  * 输出：No
  *
  * @author sunchaser
- * @date 2020/3/18
- * @since 1.0
+ * @since JDK8 2020/3/18
  */
 public class Solution01 {
 

@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 /**
+ * 全局异常处理器
  * @author lilu
- * @date 2019/9/16
- * @description 全局异常处理器
+ * @since JDK8 2019/9/16
  */
 @RestControllerAdvice
 public class GlobalExceptionHandler {

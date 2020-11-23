@@ -2,9 +2,7 @@ package com.sunchaser.sparrow.designpatterns.creational;
 
 /**
  * @author sunchaser
- * @date 2020/1/2
- * @description
- * @since 1.0
+ * @since JDK8 2020/1/2
  */
 public class Test {
     public static void main(String[] args) {

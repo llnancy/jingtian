@@ -2,8 +2,7 @@ package com.sunchaser.sparrow.javase.collect;
 
 /**
  * @author sunchaser
- * @date 2020/5/9
- * @since 1.0
+ * @since JDK8 2020/5/9
  */
 public class JavaCollectionTest {
 

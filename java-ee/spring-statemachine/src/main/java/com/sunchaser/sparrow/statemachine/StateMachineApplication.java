@@ -5,8 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * @author sunchaser
- * @date 2019/9/20
- * @description
+ * @since JDK8 2019/9/20
  */
 @SpringBootApplication
 public class StateMachineApplication {

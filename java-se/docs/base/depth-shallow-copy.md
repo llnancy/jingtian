@@ -19,8 +19,8 @@ package com.sunchaser.javase.base.cloneable;
 /**
  * LOL英雄接口
  * @author sunchaser
- * @date 2020/4/7
- * @since 1.0
+ * @since JDK8 2020/4/7
+ * 
  */
 public interface LolHero {
 
@@ -45,8 +45,8 @@ package com.sunchaser.javase.base.cloneable;
 /**
  * LOL英雄的技能类
  * @author sunchaser
- * @date 2020/4/7
- * @since 1.0
+ * @since JDK8 2020/4/7
+ * 
  */
 public class LolSkill {
     private String key;
@@ -95,8 +95,8 @@ package com.sunchaser.javase.base.cloneable;
 /**
  * 英雄生命值类
  * @author sunchaser
- * @date 2020/4/7
- * @since 1.0
+ * @since JDK8 2020/4/7
+ * 
  */
 public class LifeValue {
     private Integer lifeValue;
@@ -134,8 +134,8 @@ package com.sunchaser.javase.base.cloneable;
 /**
  * 英雄法力值类
  * @author sunchaser
- * @date 2020/4/7
- * @since 1.0
+ * @since JDK8 2020/4/7
+ * 
  */
 public class Mana {
     private Integer mana;
@@ -174,8 +174,8 @@ package com.sunchaser.javase.base.cloneable;
 /**
  * 英雄：孙悟空
  * @author sunchaser
- * @date 2020/4/7
- * @since 1.0
+ * @since JDK8 2020/4/7
+ * 
  */
 public class SunWuKong implements LolHero,Cloneable {
 
@@ -258,8 +258,8 @@ package com.sunchaser.javase.base.cloneable;
 /**
  * 深浅拷贝测试
  * @author sunchaser
- * @date 2020/4/7
- * @since 1.0
+ * @since JDK8 2020/4/7
+ * 
  */
 public class DepthCopyTest {
 
@@ -309,8 +309,8 @@ package com.sunchaser.javase.base.cloneable;
 /**
  * 英雄生命值类
  * @author sunchaser
- * @date 2020/4/7
- * @since 1.0
+ * @since JDK8 2020/4/7
+ * 
  */
 public class LifeValue implements Cloneable {
     private Integer lifeValue;
@@ -331,8 +331,8 @@ package com.sunchaser.javase.base.cloneable;
 /**
  * 英雄法力值类
  * @author sunchaser
- * @date 2020/4/7
- * @since 1.0
+ * @since JDK8 2020/4/7
+ * 
  */
 public class Mana implements Cloneable {
     private Integer mana;
@@ -354,8 +354,8 @@ package com.sunchaser.javase.base.cloneable;
 /**
  * 英雄：孙悟空
  * @author sunchaser
- * @date 2020/4/7
- * @since 1.0
+ * @since JDK8 2020/4/7
+ * 
  */
 public class SunWuKong implements LolHero,Cloneable {
 

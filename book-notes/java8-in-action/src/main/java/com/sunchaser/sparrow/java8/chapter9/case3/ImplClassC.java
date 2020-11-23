@@ -4,9 +4,9 @@ import com.sunchaser.sparrow.java8.chapter9.case1.InterfaceA;
 import com.sunchaser.sparrow.java8.chapter9.case1.InterfaceB;
 
 /**
+ * 实现类ImplClassC继承了ImplClassD实现类，并实现了InterfaceA和InterfaceB接口
  * @author sunchaser
- * @date 2019/8/23
- * @description 实现类ImplClassC继承了ImplClassD实现类，并实现了InterfaceA和InterfaceB接口
+ * @since JDK8 2019/8/23
  */
 public class ImplClassC extends ImplClassD implements InterfaceA, InterfaceB {
     /**

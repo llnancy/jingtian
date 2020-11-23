@@ -4,8 +4,7 @@ import java.util.Observable;
 
 /**
  * @author sunchaser
- * @date 2019/10/18
- * @description
+ * @since JDK8 2019/10/18
  */
 public class AnchorJdkSubject extends Observable {
 }

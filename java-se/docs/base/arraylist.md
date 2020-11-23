@@ -886,8 +886,8 @@ import java.util.List;
 
 /**
  * @author sunchaser
- * @date 2020/5/2
- * @since 1.0
+ * @since JDK8 2020/5/2
+ * 
  */
 public class ArrayListTest {
     public static void main(String[] args) {

@@ -14,8 +14,7 @@ import java.util.Map;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  *
  * @author sunchaser
- * @date 2019/7/15
- * @description
+ * @since JDK8 2019/7/15
  */
 public class TwoNumsSum {
     public static void main(String[] args) {

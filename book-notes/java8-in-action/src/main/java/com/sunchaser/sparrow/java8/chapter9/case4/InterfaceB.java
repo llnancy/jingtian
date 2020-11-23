@@ -1,9 +1,9 @@
 package com.sunchaser.sparrow.java8.chapter9.case4;
 
 /**
+ * 接口B 未继承
  * @author sunchaser
- * @date 2019/8/23
- * @description 接口B 未继承
+ * @since JDK8 2019/8/23
  */
 public interface InterfaceB {
     default void hello() {

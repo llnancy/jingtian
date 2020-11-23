@@ -2,8 +2,7 @@ package com.sunchaser.sparrow.java8.chapter11.model;
 
 /**
  * @author sunchaser
- * @date 2019/9/8
- * @description
+ * @since JDK8 2019/9/8
  */
 public class UserInfoModel {
     private String uid;

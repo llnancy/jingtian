@@ -10,9 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * 基础Service实现类
  * @author sunchaser
- * @date 2019/9/8
- * @description 基础Service实现类
+ * @since JDK8 2019/9/8
  */
 @Service
 public class ReSupplyCouponServiceImpl implements ReSupplyCouponService {

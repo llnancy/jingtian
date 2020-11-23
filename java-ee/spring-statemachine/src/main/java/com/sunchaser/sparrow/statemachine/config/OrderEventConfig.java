@@ -6,9 +6,9 @@ import org.springframework.statemachine.annotation.OnTransition;
 import org.springframework.statemachine.annotation.WithStateMachine;
 
 /**
+ * 注解配置订单状态机触发事件，等同于状态机处理监听器
  * @author sunchaser
- * @date 2019/9/20
- * @description 注解配置订单状态机触发事件，等同于状态机处理监听器
+ * @since JDK8 2019/9/20
  */
 @WithStateMachine(id = "orderStateMachine")
 public class OrderEventConfig {

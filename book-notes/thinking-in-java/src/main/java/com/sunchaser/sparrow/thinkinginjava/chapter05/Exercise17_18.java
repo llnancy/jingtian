@@ -3,15 +3,13 @@ package com.sunchaser.sparrow.thinkinginjava.chapter05;
 import java.util.Arrays;
 
 /**
- * @author sunchaser
- * @date 2020/2/2
- * @description
  * 练习17：创建一个类，它有一个接受一个String参数的构造器。在构造阶段，打印该参数。
  * 创建一个该类的对象引用数组，但是不实际去创建对象赋值给该数组。
  * 在运行程序时，请注意来自对该构造器的调用中的初始化消息是否打印了出来。
  *
  * 练习18：通过创建对象赋值给引用数组，从而完成前一个练习。
- * @since 1.0
+ * @author sunchaser
+ * @since JDK8 2020/2/2
  */
 public class Exercise17_18 {
     public Exercise17_18(String param) {

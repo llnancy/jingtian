@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
+ * 代码重构
  * @author sunchaser
- * @date 2019/8/23
- * @description 代码重构
+ * @since JDK8 2019/8/23
  */
 public class CodingRefactorTest {
 

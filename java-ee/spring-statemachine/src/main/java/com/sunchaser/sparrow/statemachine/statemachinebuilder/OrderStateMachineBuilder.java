@@ -12,9 +12,9 @@ import org.springframework.stereotype.Component;
 import java.util.EnumSet;
 
 /**
+ * 订单状态机构建器
  * @author sunchaser
- * @date 2019/9/23
- * @description 订单状态机构建器
+ * @since JDK8 2019/9/23
  */
 @Component
 public class OrderStateMachineBuilder {

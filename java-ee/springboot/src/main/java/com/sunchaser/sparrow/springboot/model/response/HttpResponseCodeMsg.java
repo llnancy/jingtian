@@ -1,9 +1,9 @@
 package com.sunchaser.sparrow.springboot.model.response;
 
 /**
+ * HTTP请求统一响应不包含data数据域的实体，提供通用状态码。
  * @author lilu
- * @date 2019/9/4
- * @description HTTP请求统一响应不包含data数据域的实体，提供通用状态码。
+ * @since JDK8 2019/9/4
  */
 public class HttpResponseCodeMsg {
 

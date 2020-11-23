@@ -1,9 +1,9 @@
 package com.sunchaser.sparrow.designpatterns.strategy.traditional;
 
 /**
+ * 野鸭：嘎嘎叫、会游泳和飞翔
  * @author sunchaser
- * @date 2019/9/15
- * @description 野鸭：嘎嘎叫、会游泳和飞翔
+ * @since JDK8 2019/9/15
  */
 public class WildDuck extends Duck {
     @Override

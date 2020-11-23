@@ -1,9 +1,9 @@
 package com.sunchaser.sparrow.designpatterns.strategy.traditional;
 
 /**
+ * 玩具鸭：不会嘎嘎叫、不会游泳和飞翔。
  * @author sunchaser
- * @date 2019/9/15
- * @description 玩具鸭：不会嘎嘎叫、不会游泳和飞翔。
+ * @since JDK8 2019/9/15
  */
 public class ToyDuck extends Duck {
     @Override

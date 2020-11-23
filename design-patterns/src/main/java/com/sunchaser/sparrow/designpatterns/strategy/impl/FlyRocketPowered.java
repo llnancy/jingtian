@@ -3,9 +3,9 @@ package com.sunchaser.sparrow.designpatterns.strategy.impl;
 import com.sunchaser.sparrow.designpatterns.strategy.FlyBehavior;
 
 /**
+ * 利用火箭动力的飞翔行为
  * @author sunchaser
- * @date 2019/9/12
- * @description 利用火箭动力的飞翔行为
+ * @since JDK8 2019/9/12
  */
 public class FlyRocketPowered implements FlyBehavior {
     @Override

@@ -8,8 +8,7 @@ import com.sunchaser.sparrow.designpatterns.observer.subject.Subject;
 
 /**
  * @author sunchaser
- * @date 2019/10/17
- * @description
+ * @since JDK8 2019/10/17
  */
 public class TestClient {
     public static void main(String[] args) {

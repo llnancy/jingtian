@@ -4,9 +4,9 @@ import com.sunchaser.sparrow.designpatterns.strategy.impl.FlyNoWay;
 import com.sunchaser.sparrow.designpatterns.strategy.impl.Squeak;
 
 /**
+ * 北京鸭：不能飞翔，吱吱叫
  * @author sunchaser
- * @date 2019/9/15
- * @description 北京鸭：不能飞翔，吱吱叫
+ * @since JDK8 2019/9/15
  */
 public class PekingDuck extends Duck {
 

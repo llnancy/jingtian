@@ -9,9 +9,9 @@ import org.springframework.statemachine.transition.Transition;
 import org.springframework.stereotype.Component;
 
 /**
+ * 状态机处理监听器
  * @author sunchaser
- * @date 2019/9/20
- * @description 状态机处理监听器
+ * @since JDK8 2019/9/20
  */
 @Component
 public class OrderStateMachineListener extends StateMachineListenerAdapter<OrderStates, OrderEvents> {

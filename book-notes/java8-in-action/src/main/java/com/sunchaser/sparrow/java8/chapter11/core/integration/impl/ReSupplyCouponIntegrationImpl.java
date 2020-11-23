@@ -9,9 +9,9 @@ import java.util.List;
 import java.util.Random;
 
 /**
+ * 模拟代码防腐层实现类，模拟调用外部服务进行用户信息查询和补发劵操作
  * @author sunchaser
- * @date 2019/9/8
- * @description 模拟代码防腐层实现类，模拟调用外部服务进行用户信息查询和补发劵操作
+ * @since JDK8 2019/9/8
  */
 @Component
 public class ReSupplyCouponIntegrationImpl implements ReSupplyCouponIntegration {

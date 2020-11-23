@@ -9,9 +9,9 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
+ * 第六章：用流收集数据。书中代码测试。
  * @author sunchaser
- * @date 2019/8/20
- * @description 第六章：用流收集数据。书中代码测试。
+ * @since JDK8 2019/8/20
  */
 @SpringBootTest
 @RunWith(SpringRunner.class)

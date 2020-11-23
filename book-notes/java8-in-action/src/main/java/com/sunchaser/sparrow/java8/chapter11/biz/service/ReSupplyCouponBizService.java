@@ -3,9 +3,9 @@ package com.sunchaser.sparrow.java8.chapter11.biz.service;
 import java.util.List;
 
 /**
+ * 业务service接口
  * @author sunchaser
- * @date 2019/9/8
- * @description 业务service接口
+ * @since JDK8 2019/9/8
  */
 public interface ReSupplyCouponBizService {
 

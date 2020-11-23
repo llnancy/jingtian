@@ -34,8 +34,8 @@ import java.io.Serializable;
 /**
  * 序列化类
  * @author sunchaser
- * @date 2020/3/19
- * @since 1.0
+ * @since JDK8 2020/3/19
+ * 
  */
 public class SerializableClass implements Serializable {
     private static final long serialVersionUID = 5135631042912401553L;

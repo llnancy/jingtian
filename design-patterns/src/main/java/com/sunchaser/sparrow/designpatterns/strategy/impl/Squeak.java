@@ -3,9 +3,9 @@ package com.sunchaser.sparrow.designpatterns.strategy.impl;
 import com.sunchaser.sparrow.designpatterns.strategy.QuackBehavior;
 
 /**
+ * 吱吱叫的行为
  * @author sunchaser
- * @date 2019/9/12
- * @description 吱吱叫的行为
+ * @since JDK8 2019/9/12
  */
 public class Squeak implements QuackBehavior {
     @Override

@@ -13,9 +13,9 @@ import org.springframework.statemachine.config.builders.StateMachineTransitionCo
 import java.util.EnumSet;
 
 /**
+ * 单个订单状态机配置类
  * @author sunchaser
- * @date 2019/9/20
- * @description 单个订单状态机配置类
+ * @since JDK8 2019/9/20
  */
 @EnableStateMachine
 public class OrderStateMachineConfig extends EnumStateMachineConfigurerAdapter<OrderStates, OrderEvents> {

@@ -11,9 +11,9 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
+ * 第四章：引入流。书中代码测试。
  * @author sunchaser
- * @date 2019/8/16
- * @description 第四章：引入流。书中代码测试。
+ * @since JDK8 2019/8/16
  */
 @SpringBootTest
 @RunWith(SpringRunner.class)

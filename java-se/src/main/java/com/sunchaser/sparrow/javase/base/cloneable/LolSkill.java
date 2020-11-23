@@ -3,8 +3,7 @@ package com.sunchaser.sparrow.javase.base.cloneable;
 /**
  * LOL英雄的技能类
  * @author sunchaser
- * @date 2020/4/7
- * @since 1.0
+ * @since JDK8 2020/4/7
  */
 public class LolSkill {
     private String key;

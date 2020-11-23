@@ -6,8 +6,7 @@ import java.io.IOException;
 
 /**
  * @author sunchaser
- * @date 2019/8/12
- * @description
+ * @since JDK8 2019/8/12
  */
 public class LambdaTest {
 

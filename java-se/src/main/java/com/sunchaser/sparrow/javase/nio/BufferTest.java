@@ -6,9 +6,8 @@ import java.nio.ByteBuffer;
 
 /**
  * @author sunchaser
- * @date 2020/1/7
- * @description
- * @since 1.0
+ * @since JDK8 2020/1/7
+ *
  */
 public class BufferTest {
     @Test

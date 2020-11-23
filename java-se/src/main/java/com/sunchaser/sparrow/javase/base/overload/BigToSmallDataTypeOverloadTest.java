@@ -3,9 +3,6 @@ package com.sunchaser.sparrow.javase.base.overload;
 import org.junit.Test;
 
 /**
- * @author sunchaser
- * @date 2020/1/8
- * @description
  * 基本数据类型重载的测试：基本数据类型范围较大的需要强制类型转换（显式转换）进行窄化处理，转换成范围较小的类型。
  *
  * 基本数据类型（除去boolean）范围如下：
@@ -18,7 +15,10 @@ import org.junit.Test;
  * float  | 32 bits | IEEE754范围
  * double | 64 bits | IEEE754范围
  * long   | 64 bits | [-2^63, +2^63 - 1]
- * @since 1.0
+ *
+ * @author sunchaser
+ * @since JDK8 2020/1/8
+ *
  */
 public class BigToSmallDataTypeOverloadTest {
 

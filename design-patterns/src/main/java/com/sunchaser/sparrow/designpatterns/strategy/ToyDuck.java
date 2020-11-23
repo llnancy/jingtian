@@ -4,9 +4,9 @@ import com.sunchaser.sparrow.designpatterns.strategy.impl.FlyNoWay;
 import com.sunchaser.sparrow.designpatterns.strategy.impl.MuteQuack;
 
 /**
+ * 玩具鸭：不会飞也不会叫
  * @author sunchaser
- * @date 2019/9/15
- * @description 玩具鸭：不会飞也不会叫
+ * @since JDK8 2019/9/15
  */
 public class ToyDuck extends Duck {
 

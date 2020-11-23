@@ -7,9 +7,9 @@ import java.util.List;
 import java.util.concurrent.*;
 
 /**
+ * 传统时间格式转换器线程安全问题演示
  * @author sunchaser
- * @date 2019/8/29
- * @description 传统时间格式转换器线程安全问题演示
+ * @since JDK8 2019/8/29
  */
 public class TraditionalSimpleDateFormat {
     public static void main(String[] args) throws Exception {

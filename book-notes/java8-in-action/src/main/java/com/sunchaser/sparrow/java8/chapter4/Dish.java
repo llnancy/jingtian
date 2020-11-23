@@ -1,9 +1,9 @@
 package com.sunchaser.sparrow.java8.chapter4;
 
 /**
+ * 菜类
  * @author sunchaser
- * @date 2019/8/16
- * @description 菜类
+ * @since JDK8 2019/8/16
  */
 public class Dish {
     private final String name;

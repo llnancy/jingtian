@@ -16,9 +16,9 @@ import java.util.Set;
 import static org.mybatis.generator.internal.util.StringUtility.isTrue;
 
 /**
- * @Auther: sunflower
- * @date 2019/10/11
- * @description 按照数据库字段注释生成model注释
+ * 按照数据库字段注释生成model注释
+ * @author sunflower
+ * @since JDK8 2019/10/11
  */
 public class MyCommentGenerator implements CommentGenerator {
     private Properties properties;

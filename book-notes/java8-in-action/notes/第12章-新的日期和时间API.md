@@ -62,8 +62,8 @@ import java.util.Date;
 
 /**
  * @author sunchaser
- * @date 2019/8/29
- * @description 传统时间格式转换器线程安全问题解决方案：使用ThreadLocal进行线程封闭
+ * @since JDK8 2019/8/29
+ * 传统时间格式转换器线程安全问题解决方案：使用ThreadLocal进行线程封闭
  */
 public class TraditionalSimpleDateFormatThreadLocal {
     private static final ThreadLocal<DateFormat> threadLocal = new ThreadLocal<DateFormat>() {

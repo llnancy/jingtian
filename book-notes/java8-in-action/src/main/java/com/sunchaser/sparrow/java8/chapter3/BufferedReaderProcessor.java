@@ -4,9 +4,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 
 /**
+ * 函数式接口
  * @author sunchaser
- * @date 2019/8/12
- * @description 函数式接口
+ * @since JDK8 2019/8/12
  */
 @FunctionalInterface
 public interface BufferedReaderProcessor {

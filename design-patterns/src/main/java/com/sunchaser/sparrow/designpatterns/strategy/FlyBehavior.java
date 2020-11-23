@@ -1,9 +1,9 @@
 package com.sunchaser.sparrow.designpatterns.strategy;
 
 /**
+ * 飞翔行为接口
  * @author sunchaser
- * @date 2019/9/12
- * @description 飞翔行为接口
+ * @since JDK8 2019/9/12
  */
 public interface FlyBehavior {
     /**

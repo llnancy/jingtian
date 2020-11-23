@@ -10,9 +10,9 @@ import java.time.temporal.*;
 import java.util.Set;
 
 /**
+ * 新的时间API
  * @author sunchaser
- * @date 2019/8/26
- * @description 新的时间API
+ * @since JDK8 2019/8/26
  */
 @SpringBootTest
 @RunWith(SpringRunner.class)

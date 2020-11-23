@@ -41,8 +41,8 @@ import org.junit.Test;
 
 /**
  * @author sunchaser
- * @date 2020/1/8
- * @description
+ * @since JDK8 2020/1/8
+ * 
  * 基本数据类型重载的测试：基本数据类型范围较小的会被自动类型转换（隐式转换）成范围较大的类型。
  *
  * 基本数据类型（除去boolean）范围如下：
@@ -56,7 +56,7 @@ import org.junit.Test;
  * double | 64 bits | IEEE754范围
  * long   | 64 bits | [-2^63, +2^63 - 1]
  *
- * @since 1.0
+ * 
  */
 public class SmallToBigDataTypeOverloadTest {
 
@@ -428,8 +428,8 @@ import org.junit.Test;
 
 /**
  * @author sunchaser
- * @date 2020/1/8
- * @description
+ * @since JDK8 2020/1/8
+ * 
  * 基本数据类型重载的测试：基本数据类型范围较大的需要强制类型转换（显式转换）进行窄化处理，转换成范围较小的类型。
  *
  * 基本数据类型（除去boolean）范围如下：
@@ -442,7 +442,7 @@ import org.junit.Test;
  * float  | 32 bits | IEEE754范围
  * double | 64 bits | IEEE754范围
  * long   | 64 bits | [-2^63, +2^63 - 1]
- * @since 1.0
+ * 
  */
 public class BigToSmallDataTypeOverloadTest {
 

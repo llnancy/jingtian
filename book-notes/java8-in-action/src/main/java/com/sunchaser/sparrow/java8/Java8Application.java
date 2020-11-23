@@ -5,8 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * @author sunchaser
- * @date 2019/8/12
- * @description
+ * @since JDK8 2019/8/12
  */
 @SpringBootApplication
 public class Java8Application {

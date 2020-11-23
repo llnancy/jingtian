@@ -3,8 +3,7 @@ package com.sunchaser.sparrow.algorithm.base;
 /**
  * 链表节点类
  * @author sunchaser
- * @date 2020/6/3
- * @since 1.0
+ * @since JDK8 2020/6/3
  */
 public class ListNode {
     int val;

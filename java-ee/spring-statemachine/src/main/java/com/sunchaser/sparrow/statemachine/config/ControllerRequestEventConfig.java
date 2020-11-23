@@ -7,8 +7,7 @@ import org.springframework.statemachine.annotation.WithStateMachine;
 
 /**
  * @author sunchaser
- * @date 2019/9/23
- * @description
+ * @since JDK8 2019/9/23
  */
 @WithStateMachine(id = "controllerRequestStateMachine")
 public class ControllerRequestEventConfig {

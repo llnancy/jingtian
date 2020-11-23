@@ -7,8 +7,7 @@ import java.util.ListIterator;
 
 /**
  * @author sunchaser
- * @date 2020/5/20
- * @since 1.0
+ * @since JDK8 2020/5/20
  */
 public class LinkedListTest {
     public static void main(String[] args) {

@@ -3,9 +3,9 @@ package com.sunchaser.sparrow.designpatterns.observer.subject;
 import com.sunchaser.sparrow.designpatterns.observer.observer.Observer;
 
 /**
+ * 抽象主题
  * @author sunchaser
- * @date 2019/10/17
- * @description 抽象主题
+ * @since JDK8 2019/10/17
  */
 public interface Subject {
 

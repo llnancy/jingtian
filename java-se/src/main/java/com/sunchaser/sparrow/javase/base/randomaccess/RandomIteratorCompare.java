@@ -4,9 +4,9 @@ import java.util.*;
 
 /**
  * 随机访问和迭代器访问效率比较
+ *
  * @author sunchaser
- * @date 2020/4/26
- * @since 1.0
+ * @since JDK8 2020/4/26
  */
 public class RandomIteratorCompare {
     public static void main(String[] args) {

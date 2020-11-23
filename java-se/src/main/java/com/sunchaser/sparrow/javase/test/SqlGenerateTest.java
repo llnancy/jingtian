@@ -8,8 +8,8 @@ import java.util.Objects;
 
 /**
  * @author sunchaser
- * @date 2020/3/12
- * @since 1.0
+ * @since JDK8 2020/3/12
+ *
  */
 public class SqlGenerateTest {
 

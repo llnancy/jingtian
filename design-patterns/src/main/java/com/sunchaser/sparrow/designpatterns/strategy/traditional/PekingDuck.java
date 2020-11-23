@@ -1,9 +1,9 @@
 package com.sunchaser.sparrow.designpatterns.strategy.traditional;
 
 /**
+ * 北京鸭：不会飞翔
  * @author sunchaser
- * @date 2019/9/15
- * @description 北京鸭：不会飞翔
+ * @since JDK8 2019/9/15
  */
 public class PekingDuck extends Duck {
     @Override

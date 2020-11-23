@@ -6,8 +6,7 @@ import java.util.Arrays;
 
 /**
  * @author sunchaser
- * @date 2019/10/17
- * @description
+ * @since JDK8 2019/10/17
  */
 public class SunchaserObserver implements Observer {
 

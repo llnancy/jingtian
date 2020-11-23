@@ -6,8 +6,7 @@ import java.util.Arrays;
 
 /**
  * @author sunchaser
- * @date 2020/4/27
- * @since 1.0
+ * @since JDK8 2020/4/27
  */
 public class TestClient {
     public static void main(String[] args) {

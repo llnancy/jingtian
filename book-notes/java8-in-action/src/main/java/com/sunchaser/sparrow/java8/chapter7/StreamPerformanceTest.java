@@ -5,9 +5,9 @@ import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
 /**
+ * 流性能测试
  * @author sunchaser
- * @date 2019/8/21
- * @description 流性能测试
+ * @since JDK8 2019/8/21
  */
 public class StreamPerformanceTest {
     /**

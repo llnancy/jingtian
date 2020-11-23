@@ -5,9 +5,9 @@ import com.sunchaser.sparrow.java8.chapter11.model.UserInfoModel;
 import java.util.Map;
 
 /**
+ * 基础Service
  * @author sunchaser
- * @date 2019/9/8
- * @description 基础Service
+ * @since JDK8 2019/9/8
  */
 public interface ReSupplyCouponService {
     /**
