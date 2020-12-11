@@ -1,4 +1,6 @@
-package com.sunchaser.sparrow.algorithm.base;
+package com.sunchaser.sparrow.algorithm.base.linkedlist;
+
+import com.sunchaser.sparrow.algorithm.base.util.LinkedListUtils;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -16,7 +18,7 @@ import java.util.List;
  * 双向链表：每个节点不仅存储数据域和指向下一个节点的指针域，它还会有一个指针域指向前一个节点。通常称为前驱节点和后继节点。
  * 双向循环链表：综合了循环链表和双向链表。头节点的前驱节点指向尾节点，尾节点的后继节点指向头节点。
  *
- * @author sunchaser
+ * @author sunchaser admin@lilu.org.cn
  * @since JDK8 2020/6/2
  */
 public class LinkedTest {
@@ -27,5 +29,31 @@ public class LinkedTest {
         linked.add("def");
         System.out.println(linked.get(0));
         System.out.println(linked.get(1));
+        // 单向链表的CRUD
+        // generate singly linked list
+        SinglyLinkedListNode head = LinkedListUtils.generateSinglyLinkedList();
+        LinkedListUtils.printLink(head); // ->1->2->3->4->5->null
+        // 从3和4之间插入0
+        SinglyLinkedListNode c = new SinglyLinkedListNode(0);
+        SinglyLinkedListNode cHead = head;
+        while (cHead.next != null) {
+            if (cHead.val == 3) {
+                c.next = cHead.next;
+                cHead.next = c;
+            }
+            cHead = cHead.next;
+        }
+        LinkedListUtils.printLink(head); // ->1->2->3->0->4->5->null
+        // 将0从3和4之间删除
+        SinglyLinkedListNode dHead = head;
+        while (dHead.next != null) {
+            if (dHead.val == 3) {
+                SinglyLinkedListNode temp = dHead.next;
+                dHead.next = dHead.next.next;
+                temp.next = null;
+            }
+            dHead = dHead.next;
+        }
+        LinkedListUtils.printLink(head); // ->1->2->3->4->5->null
     }
 }

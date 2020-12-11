@@ -8,7 +8,36 @@
     <description>Sparrow：麻雀虽小，五脏俱全</description>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-
+    <url>https://lilu.org.cn</url>
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/sunchaser-lilu/sunchaser-sparrow/issues</url>
+    </issueManagement>
+    <inceptionYear>2020</inceptionYear>
+    <developers>
+        <developer>
+            <id>SunChaser</id>
+            <name>lilu</name>
+            <email>admin@lilu.org.cn</email>
+            <url>https://lilu.org.cn</url>
+            <roles>
+                <role>Project Manager</role>
+            </roles>
+            <organization>SunChaser</organization>
+        </developer>
+    </developers>
+    <contributors>
+        <contributor />
+    </contributors>
+    <licenses>
+        <license>
+            <name>GNU General Public License v3.0</name>
+        </license>
+    </licenses>
+    <organization>
+        <name>SunChaser</name>
+        <url>https://lilu.org.cn</url>
+    </organization>
     <modules>
         <module>algorithm</module>
         <module>book-notes</module>

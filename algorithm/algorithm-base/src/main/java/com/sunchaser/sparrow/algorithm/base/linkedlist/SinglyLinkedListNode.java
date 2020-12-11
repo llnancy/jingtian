@@ -1,0 +1,22 @@
+package com.sunchaser.sparrow.algorithm.base.linkedlist;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+/**
+ * 单向链表节点类
+ * @author sunchaser
+ * @since JDK8 2020/6/3
+ */
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class SinglyLinkedListNode {
+    public Integer val;
+    public SinglyLinkedListNode next;
+
+    public SinglyLinkedListNode(Integer val) {
+        this.val = val;
+    }
+}
