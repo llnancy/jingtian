@@ -50,7 +50,7 @@ public class LinkedTest {
             if (dHead.val == 3) {
                 SinglyLinkedListNode temp = dHead.next;
                 dHead.next = dHead.next.next;
-                temp.next = null;
+                temp.next = null; // help gc
             }
             dHead = dHead.next;
         }
