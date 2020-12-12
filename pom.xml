@@ -56,7 +56,6 @@
         <spring.boot.version>2.1.6.RELEASE</spring.boot.version>
         <spring.cloud.version>Greenwich.SR3</spring.cloud.version>
         <spring.cloud.alibaba.version>2.1.0.RELEASE</spring.cloud.alibaba.version>
-        <lombok.version>1.18.10</lombok.version>
         <google.guava.version>28.1-jre</google.guava.version>
         <apache.commons.lang3>3.9</apache.commons.lang3>
         <mybatis.starter.version>2.1.0</mybatis.starter.version>
@@ -101,13 +100,6 @@
                 <version>${spring.cloud.alibaba.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
-            </dependency>
-            <!-- lombok -->
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${lombok.version}</version>
-                <scope>provided</scope>
             </dependency>
             <!-- guava -->
             <dependency>

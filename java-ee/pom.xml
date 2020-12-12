@@ -23,6 +23,7 @@
         <module>springboot</module>
         <module>spring-statemachine</module>
         <module>mybatis-generate-annotation</module>
+        <module>lombok</module>
     </modules>
 
 </project>
