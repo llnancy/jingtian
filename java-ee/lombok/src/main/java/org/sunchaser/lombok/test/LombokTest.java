@@ -12,5 +12,12 @@ public class LombokTest {
         System.out.println(getter);
         ToStringTest tst = new ToStringTest();
         System.out.println(tst);
+        AccessorsTest at = new AccessorsTest();
+        at.setAcc("acc");
+        at.setEss("ess");
+        at.setOrs("ors");
+        at.setOrs("ors")
+                .setEss("ess")
+                .setAcc("acc");
     }
 }
