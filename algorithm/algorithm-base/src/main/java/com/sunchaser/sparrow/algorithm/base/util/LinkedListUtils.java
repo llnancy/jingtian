@@ -12,7 +12,7 @@ public class LinkedListUtils {
     }
 
     /**
-     * 构造一个单链表
+     * 构造一个单链表: 1 -> 2 -> 3 -> 4 -> 5
      * @return 单链表头节点
      */
     public static SinglyLinkedListNode generateSinglyLinkedList() {
@@ -20,6 +20,21 @@ public class LinkedListUtils {
         SinglyLinkedListNode node3 = new SinglyLinkedListNode(4,node4);
         SinglyLinkedListNode node2 = new SinglyLinkedListNode(3,node3);
         SinglyLinkedListNode node1 = new SinglyLinkedListNode(2,node2);
+        return new SinglyLinkedListNode(1,node1);
+    }
+
+    /**
+     * 构造一个环形链表：1 -> 2 -> 3 -> 4 -> 5
+     *                          ↑         丨
+     *                          丨________丨
+     * @return 有环的链表
+     */
+    public static SinglyLinkedListNode generateCycleSinglyLinkedList() {
+        SinglyLinkedListNode node4 = new SinglyLinkedListNode(5,null);
+        SinglyLinkedListNode node3 = new SinglyLinkedListNode(4,node4);
+        SinglyLinkedListNode node2 = new SinglyLinkedListNode(3,node3);
+        SinglyLinkedListNode node1 = new SinglyLinkedListNode(2,node2);
+        node4.setNext(node2);
         return new SinglyLinkedListNode(1,node1);
     }
 
