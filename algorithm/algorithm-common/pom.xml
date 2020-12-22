@@ -9,16 +9,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>algorithm-base</artifactId>
+    <artifactId>algorithm-common</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.sunchaser.sparrow</groupId>
-            <artifactId>algorithm-common</artifactId>
         </dependency>
     </dependencies>
 </project>

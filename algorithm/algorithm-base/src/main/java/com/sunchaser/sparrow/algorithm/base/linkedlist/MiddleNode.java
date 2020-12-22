@@ -1,6 +1,7 @@
 package com.sunchaser.sparrow.algorithm.base.linkedlist;
 
-import com.sunchaser.sparrow.algorithm.base.util.LinkedListUtils;
+import com.sunchaser.sparrow.algorithm.common.SinglyLinkedListNode;
+import com.sunchaser.sparrow.algorithm.common.util.LinkedListUtils;
 
 /**
  * 奇数个元素的链表，获取中间位置元素

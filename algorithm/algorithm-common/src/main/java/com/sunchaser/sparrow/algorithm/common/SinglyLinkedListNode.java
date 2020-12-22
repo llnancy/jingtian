@@ -1,4 +1,4 @@
-package com.sunchaser.sparrow.algorithm.base.linkedlist;
+package com.sunchaser.sparrow.algorithm.common;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

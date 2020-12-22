@@ -1,6 +1,7 @@
 package com.sunchaser.sparrow.algorithm.base.linkedlist;
 
-import com.sunchaser.sparrow.algorithm.base.util.LinkedListUtils;
+import com.sunchaser.sparrow.algorithm.common.util.LinkedListUtils;
+import com.sunchaser.sparrow.algorithm.common.SinglyLinkedListNode;
 
 /**
  * 反转链表：递归和非递归实现

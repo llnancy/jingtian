@@ -17,5 +17,17 @@
         <module>coding-interview-guide</module>
         <module>sword-finger-offer</module>
         <module>algorithm-base</module>
+        <module>algorithm-common</module>
     </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.sunchaser.sparrow</groupId>
+                <artifactId>algorithm-common</artifactId>
+                <version>1.0-SNAPSHOT</version>
+                <scope>compile</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>

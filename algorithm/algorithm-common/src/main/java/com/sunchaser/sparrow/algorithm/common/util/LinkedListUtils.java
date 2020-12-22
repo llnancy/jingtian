@@ -1,11 +1,11 @@
-package com.sunchaser.sparrow.algorithm.base.util;
+package com.sunchaser.sparrow.algorithm.common.util;
 
-import com.sunchaser.sparrow.algorithm.base.linkedlist.SinglyLinkedListNode;
+import com.sunchaser.sparrow.algorithm.common.SinglyLinkedListNode;
 
 /**
  * 链表工具类
  * @author sunchaser admin@lilu.org.cn
- * @since JDK8 2020/12/11
+ * @since JDK8 2020/12/23
  */
 public class LinkedListUtils {
     private LinkedListUtils() {
@@ -48,7 +48,7 @@ public class LinkedListUtils {
             return;
         }
         if (head.next == null) {
-            System.out.println("->" + head.val + "->null");
+            System.out.println("->" + head.val);
             return;
         }
         System.out.print("->" + head.val);
