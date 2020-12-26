@@ -13,15 +13,50 @@ import java.util.LinkedList;
  */
 public class ReverseKGroup {
     public static void main(String[] args) {
-        SinglyLinkedListNode head = LinkedListUtils.generateSinglyLinkedList();
-        LinkedListUtils.printLink(head);
         // 套娃式递归实现
-        SinglyLinkedListNode kGroup = reverseKGroup(head, 2);
-        LinkedListUtils.printLink(kGroup);
-        SinglyLinkedListNode headUseStack = LinkedListUtils.generateSinglyLinkedList();
+        SinglyLinkedListNode kGroup1 = LinkedListUtils.generateSinglyLinkedList();
+        SinglyLinkedListNode doubleRecursionHead = reverseKGroupRecursionImpl(kGroup1, 2);
+        LinkedListUtils.printLink(doubleRecursionHead);
         // 代码栈实现
-        SinglyLinkedListNode singlyLinkedListNode = reverseKGroupUseStack(headUseStack, 2);
-        LinkedListUtils.printLink(singlyLinkedListNode);
+        SinglyLinkedListNode kGroup2 = LinkedListUtils.generateSinglyLinkedList();
+        SinglyLinkedListNode useStackHead = reverseKGroupUseStack(kGroup2, 3);
+        LinkedListUtils.printLink(useStackHead);
+        // 纯迭代实现
+        SinglyLinkedListNode kGroup3 = LinkedListUtils.generateSinglyLinkedList();
+        SinglyLinkedListNode onlyUseIteratorHead = reverseKGroupOnlyUseIterator(kGroup3, 2);
+        LinkedListUtils.printLink(onlyUseIteratorHead);
+    }
+
+    public static SinglyLinkedListNode reverseKGroupOnlyUseIterator(SinglyLinkedListNode head, int k) {
+        if (head == null || k < 2) {
+            return head;
+        }
+        SinglyLinkedListNode newHead = head;
+        SinglyLinkedListNode pre = null;
+        SinglyLinkedListNode cur = head;
+        SinglyLinkedListNode next;
+        SinglyLinkedListNode kPre;
+        SinglyLinkedListNode kCur;
+        SinglyLinkedListNode kNext;
+        int count = 1;
+        while (cur != null) {
+            next = cur.next;
+            if (count == k) {
+                kCur = kPre = pre == null ? head : pre.next;
+                newHead = pre == null ? cur : newHead;
+                while (kCur != next) {
+                    kNext = kCur.next;
+                    kCur.next = kPre;
+                    kPre = kCur;
+                    kCur = kNext;
+                }
+                pre = kPre;
+                count = 0;
+            }
+            count++;
+            cur = next;
+        }
+        return newHead;
     }
 
     /**
@@ -82,7 +117,7 @@ public class ReverseKGroup {
      * @param k k
      * @return 反转后的新链表头节点
      */
-    public static SinglyLinkedListNode reverseKGroup(SinglyLinkedListNode head, int k) {
+    public static SinglyLinkedListNode reverseKGroupRecursionImpl(SinglyLinkedListNode head, int k) {
         if (head == null || k < 2) {
             return head;
         }
@@ -97,7 +132,7 @@ public class ReverseKGroup {
         // for循环执行3次，b向右移动了3个节点，所以反转[a,b)左闭右开区间
         SinglyLinkedListNode reverseHead = reverseRecursionImpl(head, b);
         // a节点指向后面的头节点
-        head.next = reverseKGroup(b, k);
+        head.next = reverseKGroupRecursionImpl(b, k);
         return reverseHead;
     }
 
