@@ -8,7 +8,14 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <description>leetCode题解</description>
+    <description>LeetCode题解</description>
 
     <artifactId>leetcode-problem-solution</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.sunchaser.sparrow</groupId>
+            <artifactId>algorithm-common</artifactId>
+        </dependency>
+    </dependencies>
 </project>
