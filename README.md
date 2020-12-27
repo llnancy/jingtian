@@ -19,6 +19,8 @@
 SunChaser：追逐太阳
 
 Sparrow：麻雀
+
+种一棵树最好的时间是十年前，其次是现在。
 ```
 
 ## Skill
@@ -61,7 +63,30 @@ Sparrow：麻雀
 - [勇闯算法-递归法拿下反转链表的三杀](./algorithm/algorithm-base/docs/勇闯算法-递归法拿下反转链表的三杀.md)
 
 ### [LeetCode题解](./algorithm/leetcode-problem-solution/README.md)
-- [（简单）两数之和](./algorithm/leetcode-problem-solution/docs/（简单）两数之和.md)
+- 简单
+    - [两数之和](./algorithm/leetcode-problem-solution/docs/（简单）两数之和.md)
+- 链表标签（简单）
+    - [x] [返回倒数第`k`个节点](https://lilu.org.cn/2020/12/23/algorithm/leetcode/tag/linkedlist/kth-node-from-end-of-list-lcci/)
+    - [x] [删除中间节点](https://lilu.org.cn/2020/12/27/algorithm/leetcode/tag/linkedlist/delete-middle-node-lcci/)
+    - [ ] 合并两个有序链表
+    - [ ] 回文链表
+    - [ ] 删除链表中的节点
+    - [ ] 删除链表的节点
+    - [x] [链表的中间节点](https://lilu.org.cn/2020/12/12/algorithm/base/datastructure/middle-linknode/)
+    - [ ] 移除链表元素
+    - [ ] 两个链表的第一个公共节点
+    - [x] [反转链表](https://lilu.org.cn/2020/12/12/algorithm/base/datastructure/non-recursive-reverse-link/)
+    - [ ] 二进制链表转整数
+    - [ ] 链表相交
+    - [x] [相交链表](https://lilu.org.cn/2020/07/14/algorithm/leetcode/tag/linkedlist/intersection-of-two-linked-lists-lcci/)
+    - [ ] 回文链表
+    - [x] 反转链表
+    - [ ] 删除链表M个节点后的N个节点
+    - [ ] 删除排序链表中的重复元素
+    - [x] [环形链表](https://lilu.org.cn/2020/12/22/algorithm/base/datastructure/link-has-cycle/)
+    - [ ] 移除重复节点
+    - [ ] 从尾到头打印链表
+
 
 ### [《剑指Offer》](./algorithm/sword-finger-offer/README.md)
   - [实现线程安全的单例模式](./algorithm/sword-finger-offer/docs/实现线程安全的单例模式.md)
