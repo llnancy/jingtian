@@ -123,7 +123,7 @@ public class ReverseKGroup {
         }
         SinglyLinkedListNode b = head;
         for (int i = 0; i < k; i++) {
-            if (b.next == null) {
+            if (b == null) {
                 // 不足k个
                 return head;
             }
