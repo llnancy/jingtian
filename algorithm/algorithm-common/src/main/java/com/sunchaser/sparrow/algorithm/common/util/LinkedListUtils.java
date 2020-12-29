@@ -39,6 +39,19 @@ public class LinkedListUtils {
     }
 
     /**
+     * 构造一个回文链表：1 -> 2 -> 3 -> 3 -> 2 -> 1
+     * @return 回文链表
+     */
+    public static SinglyLinkedListNode generatePalindromeLinkedList() {
+        SinglyLinkedListNode node5 = new SinglyLinkedListNode(-129,null);
+        SinglyLinkedListNode node4 = new SinglyLinkedListNode(2,node5);
+        SinglyLinkedListNode node3 = new SinglyLinkedListNode(3,node4);
+        SinglyLinkedListNode node2 = new SinglyLinkedListNode(3,node3);
+        SinglyLinkedListNode node1 = new SinglyLinkedListNode(2,node2);
+        return new SinglyLinkedListNode(-129,node1);
+    }
+
+    /**
      * 按顺序打印单链表
      * @param head 要打印的单链表头节点
      */
