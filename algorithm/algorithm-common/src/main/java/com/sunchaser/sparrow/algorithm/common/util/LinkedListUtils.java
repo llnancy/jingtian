@@ -52,6 +52,19 @@ public class LinkedListUtils {
     }
 
     /**
+     * 构造一个二进制链表：1 -> 0 -> 1 -> 0 -> 1 -> 0
+     * @return 二进制链表
+     */
+    public static SinglyLinkedListNode generateBinaryNumberLinkedList() {
+        SinglyLinkedListNode node5 = new SinglyLinkedListNode(0,null);
+        SinglyLinkedListNode node4 = new SinglyLinkedListNode(1,node5);
+        SinglyLinkedListNode node3 = new SinglyLinkedListNode(0,node4);
+        SinglyLinkedListNode node2 = new SinglyLinkedListNode(1,node3);
+        SinglyLinkedListNode node1 = new SinglyLinkedListNode(0,node2);
+        return new SinglyLinkedListNode(1,node1);
+    }
+
+    /**
      * 按顺序打印单链表
      * @param head 要打印的单链表头节点
      */
