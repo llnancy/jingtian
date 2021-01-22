@@ -15,6 +15,7 @@
         <module>hystrix</module>
         <module>eureka-server</module>
         <module>eureka-client</module>
+        <module>resilience4j</module>
     </modules>
 
 </project>

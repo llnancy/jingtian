@@ -1,0 +1,9 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:520/eureka/
+spring:
+  application:
+    name: resilience4j
+server:
+  port: 9002
