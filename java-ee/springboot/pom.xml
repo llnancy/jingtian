@@ -11,6 +11,14 @@
 
     <artifactId>springboot</artifactId>
 
+    <!--
+    todo
+    <dependency>
+        <groupId>com.googlecode.aviator</groupId>
+        <artifactId>aviator</artifactId>
+        <version>4.2.10</version>
+    </dependency>
+    -->
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -19,6 +27,23 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
         </dependency>
     </dependencies>
 

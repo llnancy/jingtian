@@ -74,6 +74,7 @@
         <elastic.job.core.version>3.0.0.M1-SNAPSHOT</elastic.job.core.version>
         <elastic.job.spring.version>3.0.0.M1-SNAPSHOT</elastic.job.spring.version>
         <dubbo.version>2.7.5</dubbo.version>
+        <groovy-all.version>2.5.6</groovy-all.version>
     </properties>
 
     <dependencyManagement>
@@ -191,6 +192,12 @@
                 <groupId>org.apache.dubbo</groupId>
                 <artifactId>dubbo-dependencies-zookeeper</artifactId>
                 <version>${dubbo.version}</version>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>org.codehaus.groovy</groupId>
+                <artifactId>groovy-all</artifactId>
+                <version>${groovy-all.version}</version>
                 <type>pom</type>
             </dependency>
         </dependencies>

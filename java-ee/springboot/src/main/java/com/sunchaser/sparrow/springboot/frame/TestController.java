@@ -1,0 +1,35 @@
+package com.sunchaser.sparrow.springboot.frame;
+
+import groovy.lang.Tuple2;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+/**
+ * @author sunchaser admin@lilu.org.cn
+ * @since JDK8 2021/1/27
+ */
+@RestController
+public class TestController {
+    private final ExecutorService executorService = Executors.newFixedThreadPool(10);
+
+    @Autowired
+    private CacheTemplate cacheTemplate;
+
+    @GetMapping("/countDownLatchExecuteTest")
+    public void test() {
+        CountDownLatch2Executor<String, String> countDownLatch2Executor = new CountDownLatch2Executor<>(cacheTemplate);
+        Tuple2<String, String> execute = countDownLatch2Executor.execute(
+                executorService,
+                () -> "do execute1",
+                () -> "do execute2",
+                "key1",
+                "key2"
+        );
+        String first = execute.getFirst();
+        String second = execute.getSecond();
+    }
+}
