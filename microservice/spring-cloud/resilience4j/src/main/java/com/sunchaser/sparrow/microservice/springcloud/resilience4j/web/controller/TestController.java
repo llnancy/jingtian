@@ -1,18 +1,20 @@
 package com.sunchaser.sparrow.microservice.springcloud.resilience4j.web.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.google.common.base.Supplier;
 import io.github.resilience4j.circuitbreaker.CircuitBreaker;
 import io.github.resilience4j.circuitbreaker.CircuitBreakerConfig;
 import io.github.resilience4j.circuitbreaker.CircuitBreakerRegistry;
 import io.github.resilience4j.circuitbreaker.event.CircuitBreakerEvent;
 import io.github.resilience4j.circuitbreaker.operator.CircuitBreakerOperator;
 import io.github.resilience4j.circuitbreaker.utils.CircuitBreakerUtil;
+import io.reactivex.Flowable;
+import io.reactivex.Observable;
 import io.vavr.CheckedFunction0;
 import io.vavr.CheckedFunction1;
 import io.vavr.control.Try;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import rx.Observable;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -44,15 +46,28 @@ public class TestController {
 
     private static void doRxJavaTestCircuitBreaker() {
         CircuitBreaker rxJavaCircuitBreaker = CircuitBreaker.ofDefaults("rx-java-circuit-breaker");
-        Callable<String> callable = () -> "do something";
-        // is this a problem
-//        Observable.fromCallable(callable).compose(CircuitBreakerOperator.of(rxJavaCircuitBreaker));
-//        Folwable.fromCallable(callable).compose(CircuitBreakerOperator.of(rxJavaCircuitBreaker));
+        Callable<String> callable = TestController::doRxJavaTargetMethod;
+        Observable<String> observable = Observable.fromCallable(callable)
+                .compose(CircuitBreakerOperator.of(rxJavaCircuitBreaker));
+        Flowable<String> flowable = Flowable.fromCallable(callable)
+                .compose(CircuitBreakerOperator.of(rxJavaCircuitBreaker));
+    }
+
+    private static void doReactorTestCircuitBreaker() {
+        CircuitBreaker reactorCircuitBreaker = CircuitBreaker.ofDefaults("reactor-circuit-breaker");
+        Callable<String> callable = TestController::doReactorTargetMethod;
+        Observable<String> compose = Observable.fromCallable(callable)
+                .compose(CircuitBreakerOperator.of(reactorCircuitBreaker));
     }
 
     private static String doRxJavaTargetMethod() {
-        return null;
+        return "do rx java";
     }
+
+    private static String doReactorTargetMethod() {
+        return "do reactor";
+    }
+
 
     private static void doBaseTestCircuitBreaker() {
         // 获取一个熔断器实例对象
