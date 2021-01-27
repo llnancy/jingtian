@@ -1,13 +1,10 @@
 package com.sunchaser.sparrow.microservice.springcloud.resilience4j.web.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.google.common.base.Supplier;
 import io.github.resilience4j.circuitbreaker.CircuitBreaker;
 import io.github.resilience4j.circuitbreaker.CircuitBreakerConfig;
 import io.github.resilience4j.circuitbreaker.CircuitBreakerRegistry;
-import io.github.resilience4j.circuitbreaker.event.CircuitBreakerEvent;
 import io.github.resilience4j.circuitbreaker.operator.CircuitBreakerOperator;
-import io.github.resilience4j.circuitbreaker.utils.CircuitBreakerUtil;
 import io.reactivex.Flowable;
 import io.reactivex.Observable;
 import io.vavr.CheckedFunction0;
@@ -19,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.concurrent.Callable;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
 import static io.github.resilience4j.circuitbreaker.CircuitBreakerConfig.SlidingWindowType.COUNT_BASED;
@@ -42,6 +40,31 @@ public class TestController {
         doTestGetCircuitBreaker();
         doBaseTestCircuitBreaker();
         doRxJavaTestCircuitBreaker();
+        doTestCircuitBreaker();
+    }
+
+    private static void doTestCircuitBreaker() {
+        // 熔断器配置：执行2次进入open状态
+        CircuitBreakerConfig circuitBreakerConfig = CircuitBreakerConfig.custom()
+                .minimumNumberOfCalls(2)
+                .slidingWindowType(COUNT_BASED)
+                .build();
+        // 根据指定配置创建熔断器
+        CircuitBreaker circuitBreaker = CircuitBreaker.of("test-circuit-breaker", circuitBreakerConfig);
+        // 初始状态：CLOSED
+        System.out.println("init state:" + circuitBreaker.getState());
+        // 模拟调用目标方法发生2次异常
+        circuitBreaker.onError(0, TimeUnit.SECONDS, new RuntimeException());
+        circuitBreaker.onError(0, TimeUnit.SECONDS, new RuntimeException());
+        // 再次查看熔断器状态：OPEN
+        System.out.println("after two error#state:" + circuitBreaker.getState());
+        // 为目标方法配置熔断器，已为OPEN状态的熔断器是否能使目标方法调用成功
+        Try<String> result = Try.of(
+                CircuitBreaker.decorateCheckedSupplier(circuitBreaker, TestController::doNoInputTargetMethod)
+        ).map(value -> value + "do map");
+        // 调用结果输出
+        System.out.println(result.isSuccess());
+        System.out.println(result.get());
     }
 
     private static void doRxJavaTestCircuitBreaker() {
@@ -67,7 +90,6 @@ public class TestController {
     private static String doReactorTargetMethod() {
         return "do reactor";
     }
-
 
     private static void doBaseTestCircuitBreaker() {
         // 获取一个熔断器实例对象
