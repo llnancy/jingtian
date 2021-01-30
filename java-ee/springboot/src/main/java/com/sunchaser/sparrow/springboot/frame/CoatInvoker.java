@@ -10,7 +10,7 @@ package com.sunchaser.sparrow.springboot.frame;
  * 入参用final变量传入lambda表达式
  * 出参用引用设置到外部
  *
- * @author sunchaserlilu@didiglobal.com
+ * @author sunchaser admin@lilu.org.cn
  * @since JDK8 2021/1/30
  */
 @FunctionalInterface

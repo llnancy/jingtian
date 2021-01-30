@@ -8,8 +8,8 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 
 /**
- *
- * @author sunchaserlilu@didiglobal.com
+ * 多任务并行执行工具类
+ * @author sunchaser admin@lilu.org.cn
  * @since JDK8 2021/1/30
  */
 @Slf4j

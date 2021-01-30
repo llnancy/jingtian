@@ -11,9 +11,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Supplier;
 
-
 /**
- * @author sunchaserlilu@didiglobal.com
+ * @author sunchaser admin@lilu.org.cn
  * @since JDK8 2021/1/25
  */
 @Slf4j
