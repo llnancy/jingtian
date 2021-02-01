@@ -9,20 +9,23 @@ import org.springframework.util.StopWatch;
 import java.util.concurrent.CountDownLatch;
 
 /**
- * 装饰一下org.springframework.util.StopWatch
+ * 扩展org.springframework.util.StopWatch
+ *
+ * 可单独监控耗时工具类使用，也可配合CountDownLatchExecutorUtils工具类使用。
  *
  * 支持JDK7的try-with-resources特性：
  *
- * 1、自动回调org.springframework.util.StopWatch#stop()方法
- * 2、使用JDK7的try-with-resources特性时，如果指定了watch的id，会自动打印该id的watch耗时。
- * 3、如果配合CountDownLatch使用，会自动回调java.util.concurrent.CountDownLatch#countDown()方法
+ * 1、自动回调org.springframework.util.StopWatch#stop()方法，无需手动调用stop()方法。
+ * 2、指定了watch的id时，会自动打印该id的watch耗时。
+ * 3、如果配合CountDownLatch使用，会自动回调java.util.concurrent.CountDownLatch#countDown()方法将闭锁减一。
  *
  * code example：
  *
- * try (StopWatchDecorator watch = new StopWatchDecorator("stop-watch")) {
- *     // do biz
- *     // 不用在finally代码块里面调用watch.stop了。
- *     // 不用在finally代码块里面进行countDownLatch.countDown()了。
+ * try (StopWatchWrapper watch = new StopWatchWrapper("stop-watch")) {
+ *     // 专心写业务逻辑
+ *     // 1、不用在finally代码块里面调用watch.stop了。
+ *     // 2、不用在finally代码块里面进行countDownLatch.countDown()了。
+ *     // 3、自动打印日志：stop-watch执行耗时{}ms
  * } catch (Exception e) {
  * }
  *
@@ -32,7 +35,7 @@ import java.util.concurrent.CountDownLatch;
 @Slf4j
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class StopWatchDecorator extends StopWatch implements AutoCloseable {
+public class StopWatchWrapper extends StopWatch implements AutoCloseable {
 
     /**
      * 可选，try-with-resources回调时进行countDown()
@@ -59,21 +62,21 @@ public class StopWatchDecorator extends StopWatch implements AutoCloseable {
         }
     }
 
-    public StopWatchDecorator(CountDownLatch countDownLatch) {
+    public StopWatchWrapper(CountDownLatch countDownLatch) {
         super();
         this.countDownLatch = countDownLatch;
     }
 
-    public StopWatchDecorator(String id, CountDownLatch countDownLatch) {
+    public StopWatchWrapper(String id, CountDownLatch countDownLatch) {
         super(id);
         this.countDownLatch = countDownLatch;
     }
 
-    public StopWatchDecorator() {
+    public StopWatchWrapper() {
         super();
     }
 
-    public StopWatchDecorator(String id) {
+    public StopWatchWrapper(String id) {
         super(id);
     }
 }

@@ -2,6 +2,7 @@ package com.sunchaser.sparrow.springboot.frame;
 
 import groovy.lang.Tuple2;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.StopWatch;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -42,7 +43,35 @@ public class TestController {
     }
 
     public static void main(String[] args) {
+        testSpringStopWatch();
+        testStopWatchWrapper();
         testCountDownLatchExecutorUtils();
+    }
+
+    private static void testStopWatchWrapper() {
+        try (StopWatchWrapper watchWrapper = new StopWatchWrapper("test-watch-wrapper")){
+            watchWrapper.start();
+            Thread.sleep(100);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void testSpringStopWatch() {
+        StopWatch stopWatch = null;
+        try {
+            stopWatch = new StopWatch();
+            stopWatch.start();
+            // mock biz
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            if (stopWatch != null) {
+                stopWatch.stop();
+            }
+        }
+        System.out.println("执行耗时：" + stopWatch.getTotalTimeMillis());
     }
 
     public static void testCountDownLatchExecutorUtils() {
