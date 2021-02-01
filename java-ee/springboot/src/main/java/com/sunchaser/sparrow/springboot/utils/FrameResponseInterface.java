@@ -1,4 +1,4 @@
-package com.sunchaser.sparrow.springboot.frame;
+package com.sunchaser.sparrow.springboot.utils;
 
 /**
  * @author sunchaser admin@lilu.org.cn

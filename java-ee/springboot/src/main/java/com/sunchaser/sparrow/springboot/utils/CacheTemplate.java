@@ -1,4 +1,4 @@
-package com.sunchaser.sparrow.springboot.frame;
+package com.sunchaser.sparrow.springboot.utils;
 
 import org.springframework.stereotype.Component;
 

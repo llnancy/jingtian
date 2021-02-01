@@ -1,9 +1,9 @@
-package com.sunchaser.sparrow.springboot.frame;
+package com.sunchaser.sparrow.springboot.utils;
 
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.platform.commons.util.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.util.StopWatch;
 
 import java.util.concurrent.CountDownLatch;
@@ -46,7 +46,7 @@ public class StopWatchWrapper extends StopWatch implements AutoCloseable {
      * 支持try-with-resources写法
      * 1、监控停止：org.springframework.util.StopWatch#stop()
      * 2、耗时打印
-     * 2、闭锁CountDownLatch减一
+     * 3、闭锁CountDownLatch减一
      * @throws Exception org.springframework.util.StopWatch#stop() throws
      */
     @Override
@@ -55,7 +55,7 @@ public class StopWatchWrapper extends StopWatch implements AutoCloseable {
             this.stop();
         }
         if (StringUtils.isNotBlank(this.getId())) {
-            log.info("{}执行耗时{}ms", this.getId(), this.getTotalTimeMillis());
+            log.info("{}-执行耗时{}ms", this.getId(), this.getTotalTimeMillis());
         }
         if (countDownLatch != null) {
             countDownLatch.countDown();

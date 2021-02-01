@@ -1,4 +1,4 @@
-package com.sunchaser.sparrow.springboot.frame;
+package com.sunchaser.sparrow.springboot.utils;
 
 /**
  * 空执行的函数式接口

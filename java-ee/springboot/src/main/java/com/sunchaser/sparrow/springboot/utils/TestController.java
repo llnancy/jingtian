@@ -1,6 +1,7 @@
-package com.sunchaser.sparrow.springboot.frame;
+package com.sunchaser.sparrow.springboot.utils;
 
 import groovy.lang.Tuple2;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StopWatch;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +18,7 @@ import java.util.concurrent.atomic.AtomicReference;
  * @since JDK8 2021/1/27
  */
 @RestController
+@Slf4j
 public class TestController {
     private static final ExecutorService executorService = Executors.newFixedThreadPool(10);
 
@@ -52,6 +54,8 @@ public class TestController {
         try (StopWatchWrapper watchWrapper = new StopWatchWrapper("test-watch-wrapper")){
             watchWrapper.start();
             Thread.sleep(100);
+            // mock exception
+            // throw new RuntimeException("mock error");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -71,7 +75,7 @@ public class TestController {
                 stopWatch.stop();
             }
         }
-        System.out.println("执行耗时：" + stopWatch.getTotalTimeMillis());
+        log.info("执行耗时{}ms",stopWatch.getTotalTimeMillis());
     }
 
     public static void testCountDownLatchExecutorUtils() {
