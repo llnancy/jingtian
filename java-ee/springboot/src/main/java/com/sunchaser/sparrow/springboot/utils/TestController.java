@@ -98,7 +98,7 @@ public class TestController {
         list.add(coatInvoker1);
         list.add(coatInvoker2);
         list.add(coatInvoker3);
-        CountDownLatchExecutorUtils.execute(executorService, list, "test");
+        CountDownLatchExecutorUtils.execute(executorService, "test", list);
         // 得到执行结果
         String r1 = result1.get();
         String r2 = result1.get();

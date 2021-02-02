@@ -1,6 +1,7 @@
 package com.sunchaser.sparrow.springboot.utils;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.util.CollectionUtils;
 
 import java.util.Arrays;
@@ -8,6 +9,8 @@ import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.function.Consumer;
+
+import static org.apache.commons.lang3.StringUtils.EMPTY;
 
 /**
  * 多任务并行执行模板
@@ -61,17 +64,43 @@ import java.util.function.Consumer;
  *         String r2 = result1.get();
  *         String r3 = result1.get();
  *
+ * 默认会自动打印整体的执行耗时：
+ * 如果指定了bizId，则日志格式为："main-{bizId}-执行耗时{}ms"，否则日志格式为："main-执行耗时{}ms"。
  * @author sunchaser admin@lilu.org.cn
  * @since JDK8 2021/1/30
  */
 @Slf4j
 public class CountDownLatchExecutorUtils {
+    private static final String SEPARATE = "-";
+    private static final String MAIN = "main";
+    private static final String SUB = "sub";
     private CountDownLatchExecutorUtils() {
     }
 
     /**
      *
-     * 建议直接使用这个重载的方法，只关注需要并行执行的任务。
+     * 如果你想自动打印每个子任务的耗时，使用这个重载的方法。
+     *
+     * 需要你传入一个bizId来标识你的业务。打印的日志格式为：{bizId}-{i}-执行耗时{}ms。
+     * 1、第一个占位符是传入的bizId
+     * 2、第二个占位符是子任务的索引，即CoatInvoker传入的顺序
+     * 3、第三个占位符是执行耗时
+     *
+     * 多任务使用子线程并行执行
+     *
+     * 将需要执行的任务包装成CoatInvoker传入。使用可变参数，数量随意。
+     *
+     * @param executorService 线程池
+     * @param bizId 业务唯一标识
+     * @param coatInvoker 需要异步并行执行的任务
+     */
+    public static void execute(ExecutorService executorService, String bizId, CoatInvoker ... coatInvoker) {
+        execute(executorService, bizId, Arrays.asList(coatInvoker));
+    }
+
+    /**
+     *
+     * 如果你不需要自动打印每个子任务的耗时，用这个重载的方法。
      *
      * 多任务使用子线程并行执行
      *
@@ -85,62 +114,72 @@ public class CountDownLatchExecutorUtils {
     }
 
     /**
+     *
      * 多任务使用子线程并行执行
      *
-     * 需要由调用者将多任务打包成List集合
+     * 需要你将多个任务打包成List集合，不会自动打印子线程的执行耗时。
      *
      * @param executorService 线程池
      * @param coatInvokerList 需要异步执行的任务集合
      */
     public static void execute(ExecutorService executorService,
                                List<CoatInvoker> coatInvokerList) {
-        execute(executorService, coatInvokerList, "");
+        execute(executorService, EMPTY, coatInvokerList);
     }
 
     /**
      * 多任务使用子线程并行执行
      *
      * 支持打印整体执行耗时、单个异步子线程执行耗时。
-     * 可传入bizId，在com.wujie.group.leader.mis.biz.async.frame.StopWatchWrapper#close()方法中会进行打印。
+     *
+     * 指定bizId时，在com.wujie.group.leader.mis.biz.async.frame.StopWatchWrapper#close()方法中会打印执行耗时。
+     *
      * @param executorService 线程池
+     * @param bizId 业务名称 不能为null空指针
      * @param coatInvokerList 需要异步执行的任务集合
-     * @param bizId 业务名称
      */
     public static void execute(ExecutorService executorService,
-                               List<CoatInvoker> coatInvokerList,
-                               String bizId) {
+                               String bizId,
+                               List<CoatInvoker> coatInvokerList) {
         if (executorService == null
                 || CollectionUtils.isEmpty(coatInvokerList)
                 || bizId == null) {
             throw new IllegalArgumentException("执行参数错误");
         }
         int size = coatInvokerList.size();
-        try (StopWatchWrapper watch = new StopWatchWrapper(bizId)) {
+        String mainBizId = MAIN;
+        String subBizIdPrefix = EMPTY;
+        if (StringUtils.isNotBlank(bizId)) {
+            mainBizId = mainBizId + SEPARATE + bizId;
+            subBizIdPrefix = SUB + SEPARATE + bizId;
+        }
+        // log "main-bizId-执行耗时{}ms"
+        try (StopWatchWrapper watch = new StopWatchWrapper(mainBizId)) {
             watch.start();
             CountDownLatch countDownLatch = new CountDownLatch(size);
-            final String subBizId = bizId + "-";
             for (int i = 0; i < coatInvokerList.size(); i++) {
                 CoatInvoker coatInvoker = coatInvokerList.get(i);
-                final String id = subBizId + i;
+                final String subId = subBizIdPrefix + i;
                 executorService.execute(() -> {
-                    // log "bizId-i"
-                    try (StopWatchWrapper subWatch = new StopWatchWrapper(id, countDownLatch)) {
+                    // log "sub-bizId-i-执行耗时{}ms"
+                    try (StopWatchWrapper subWatch = new StopWatchWrapper(subId, countDownLatch)) {
                         subWatch.start();
                         coatInvoker.invoke();
                     } catch (Exception e) {
-                        log.error("CountDownLatchExecutorUtils#CoatInvoker-{}-sub-thread-error", id, e);
+                        log.error("CountDownLatchExecutorUtils#CoatInvoker-{}-sub-thread-error", subId, e);
                         throw new RuntimeException("error");
                     }
                 });
             }
             countDownLatch.await();
         } catch (Exception e) {
-            log.error("CountDownLatchExecutorUtils#CoatInvoker-{}-async-error.", bizId, e);
+            log.error("CountDownLatchExecutorUtils#CoatInvoker-{}-async-error.", mainBizId, e);
             throw new RuntimeException("error");
         }
     }
 
     /**
+     *
      * 一般来说，用final变量将入参传给CoatInvoker包装的lambda表达式即可。
      *
      * 如有特殊情况，可使用该实现。
@@ -176,9 +215,11 @@ public class CountDownLatchExecutorUtils {
                     }
                 });
             }
+            countDownLatch.await();
         } catch (Exception e) {
             log.error("CountDownLatchExecutorUtils#Consumer async error.", e);
             throw new RuntimeException("error");
         }
     }
+
 }
