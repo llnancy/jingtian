@@ -54,14 +54,14 @@ public class StopWatchWrapper extends StopWatch implements AutoCloseable {
         if (this.isRunning()) {
             this.stop();
         }
-        if (countDownLatch != null) {
-            countDownLatch.countDown();
-        }
     }
 
     @Override
     public void stop() throws IllegalStateException {
         super.stop();
+        if (countDownLatch != null) {
+            countDownLatch.countDown();
+        }
         if (StringUtils.isNotBlank(this.getId())) {
             log.info("{}-执行耗时{}ms", this.getId(), this.getTotalTimeMillis());
         }
