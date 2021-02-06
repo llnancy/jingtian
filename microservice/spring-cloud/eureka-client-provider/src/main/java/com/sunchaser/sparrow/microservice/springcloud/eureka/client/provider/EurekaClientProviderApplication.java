@@ -1,4 +1,4 @@
-package com.sunchaser.sparrow.microservice.springcloud.eureka.client;
+package com.sunchaser.sparrow.microservice.springcloud.eureka.client.provider;
 
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,9 +9,9 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
  * @since JDK8 2021/1/7
  */
 @SpringBootApplication
-public class EurekaClientApplication {
+public class EurekaClientProviderApplication {
     public static void main(String[] args) {
-        new SpringApplicationBuilder(EurekaClientApplication.class)
+        new SpringApplicationBuilder(EurekaClientProviderApplication.class)
                 .web(WebApplicationType.SERVLET)
                 .run(args);
     }
