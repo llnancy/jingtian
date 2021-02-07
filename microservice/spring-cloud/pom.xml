@@ -17,6 +17,7 @@
         <module>resilience4j</module>
         <module>eureka-client-provider</module>
         <module>eureka-client-consumer</module>
+        <module>ribbon</module>
     </modules>
 
 </project>
