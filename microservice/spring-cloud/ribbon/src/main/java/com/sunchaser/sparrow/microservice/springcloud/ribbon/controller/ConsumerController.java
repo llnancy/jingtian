@@ -17,6 +17,7 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 public class ConsumerController {
     private static final Logger log = LoggerFactory.getLogger(ConsumerController.class);
+
     @Autowired
     private RestTemplate restTemplate;
 
@@ -25,7 +26,7 @@ public class ConsumerController {
 
     @GetMapping("/consumer/{id}")
     public String consume(@PathVariable String id) {
-        return restTemplate.getForObject("http://localhost:9000/provider?id=" + id, String.class);
+        return restTemplate.getForObject("http://eureka-client-service-provider/provider?id=" + id, String.class);
     }
 
     @GetMapping("/print/provider/instance")
