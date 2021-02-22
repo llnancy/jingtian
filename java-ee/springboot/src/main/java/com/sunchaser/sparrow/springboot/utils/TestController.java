@@ -45,9 +45,9 @@ public class TestController {
     }
 
     public static void main(String[] args) {
-        testSpringStopWatch();
+//        testSpringStopWatch();
         testStopWatchWrapper();
-        testCountDownLatchExecutorUtils();
+//        testCountDownLatchExecutorUtils();
     }
 
     private static void testStopWatchWrapper() {
@@ -55,7 +55,7 @@ public class TestController {
             watchWrapper.start();
             Thread.sleep(100);
             // mock exception
-            // throw new RuntimeException("mock error");
+            throw new RuntimeException("mock error");
         } catch (Exception e) {
             e.printStackTrace();
         }

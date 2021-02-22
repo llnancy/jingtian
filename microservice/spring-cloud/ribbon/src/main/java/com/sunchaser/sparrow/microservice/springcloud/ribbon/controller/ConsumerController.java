@@ -1,7 +1,6 @@
 package com.sunchaser.sparrow.microservice.springcloud.ribbon.controller;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
@@ -15,8 +14,8 @@ import org.springframework.web.client.RestTemplate;
  * @since JDK8 2021/2/6
  */
 @RestController
+@Slf4j
 public class ConsumerController {
-    private static final Logger log = LoggerFactory.getLogger(ConsumerController.class);
 
     @Autowired
     private RestTemplate restTemplate;
@@ -30,8 +29,9 @@ public class ConsumerController {
     }
 
     @GetMapping("/print/provider/instance")
-    public void getProviderInstanceList() {
+    public String getProviderInstanceList() {
         ServiceInstance serviceInstance = this.loadBalancerClient.choose("eureka-client-service-provider");
         log.info("service instance:{}", serviceInstance);
+        return serviceInstance.toString();
     }
 }

@@ -1,7 +1,9 @@
 package com.sunchaser.sparrow.javase.test;
 
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
+import com.google.common.collect.Lists;
+
+import java.util.List;
+import java.util.StringJoiner;
 
 /**
  * @author sunchaser
@@ -10,8 +12,9 @@ import java.time.temporal.ChronoUnit;
  */
 public class Test {
     public static void main(String[] args) {
-        System.out.println(LocalDate.now().toString());
-        System.out.println(LocalDate.now().minus(7, ChronoUnit.DAYS));
-        System.out.println(LocalDate.now().minusMonths(3));
+        List<String> str = Lists.newArrayList("aaa", "bbb", "ccc");
+        StringJoiner sj = new StringJoiner("','", "'", "'");
+        str.forEach(sj::add);
+        System.out.println(sj.toString());
     }
 }
