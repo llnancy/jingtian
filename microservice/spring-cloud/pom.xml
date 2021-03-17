@@ -18,6 +18,7 @@
         <module>eureka-client-provider</module>
         <module>eureka-client-consumer</module>
         <module>ribbon</module>
+        <module>openfeign</module>
     </modules>
 
 </project>
