@@ -14,6 +14,6 @@
     <dubbo:registry address="zookeeper://47.92.27.29:2181"/>
 
     <!-- dubbo协议 -->
-<!--    <dubbo:protocol name="dubbo" port="20880"/>-->
+    <dubbo:protocol name="dubbo" port="20881"/>
 
 </beans>

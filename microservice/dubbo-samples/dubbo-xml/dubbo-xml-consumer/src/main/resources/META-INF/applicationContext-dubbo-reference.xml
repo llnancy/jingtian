@@ -11,5 +11,7 @@
     <dubbo:reference
             interface="com.sunchaser.sparrow.microservice.dubbo.facade.EchoFacade"
             id="echoFacade"
+            version="0.0.1"
+            group="echo"
             check="false"/>
 </beans>

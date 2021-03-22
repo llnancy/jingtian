@@ -10,5 +10,7 @@
     <!-- 服务暴露 -->
     <dubbo:service
             interface="com.sunchaser.sparrow.microservice.dubbo.facade.EchoFacade"
-            ref="echoFacade"/>
+            ref="echoFacade"
+            version="0.0.1"
+            group="dubbo"/>
 </beans>

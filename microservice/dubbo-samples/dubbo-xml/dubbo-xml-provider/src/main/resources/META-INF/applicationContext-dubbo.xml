@@ -16,4 +16,7 @@
     <!-- dubbo协议 -->
     <dubbo:protocol name="dubbo" port="20881"/>
 
+    <dubbo:config-center address="zookeeper://47.92.27.29:2181"/>
+
+    <dubbo:metadata-report address="zookeeper://47.92.27.29:2181"/>
 </beans>
