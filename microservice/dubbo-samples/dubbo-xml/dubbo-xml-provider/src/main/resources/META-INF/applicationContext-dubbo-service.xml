@@ -12,5 +12,5 @@
             interface="com.sunchaser.sparrow.microservice.dubbo.facade.EchoFacade"
             ref="echoFacade"
             version="0.0.1"
-            group="dubbo"/>
+            group="echo"/>
 </beans>

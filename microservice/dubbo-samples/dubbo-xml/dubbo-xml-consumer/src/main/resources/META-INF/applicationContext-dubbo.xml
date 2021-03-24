@@ -11,7 +11,7 @@
     <dubbo:application name="dubbo-xml-consumer"/>
 
     <!-- 注册中心 -->
-    <dubbo:registry address="zookeeper://47.92.27.29:2181"/>
+    <dubbo:registry address="zookeeper://47.92.27.29:2181,47.92.27.29:2182,47.92.27.29:2183"/>
 
     <!-- dubbo协议 -->
     <dubbo:protocol name="dubbo" port="20881"/>
