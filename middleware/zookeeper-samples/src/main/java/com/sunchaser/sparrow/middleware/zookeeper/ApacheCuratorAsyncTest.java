@@ -7,6 +7,7 @@ import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.framework.api.BackgroundCallback;
 import org.apache.curator.framework.api.CuratorEvent;
 import org.apache.curator.framework.api.CuratorEventType;
+import org.apache.curator.framework.api.CuratorListener;
 import org.apache.curator.retry.ExponentialBackoffRetry;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.data.Stat;
@@ -34,7 +35,7 @@ public class ApacheCuratorAsyncTest {
                 processEvent(client, event);
             }
         });
-         **/
+        **/
 
         // JDK8
         client.getCuratorListenable().addListener(ApacheCuratorAsyncTest::processEvent);
@@ -99,105 +100,105 @@ public class ApacheCuratorAsyncTest {
     }
 
     public enum CuratorEventProcessorEnum {
-        CREATE_PROCESS(CuratorEventType.CREATE) {
+        CREATE_PROCESSOR(CuratorEventType.CREATE) {
             @Override
             void process(CuratorFramework client, CuratorEvent event) {
                 System.out.println("process create event: " + event.getPath());
             }
         },
 
-        DELETE_PROCESS(CuratorEventType.DELETE) {
+        DELETE_PROCESSOR(CuratorEventType.DELETE) {
             @Override
             void process(CuratorFramework client, CuratorEvent event) {
                 System.out.println("process delete event: " + event.getPath());
             }
         },
 
-        EXISTS_PROCESS(CuratorEventType.EXISTS) {
+        EXISTS_PROCESSOR(CuratorEventType.EXISTS) {
             @Override
             void process(CuratorFramework client, CuratorEvent event) {
                 System.out.println("process exists event: " + event.getPath());
             }
         },
 
-        GET_DATA_PROCESS(CuratorEventType.GET_DATA) {
+        GET_DATA_PROCESSOR(CuratorEventType.GET_DATA) {
             @Override
             void process(CuratorFramework client, CuratorEvent event) {
                 System.out.println("process get data event: " + event.getPath());
             }
         },
 
-        SET_DATA_PROCESS(CuratorEventType.SET_DATA) {
+        SET_DATA_PROCESSOR(CuratorEventType.SET_DATA) {
             @Override
             void process(CuratorFramework client, CuratorEvent event) {
                 System.out.println("process set data event: " + event.getPath());
             }
         },
 
-        CHILDREN_PROCESS(CuratorEventType.CHILDREN) {
+        CHILDREN_PROCESSOR(CuratorEventType.CHILDREN) {
             @Override
             void process(CuratorFramework client, CuratorEvent event) {
                 System.out.println("process children event: " + event.getPath());
             }
         },
 
-        SYNC_PROCESS(CuratorEventType.SYNC) {
+        SYNC_PROCESSOR(CuratorEventType.SYNC) {
             @Override
             void process(CuratorFramework client, CuratorEvent event) {
                 System.out.println("process sync event: " + event.getPath());
             }
         },
 
-        GET_ACL_PROCESS(CuratorEventType.GET_ACL) {
+        GET_ACL_PROCESSOR(CuratorEventType.GET_ACL) {
             @Override
             void process(CuratorFramework client, CuratorEvent event) {
                 System.out.println("process get acl event: " + event.getPath());
             }
         },
 
-        SET_ACL_PROCESS(CuratorEventType.SET_ACL) {
+        SET_ACL_PROCESSOR(CuratorEventType.SET_ACL) {
             @Override
             void process(CuratorFramework client, CuratorEvent event) {
                 System.out.println("process set acl event: " + event.getPath());
             }
         },
 
-        TRANSACTION_PROCESS(CuratorEventType.TRANSACTION) {
+        TRANSACTION_PROCESSOR(CuratorEventType.TRANSACTION) {
             @Override
             void process(CuratorFramework client, CuratorEvent event) {
                 System.out.println("process transaction event: " + event.getPath());
             }
         },
 
-        GET_CONFIG_PROCESS(CuratorEventType.GET_CONFIG) {
+        GET_CONFIG_PROCESSOR(CuratorEventType.GET_CONFIG) {
             @Override
             void process(CuratorFramework client, CuratorEvent event) {
                 System.out.println("process get config event: " + event.getPath());
             }
         },
 
-        RECONFIG_PROCESS(CuratorEventType.RECONFIG) {
+        RECONFIG_PROCESSOR(CuratorEventType.RECONFIG) {
             @Override
             void process(CuratorFramework client, CuratorEvent event) {
                 System.out.println("process reconfig event: " + event.getPath());
             }
         },
 
-        WATCHED_PROCESS(CuratorEventType.WATCHED) {
+        WATCHED_PROCESSOR(CuratorEventType.WATCHED) {
             @Override
             void process(CuratorFramework client, CuratorEvent event) {
                 System.out.println("process watched event: " + event.getPath());
             }
         },
 
-        REMOVE_WATCHES_PROCESS(CuratorEventType.REMOVE_WATCHES) {
+        REMOVE_WATCHES_PROCESSOR(CuratorEventType.REMOVE_WATCHES) {
             @Override
             void process(CuratorFramework client, CuratorEvent event) {
                 System.out.println("process remove watches event: " + event.getPath());
             }
         },
 
-        CLOSING_PROCESS(CuratorEventType.CLOSING) {
+        CLOSING_PROCESSOR(CuratorEventType.CLOSING) {
             @Override
             void process(CuratorFramework client, CuratorEvent event) {
                 System.out.println("process closing event: " + event.getPath());
