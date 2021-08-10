@@ -13,7 +13,7 @@ public class SerializableTest {
         // 获取当前类所在包中的serializableClass.txt文件路径
         String path = SerializableTest.class.getResource("").getPath();
         path = path.replace("target/classes","src/main/java") + "serializableClass.txt";
-        SerializableClass sc = new SerializableClass().setName("序列化").setAge(10);
+        SerializableClass sc = new SerializableClass().setName("序列化测试").setAge(10);
 //        writeObject(sc,path);
         readObject(path);
     }
