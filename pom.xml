@@ -75,6 +75,9 @@
         <elastic.job.spring.version>3.0.0.M1-SNAPSHOT</elastic.job.spring.version>
         <dubbo.version>2.7.3</dubbo.version>
         <groovy-all.version>2.5.6</groovy-all.version>
+        <cuacho.hessian.version>4.0.38</cuacho.hessian.version>
+        <snappy.version>1.1.8.4</snappy.version>
+        <netty.version>4.1.42.Final</netty.version>
     </properties>
 
     <dependencyManagement>
@@ -194,16 +197,26 @@
                 <version>${dubbo.version}</version>
                 <type>pom</type>
             </dependency>
-<!--            <dependency>-->
-<!--                <groupId>org.apache.dubbo</groupId>-->
-<!--                <artifactId>dubbo-spring-boot-starter</artifactId>-->
-<!--                <version>2.7.8</version>-->
-<!--            </dependency>-->
             <dependency>
                 <groupId>org.codehaus.groovy</groupId>
                 <artifactId>groovy-all</artifactId>
                 <version>${groovy-all.version}</version>
                 <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>com.caucho</groupId>
+                <artifactId>hessian</artifactId>
+                <version>${cuacho.hessian.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.xerial.snappy</groupId>
+                <artifactId>snappy-java</artifactId>
+                <version>${snappy.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>${netty.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

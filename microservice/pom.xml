@@ -14,5 +14,6 @@
     <modules>
         <module>spring-cloud</module>
         <module>dubbo-samples</module>
+        <module>sunchaser-rpc</module>
     </modules>
 </project>
