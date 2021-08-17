@@ -41,7 +41,7 @@ public class SAXParseXmlTest {
             public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
                 super.startElement(uri, localName, qName, attributes);
                 LOGGER.info("startElement: uri={}, localName={}, qName={}, attributes={}", uri, localName, qName, attributes);
-                for (int i = 0; i < attributes.getLength(); i++) {
+                for (int i = 0; i < attributes.getLength(); i++) {// 循环输出Attr属性
                     LOGGER.info("attributes: localName={}, qName={}, type={}, uri={}, value={}",
                             attributes.getLocalName(i),
                             attributes.getQName(i),
@@ -60,7 +60,7 @@ public class SAXParseXmlTest {
 
             @Override
             public void characters(char[] ch, int start, int length) throws SAXException {
-                super.characters(ch, start, length);
+                super.characters(ch, start, length);// 解析到字符
                 LOGGER.info("characters: ch={}", new String(ch, start, length));
             }
 
