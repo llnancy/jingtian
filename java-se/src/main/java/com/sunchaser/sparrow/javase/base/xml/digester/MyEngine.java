@@ -1,34 +1,22 @@
 package com.sunchaser.sparrow.javase.base.xml.digester;
 
+import lombok.Data;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author sunchaser admin@lilu.org.cn
  * @since JDK8 2021/8/18
  */
+@Data
 public class MyEngine {
     private String name;
     private String defaultHost;
 
-    public String getName() {
-        return name;
-    }
+    private List<MyHost> myHostList = new ArrayList<>();
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDefaultHost() {
-        return defaultHost;
-    }
-
-    public void setDefaultHost(String defaultHost) {
-        this.defaultHost = defaultHost;
-    }
-
-    @Override
-    public String toString() {
-        return "MyEngine{" +
-                "name='" + name + '\'' +
-                ", defaultHost='" + defaultHost + '\'' +
-                '}';
+    public void addMyHost(MyHost myHost) {
+        myHostList.add(myHost);
     }
 }

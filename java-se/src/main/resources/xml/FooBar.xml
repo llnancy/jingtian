@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Foo>
+    <Bar name="bar1">
+    </Bar>
+    <Bar name="bar2">
+    </Bar>
+    <Bar name="bar3">
+    </Bar>
+</Foo>
