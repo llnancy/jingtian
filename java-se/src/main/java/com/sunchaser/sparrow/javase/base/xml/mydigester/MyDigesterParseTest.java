@@ -1,6 +1,5 @@
 package com.sunchaser.sparrow.javase.base.xml.mydigester;
 
-import com.google.common.collect.Lists;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;

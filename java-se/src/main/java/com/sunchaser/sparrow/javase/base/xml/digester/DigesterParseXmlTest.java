@@ -36,7 +36,7 @@ public class DigesterParseXmlTest {
         // 创建Digester对象
         Digester digester = createDigester();
         // 获取xml文件的输入流
-        InputStream is = SAXParseXmlTest.class.getResourceAsStream("/xml/server.xml");
+        InputStream is = DigesterParseXmlTest.class.getResourceAsStream("/xml/server.xml");
         // 将当前类压入Digester的对象栈栈顶
         digester.push(this);
         // 执行解析
