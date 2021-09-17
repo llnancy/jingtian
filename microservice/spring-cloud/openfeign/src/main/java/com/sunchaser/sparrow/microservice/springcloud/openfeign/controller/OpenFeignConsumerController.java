@@ -1,6 +1,6 @@
 package com.sunchaser.sparrow.microservice.springcloud.openfeign.controller;
 
-import com.sunchaser.sparrow.microservice.springcloud.openfeign.feign.ProviderFeignClient;
+import com.sunchaser.sparrow.microservice.springcloud.openfeign.clients.ProviderFeignClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
