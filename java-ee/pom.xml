@@ -26,7 +26,6 @@
         <module>lombok</module>
         <module>lombok-test</module>
         <module>sunchaser-lombok</module>
-        <module>hikaricp</module>
     </modules>
 
 </project>
