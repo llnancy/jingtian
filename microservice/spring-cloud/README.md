@@ -8,3 +8,4 @@
 - `hystrix`: `9005`
 - `hystrix-dashboard`: `9006`
 - `zuul`: `9007`
+- `gateway`: `9008`

@@ -1,0 +1,25 @@
+server:
+  port: 9008
+
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      routes:
+        - id: eureka-client-api
+          uri: http://127.0.0.1:9002
+          predicates:
+            - Path=/eureka-client/**
+        - id: ribbon-api
+          uri: http://127.0.0.1:9003
+          predicates:
+            - Path=/ribbon/**
+        - id: openfeign-api
+          uri: http://127.0.0.1:9004
+          predicates:
+            - Path=/openfeign/**
+        - id: hystrix-api
+          uri: http://127.0.0.1:9005
+          predicates:
+            - Path=/hystrix/**
