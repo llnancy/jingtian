@@ -1,0 +1,6 @@
+server:
+  port: 521
+
+#eureka:
+#  instance:
+#    instance-id: instance2

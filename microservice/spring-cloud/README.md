@@ -1,7 +1,7 @@
 ## 端口规划
 
 - `eureka-server`: `520/521`
-- `eureka-client-provider`: `9001`
+- `eureka-client-provider`: `9000/9001`
 - `eureka-client-consumer`: `9002`
 - `ribbon`: `9003`
 - `openfeign`: `9004`

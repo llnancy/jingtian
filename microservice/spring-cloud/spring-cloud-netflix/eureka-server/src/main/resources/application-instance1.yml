@@ -1,0 +1,6 @@
+server:
+  port: 520
+
+#eureka:
+#  instance:
+#    instance-id: instance1
