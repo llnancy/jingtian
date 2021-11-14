@@ -1,10 +1,7 @@
 package com.sunchaser.sparrow.algorithm.base.array;
 
-import java.util.Arrays;
-import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.Queue;
-import java.util.stream.Collectors;
 
 /**
  * 数组中第K个最大的元素：top K
