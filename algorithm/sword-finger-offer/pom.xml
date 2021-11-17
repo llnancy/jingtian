@@ -12,4 +12,11 @@
     <artifactId>sword-finger-offer</artifactId>
 
     <description>《剑指Offer》</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.sunchaser.sparrow</groupId>
+            <artifactId>algorithm-common</artifactId>
+        </dependency>
+    </dependencies>
 </project>

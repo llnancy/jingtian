@@ -23,7 +23,7 @@ public class MergeKLists {
         SinglyLinkedListNode p = hair;
         Queue<SinglyLinkedListNode> pq = new PriorityQueue<>(
                 listNodes.length,
-                Comparator.comparingInt(SinglyLinkedListNode::getVal)
+                Comparator.comparingInt(x -> x.val)
         );
         for (SinglyLinkedListNode eachHead : listNodes) {
             if (eachHead != null) {
