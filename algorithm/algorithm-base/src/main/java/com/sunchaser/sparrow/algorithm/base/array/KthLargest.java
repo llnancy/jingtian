@@ -5,13 +5,14 @@ import java.util.Queue;
 
 /**
  * 数组中第K个最大的元素：top K
+ *
  * @author sunchaser admin@lilu.org.cn
  * @since JDK8 2021/11/11
  */
 public class KthLargest {
 
     public static void main(String[] args) {
-        int[] nums = {3,2,1,5,6,4};
+        int[] nums = {3, 2, 1, 5, 6, 4};
         int k = 2;
         System.out.println(findKthLargest(nums, k));
         System.out.println(findKthLargestV2(nums, k));

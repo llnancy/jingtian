@@ -2,6 +2,7 @@ package com.sunchaser.sparrow.algorithm.base.lru;
 
 /**
  * 双向链表
+ *
  * @author sunchaser admin@lilu.org.cn
  * @since JDK8 2021/11/8
  */

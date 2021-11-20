@@ -1,10 +1,11 @@
 package com.sunchaser.sparrow.algorithm.base.linkedlist;
 
-import com.sunchaser.sparrow.algorithm.common.util.LinkedListUtils;
 import com.sunchaser.sparrow.algorithm.common.SinglyLinkedListNode;
+import com.sunchaser.sparrow.algorithm.common.util.LinkedListUtils;
 
 /**
  * 反转链表：递归和非递归实现
+ *
  * @author sunchaser
  * @since JDK8 2020/6/3
  */
@@ -28,6 +29,7 @@ public class ReverseLink {
 
     /**
      * 反转单链表递归实现
+     *
      * @param head 单链表头节点
      * @return 反转后的链表头节点
      */
@@ -42,6 +44,7 @@ public class ReverseLink {
 
     /**
      * 非递归法实现单链表反转
+     *
      * @param head 原单链表头节点
      * @return 反转后链表头节点
      */
@@ -70,8 +73,9 @@ public class ReverseLink {
 
     /**
      * 反转链表的前n个元素
+     *
      * @param head 原链表头节点
-     * @param n 前n个元素
+     * @param n    前n个元素
      * @return 反转后的链表头节点
      */
     public static SinglyLinkedListNode reverseN(SinglyLinkedListNode head, int n) {
@@ -79,7 +83,7 @@ public class ReverseLink {
             nNext = head.next;
             return head;
         }
-        SinglyLinkedListNode reverseHead = reverseN(head.next,n - 1);
+        SinglyLinkedListNode reverseHead = reverseN(head.next, n - 1);
         head.next.next = head;
         head.next = nNext;
         return reverseHead;
@@ -87,18 +91,18 @@ public class ReverseLink {
 
     /**
      * ->1->2->3->4->5->null
-     *
+     * <p>
      * m = 2,n = 4
      * ->1->4->3->2->5->null
      *
      * @param head 头节点
-     * @param m m
-     * @param n n
+     * @param m    m
+     * @param n    n
      * @return 反转后头节点
      */
     public static SinglyLinkedListNode reverseBetweenMToN(SinglyLinkedListNode head, int m, int n) {
         if (m == 1) {
-            return reverseN(head,n);
+            return reverseN(head, n);
         }
         head.next = reverseBetweenMToN(head.next, m - 1, n - 1);
         return head;

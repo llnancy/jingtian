@@ -2,6 +2,7 @@ package com.sunchaser.sparrow.algorithm.base.sort;
 
 /**
  * 快排
+ *
  * @author sunchaser admin@lilu.org.cn
  * @since JDK8 2021/11/12
  */

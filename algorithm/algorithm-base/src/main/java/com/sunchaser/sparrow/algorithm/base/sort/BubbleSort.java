@@ -19,14 +19,14 @@ public class BubbleSort {
 
 //        int mySqrt = mySqrt(2147483647);
 //        System.out.println(mySqrt);
-        int[] nums = {4,5,6,7,0,1,2};
+        int[] nums = {4, 5, 6, 7, 0, 1, 2};
         System.out.println(search(nums, 3));
     }
 
     public static boolean isValid(String s) {
         Deque<Character> stack = new LinkedList<>();
         char[] c = s.toCharArray();
-        for (int i = 0;i < c.length;i++) {
+        for (int i = 0; i < c.length; i++) {
             if ('(' == c[i] || '{' == c[i] || '[' == c[i]) {
                 stack.push(c[i]);
             } else {
@@ -79,9 +79,9 @@ public class BubbleSort {
         int right = x;
         while (left <= right) {
             int mid = (left + right) >>> 1;
-            if ((long)(mid * mid) == x) {
+            if ((long) (mid * mid) == x) {
                 return mid;
-            } else if ((long) (mid * mid) < x && (long)((mid + 1) * (mid + 1)) > x) {
+            } else if ((long) (mid * mid) < x && (long) ((mid + 1) * (mid + 1)) > x) {
                 return mid;
             } else if ((long) (mid * mid) < x) {
                 left = mid + 1;

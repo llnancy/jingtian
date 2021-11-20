@@ -2,7 +2,7 @@ package com.sunchaser.sparrow.leetcode.middle;
 
 /**
  * 200. 岛屿数量
- *
+ * <p>
  * https://leetcode-cn.com/problems/number-of-islands/
  *
  * @author sunchaser admin@lilu.org.cn
@@ -13,8 +13,8 @@ public class NumberOfIslands {
         int res = 0;
         int m = grid.length;
         int n = grid[0].length;
-        for (int i = 0;i < m;i++) {
-            for (int j = 0;j < n;j++) {
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
                 if (grid[i][j] == '1') {// 发现一个岛屿
                     res++;
                     // 使用dfs将岛屿淹了

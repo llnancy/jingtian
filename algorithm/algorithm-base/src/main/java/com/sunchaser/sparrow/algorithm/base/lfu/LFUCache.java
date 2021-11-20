@@ -6,6 +6,7 @@ import java.util.Map;
 
 /**
  * LFU：最近最少访问
+ *
  * @author sunchaser admin@lilu.org.cn
  * @since JDK8 2021/11/10
  */
@@ -69,6 +70,7 @@ public class LFUCache<K, V> {
 
     /**
      * 将指定key的使用次数加一
+     *
      * @param key
      */
     public void increaseFreq(K key) {

@@ -5,6 +5,7 @@ import com.sunchaser.sparrow.algorithm.common.util.LinkedListUtils;
 
 /**
  * 判断链表是否有环
+ *
  * @author sunchaser admin@lilu.org.cn
  * @since JDK8 2020/12/21
  */

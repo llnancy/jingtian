@@ -8,6 +8,7 @@ import java.util.List;
 
 /**
  * 回文链表：请判断一个链表是否为回文链表。
+ *
  * @author sunchaser admin@lilu.org.cn
  * @since JDK8 2020/12/30
  */
@@ -44,7 +45,7 @@ public class PalindromeLinkedList {
             list.add(head);
             head = head.next;
         }
-        for (int i = 0,size = list.size();i < size / 2;i++) {
+        for (int i = 0, size = list.size(); i < size / 2; i++) {
             if (!list.get(i).val.equals(list.get(size - i - 1).val)) return false;
         }
         return true;

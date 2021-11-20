@@ -13,8 +13,7 @@ public class AddStrings {
         System.out.println(addStrings("123", "12345"));
     }
 
-    /**
-    public static String addStrings(String num1, String num2) {
+    public static String addStrings2(String num1, String num2) {
         char[] c1 = num1.toCharArray();
         char[] c2 = num2.toCharArray();
         int jin = 0;
@@ -59,7 +58,6 @@ public class AddStrings {
         }
         return res.reverse().toString();
     }
-     **/
 
     public static String addStrings(String num1, String num2) {
         int i = num1.length() - 1;

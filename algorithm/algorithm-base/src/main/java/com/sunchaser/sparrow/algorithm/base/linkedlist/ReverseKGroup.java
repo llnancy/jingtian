@@ -8,6 +8,7 @@ import java.util.LinkedList;
 
 /**
  * K 个一组翻转链表
+ *
  * @author sunchaser admin@lilu.org.cn
  * @since JDK8 2020/12/24
  */
@@ -61,8 +62,9 @@ public class ReverseKGroup {
 
     /**
      * k个一组翻转链表，利用代码栈结构实现
+     *
      * @param head 链表头节点
-     * @param k k
+     * @param k    k
      * @return 反转后的新链表头节点
      */
     public static SinglyLinkedListNode reverseKGroupUseStack(SinglyLinkedListNode head, int k) {
@@ -113,8 +115,9 @@ public class ReverseKGroup {
 
     /**
      * k个一组翻转链表，递归（系统栈）实现
+     *
      * @param head 链表头节点
-     * @param k k
+     * @param k    k
      * @return 反转后的新链表头节点
      */
     public static SinglyLinkedListNode reverseKGroupRecursionImpl(SinglyLinkedListNode head, int k) {
@@ -138,9 +141,10 @@ public class ReverseKGroup {
 
     /**
      * 非递归实现反转[a,b)区间
+     *
      * @param a 区间开始节点
      * @param b 区间结束节点（不反转该节点）
-     * @return [a,b)反转后的头节点
+     * @return [a, b)反转后的头节点
      */
     private static SinglyLinkedListNode reverse(SinglyLinkedListNode a, SinglyLinkedListNode b) {
         SinglyLinkedListNode pre = null;
@@ -161,9 +165,10 @@ public class ReverseKGroup {
 
     /**
      * 递归实现反转[a,b)区间
+     *
      * @param a 区间开始节点
      * @param b 区间结束节点（不反转该节点）
-     * @return [a,b)反转后的头节点
+     * @return [a, b)反转后的头节点
      */
     private static SinglyLinkedListNode reverseRecursionImpl(SinglyLinkedListNode a, SinglyLinkedListNode b) {
         if (a.next == b) {

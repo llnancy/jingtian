@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 /**
  * 二分查找：https://leetcode-cn.com/problems/binary-search/
+ *
  * @author sunchaser admin@lilu.org.cn
  * @since JDK8 2021/10/7
  */

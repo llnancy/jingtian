@@ -5,6 +5,7 @@ import com.sunchaser.sparrow.algorithm.common.util.LinkedListUtils;
 
 /**
  * 返回倒数第k个节点
+ *
  * @author sunchaser admin@lilu.org.cn
  * @since JDK8 2020/12/23
  */
@@ -12,7 +13,7 @@ public class KthToLastNode {
     public static void main(String[] args) {
         SinglyLinkedListNode list = LinkedListUtils.generateSinglyLinkedList();
         LinkedListUtils.printLink(list);
-        System.out.println(kthToLastNode(list,3));
+        System.out.println(kthToLastNode(list, 3));
     }
 
     public static int kthToLastNode(SinglyLinkedListNode head, int k) {

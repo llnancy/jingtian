@@ -5,21 +5,22 @@ import java.util.Map;
 
 /**
  * 滑动窗口
+ *
  * @author sunchaser admin@lilu.org.cn
  * @since JDK8 2021/11/11
  */
 public class SlidingWindow {
     /**
      * 滑动窗口模板
-     *
+     * <p>
      * 现在开始套模板，只需要思考以下四个问题：
-     *
+     * <p>
      * 1、当移动 right 扩大窗口，即加入字符时，应该更新哪些数据？
-     *
+     * <p>
      * 2、什么条件下，窗口应该暂停扩大，开始移动 left 缩小窗口？
-     *
+     * <p>
      * 3、当移动 left 缩小窗口，即移出字符时，应该更新哪些数据？
-     *
+     * <p>
      * 4、我们要的结果应该在扩大窗口时还是缩小窗口时进行更新？
      *
      * @param s

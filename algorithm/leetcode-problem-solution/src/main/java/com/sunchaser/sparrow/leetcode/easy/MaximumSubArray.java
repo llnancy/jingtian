@@ -2,7 +2,7 @@ package com.sunchaser.sparrow.leetcode.easy;
 
 /**
  * 53. 最大子序和
- *
+ * <p>
  * https://leetcode-cn.com/problems/maximum-subarray/
  *
  * @author sunchaser admin@lilu.org.cn
@@ -24,7 +24,7 @@ public class MaximumSubArray {
         int dp1;
         int max = dp0;
         // 状态转移方程
-        for (int i = 1;i < n;i++) {
+        for (int i = 1; i < n; i++) {
             dp1 = Math.max(nums[i], nums[i] + dp0);
             dp0 = dp1;
             max = Math.max(max, dp1);

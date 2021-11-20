@@ -2,7 +2,7 @@ package com.sunchaser.sparrow.leetcode.middle;
 
 /**
  * 5. 最长回文子串
- *
+ * <p>
  * 链接：https://leetcode-cn.com/problems/longest-palindromic-substring
  *
  * @author sunchaser admin@lilu.org.cn
@@ -17,7 +17,7 @@ public class LongestPalindromicSubString {
 
     public static String longestPalindrome(String s) {
         String res = "";
-        for (int i = 0;i < s.length();i++) {
+        for (int i = 0; i < s.length(); i++) {
             // 以s[i]为中心的最长回文子串
             String s1 = palindrome(s, i, i);
             // 以s[i]和s[i + 1]为中心的最长回文子串

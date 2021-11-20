@@ -8,10 +8,11 @@ import java.util.List;
 
 /**
  * 103. 二叉树的锯齿形层序遍历
- *
+ * <p>
  * 之字形打印二叉树
- *
+ * <p>
  * https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/
+ *
  * @author sunchaser admin@lilu.org.cn
  * @since JDK8 2021/11/14
  */
@@ -37,7 +38,7 @@ public class BinaryTreeZigzagLevelOrderTraversal {
      * 从右至左：右出左进
      */
     public static List<List<Integer>> zigzagLevelOrder(TreeNode root) {
-        List<List<Integer>> res= new LinkedList<>();
+        List<List<Integer>> res = new LinkedList<>();
         Deque<TreeNode> deque = new LinkedList<>();
         if (root != null) {
             deque.offerLast(root);

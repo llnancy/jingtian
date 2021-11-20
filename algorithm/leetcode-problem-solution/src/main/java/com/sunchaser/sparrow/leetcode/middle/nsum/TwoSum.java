@@ -6,6 +6,7 @@ import java.util.List;
 
 /**
  * 两数之和
+ *
  * @author sunchaser admin@lilu.org.cn
  * @since JDK8 2021/11/12
  */
@@ -24,6 +25,7 @@ public class TwoSum {
     /**
      * 排序+双指针
      * 返回和为target的两个数的下标
+     *
      * @param nums
      * @param target
      * @return
@@ -39,14 +41,15 @@ public class TwoSum {
             } else if (sum > target) {
                 right--;
             } else {
-                return new int[] {left, right};
+                return new int[]{left, right};
             }
         }
-        return new int[] {-1, -1};
+        return new int[]{-1, -1};
     }
 
     /**
      * 返回和为target的两个数，去重
+     *
      * @param nums
      * @param target
      * @return

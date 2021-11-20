@@ -28,6 +28,7 @@ import java.util.LinkedList;
  * //
  * // 假设我们的环境只能存储得下 32 位的有符号整数，则其数值范围为 [−231, 231 − 1]。请根据这个假设，如果反转后整数溢出那么就返回 0。
  * // Related Topics 数学
+ *
  * @author sunchaser admin@lilu.org.cn
  * @since JDK8 2020/12/1
  */

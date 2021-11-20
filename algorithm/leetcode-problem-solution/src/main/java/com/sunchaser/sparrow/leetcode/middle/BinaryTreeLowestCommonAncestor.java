@@ -4,7 +4,7 @@ import com.sunchaser.sparrow.algorithm.common.TreeNode;
 
 /**
  * 236. 二叉树的最近公共祖先
- *
+ * <p>
  * https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/
  *
  * @author sunchaser admin@lilu.org.cn
