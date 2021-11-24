@@ -62,42 +62,53 @@ public class StringToIntegerAtoi {
         return res;
     }
 
+    /**
+     * 1 去除前导空格，并防止全部为空格的情况
+     * 2 记录第一个字符的正负号
+     * 3 循环处理后续字符
+     * 3.1 如果遇到非0-9的字符则立即退出
+     * 3.2 如果大于Integer.MAX_VALUE则返回Integer.MAX_VALUE
+     * 3.3 如果小于Integer.MIN_VALUE则返回Integer.MIN_VALUE
+     * 3.4 累加结果
+     */
     public static int atoi2(String s) {
-        int len = s.length();
-        char[] cArr = s.toCharArray();
+        int n = s.length();
+        char[] sArr = s.toCharArray();
         int res = 0;
-        int index = 0;
-        // 去除前导空格
-        while (index < len && cArr[index] == ' ') {
-            index++;
+        int cur = 0;
+        // 1 去除前导空格
+        while (cur < n && sArr[cur] == ' ') {
+            cur++;
         }
-        // 极端情况 '    '
-        if (index == len) {
+        // 1.1 防止全部为空格的情况
+        if (cur == n) {
             return res;
         }
-        int sign = 1;
-        char firstChar = cArr[index];
-        if (firstChar == '+') {
-            index++;
-        } else if (firstChar == '-') {
-            sign = -1;
-            index++;
+        // 2 记录第一个字符的正负号
+        int flag = 1;
+        if (sArr[cur] == '+') {
+            cur++;
+        } else if (sArr[cur] == '-') {
+            cur++;
+            flag = -1;
         }
-        while (index < len) {
-            char curChar = cArr[index];
-            if (curChar < '0' || curChar > '9') {
+        // 3 循环处理后续字符
+        while (cur < n) {
+            // 3.1 遇到非0-9字符则退出
+            if (sArr[cur] < '0' || sArr[cur] > '9') {
                 break;
             }
-            // 越界判断
-            if (res > Integer.MAX_VALUE / 10 || (res == Integer.MAX_VALUE / 10 && (curChar - '0') > Integer.MAX_VALUE % 10)) {
+            // 3.2 溢出返回
+            if (res > Integer.MAX_VALUE / 10 || (res == Integer.MAX_VALUE / 10 && sArr[cur] - '0' > Integer.MAX_VALUE % 10)) {
                 return Integer.MAX_VALUE;
             }
-            if (res < Integer.MIN_VALUE / 10 || (res == Integer.MIN_VALUE / 10 && (curChar - '0') > -(Integer.MIN_VALUE % 10))) {
+            // 3.3 溢出返回
+            if (res < Integer.MIN_VALUE / 10 || (res == Integer.MIN_VALUE / 10 && sArr[cur] - '0' > -(Integer.MIN_VALUE % 10))) {
                 return Integer.MIN_VALUE;
             }
-
-            res = res * 10 + sign * (curChar - '0');
-            index++;
+            // 计算结果
+            res = res * 10 + flag * (sArr[cur] - '0');
+            cur++;
         }
         return res;
     }
