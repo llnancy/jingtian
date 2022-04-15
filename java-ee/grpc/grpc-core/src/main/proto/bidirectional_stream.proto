@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "org.sunchaser.sparrow.javaee.grpc.core.bidirectionalstream";
+option java_outer_classname = "BidirectionalStreamProto";
+
+service BidirectionalStreamService {
+  rpc BidirectionalStreamCommunication(stream BidirectionalStreamRequest) returns (stream BidirectionalStreamResponse) {}
+}
+
+message BidirectionalStreamRequest {
+  string req_msg = 1;
+}
+
+message BidirectionalStreamResponse {
+  string resp_msg = 1;
+}

@@ -1,0 +1,9 @@
+server:
+  port: 9003
+spring:
+  application:
+    name: ribbon-service-consumer
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:520/eureka/,http://localhost:521/eureka/

@@ -1,0 +1,21 @@
+server:
+  port: 9007
+
+spring:
+  application:
+    name: zuul-service
+
+zuul:
+  routes:
+    eureka-client-api:
+      path: /eureka-client/**
+      url: http://127.0.0.1:9002
+    ribbon-api:
+      path: /ribbon/**
+      url: http://127.0.0.1:9003
+    openfeign-api:
+      path: /openfeign/**
+      url: http://127.0.0.1:9004
+    hystrix-api:
+      path: /hystrix/**
+      url: http://127.0.0.1:9005

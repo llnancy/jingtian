@@ -1,0 +1,15 @@
+# 单机eureka配置
+server:
+  port: 520
+spring:
+  application:
+    name: eureka-service
+
+eureka:
+  instance:
+    hostname: localhost # host名称
+  client:
+    # 是否将自己注册至eureka，默认为true。由于当前应用就是eureka-server，故设置为false。
+    register-with-eureka: false
+    # 是否从eureka-server获取注册信息，默认为true。由于当前应用是一个单点的eureka-server实例，不需要同步其它节点的数据，故设置为false。
+    fetch-registry: false

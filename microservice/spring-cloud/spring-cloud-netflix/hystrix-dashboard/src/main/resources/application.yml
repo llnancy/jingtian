@@ -1,0 +1,25 @@
+server:
+  port: 9006
+
+spring:
+  application:
+    name: hystrix-turbine
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:520/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+turbine:
+  app-config: hystrix-service
+  cluster-name-expression: new String("default")
+
+hystrix:
+  dashboard:
+    proxy-stream-allow-list: 127.0.0.1

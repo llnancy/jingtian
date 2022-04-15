@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+// 为每个Java类生成单独的.java文件
+option java_multiple_files = true;
+// 生成的Java包名
+option java_package = "com.sunchaser.sparrow.javaee.grpc.core.helloworld";
+// 生成的Java类名
+option java_outer_classname = "HelloWorldProto";
+
+// 指定Java包名，被option java_package选项覆盖
+package helloworld;
+
+// 定义rpc服务
+service Greeter {
+  rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
+
+// 定义message
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloReply {
+  string message = 1;
+}

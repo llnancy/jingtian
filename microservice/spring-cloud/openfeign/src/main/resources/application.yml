@@ -1,0 +1,9 @@
+server:
+  port: 9004
+spring:
+  application:
+    name: openfeign-service-consumer
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:520/eureka/,http://localhost:521/eureka/

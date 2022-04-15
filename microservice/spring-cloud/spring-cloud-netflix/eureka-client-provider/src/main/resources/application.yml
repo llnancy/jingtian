@@ -1,0 +1,11 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: eureka-client-service-provider
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:520/eureka/,http://localhost:521/eureka/
+  instance:
+    virtual-host-name: eureka-client-service-provider

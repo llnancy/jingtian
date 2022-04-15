@@ -1,0 +1,30 @@
+@startuml
+
+abstract class Duck {
+    public abstract void display()
+    void quack()
+    void swim()
+    void fly()
+}
+
+class WildDuck {
+    void display()
+}
+
+class PekingDuck {
+    void display()
+    void fly()
+}
+
+class ToyDuck {
+    void display()
+    void quack()
+    void swim()
+    void fly()
+}
+
+Duck <|--- WildDuck
+Duck <|--- PekingDuck
+Duck <|--- ToyDuck
+
+@enduml

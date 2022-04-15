@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Server port="8005" shutdown="SHUTDOWN">
+    this is Server start
+    <Service name="Catalina">
+        this is Service start
+        <Connector port="8080"
+                   protocol="HTTP/1.1"
+                   connectionTimeout="20000"
+                   redirectPort="8443" />
+        <Engine name="Catalina" defaultHost="localHost">
+            this is Engine start
+            <Host name="localhost"
+                  appBase="webapps"
+                  unpackWARs="true"
+                  autoDeploy="true">
+                this is Host
+            </Host>
+            this is Engine end
+        </Engine>
+        this is Service end
+    </Service>
+    this is Server end
+</Server>

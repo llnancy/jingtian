@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.sunchaser.sparrow</groupId>
+    <artifactId>sunchaser-sparrow</artifactId>
+    <description>Sparrow：麻雀虽小，五脏俱全</description>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <url>https://lilu.org.cn</url>
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/sunchaser-lilu/sunchaser-sparrow/issues</url>
+    </issueManagement>
+    <inceptionYear>2020</inceptionYear>
+    <developers>
+        <developer>
+            <id>SunChaser</id>
+            <name>lilu</name>
+            <email>admin@lilu.org.cn</email>
+            <url>https://lilu.org.cn</url>
+            <roles>
+                <role>Project Manager</role>
+            </roles>
+            <organization>SunChaser</organization>
+        </developer>
+    </developers>
+    <contributors>
+        <contributor />
+    </contributors>
+    <licenses>
+        <license>
+            <name>GNU General Public License v3.0</name>
+        </license>
+    </licenses>
+    <organization>
+        <name>SunChaser</name>
+        <url>https://lilu.org.cn</url>
+    </organization>
+    <modules>
+        <module>algorithm</module>
+        <module>book-notes</module>
+        <module>design-patterns</module>
+        <module>java-ee</module>
+        <module>java-se</module>
+        <module>database</module>
+        <module>middleware</module>
+        <module>distributed</module>
+        <module>microservice</module>
+        <module>devops</module>
+    </modules>
+
+    <!-- version -->
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+
+        <log4j2.version>2.17.0</log4j2.version>
+
+        <spring.boot.version>2.6.4</spring.boot.version>
+        <spring.cloud.version>Hoxton.SR1</spring.cloud.version>
+        <spring.cloud.alibaba.version>2.2.1.RELEASE</spring.cloud.alibaba.version>
+        <google.guava.version>30.0-jre</google.guava.version>
+        <google.gson.version>2.8.6</google.gson.version>
+        <apache.commons.lang3>3.9</apache.commons.lang3>
+        <apache.commons.digester3.version>3.2</apache.commons.digester3.version>
+        <mybatis.starter.version>2.1.0</mybatis.starter.version>
+        <mybatis.generator.version>1.3.7</mybatis.generator.version>
+        <mysql.driver.version>8.0.16</mysql.driver.version>
+        <pagehelper.starter.version>1.2.10</pagehelper.starter.version>
+        <druid.starter.version>1.1.10</druid.starter.version>
+        <alibaba.fastjson.version>1.2.60</alibaba.fastjson.version>
+        <okhttp.version>3.11.0</okhttp.version>
+        <guava.retrying.version>2.0.0</guava.retrying.version>
+        <curator.framework.version>4.1.0</curator.framework.version>
+        <zookeeper.version>3.4.8</zookeeper.version>
+        <apache.shardingsphere.starter.version>4.0.0-RC1</apache.shardingsphere.starter.version>
+        <spring.statemachine.version>2.1.3.RELEASE</spring.statemachine.version>
+        <elastic.job.core.version>3.0.0.M1-SNAPSHOT</elastic.job.core.version>
+        <elastic.job.spring.version>3.0.0.M1-SNAPSHOT</elastic.job.spring.version>
+        <dubbo.version>2.7.3</dubbo.version>
+        <groovy-all.version>2.5.6</groovy-all.version>
+        <cuacho.hessian.version>4.0.38</cuacho.hessian.version>
+        <snappy.version>1.1.8.4</snappy.version>
+        <netty.version>4.1.42.Final</netty.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- spring boot -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- spring cloud -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- spring cloud alibaba -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring.cloud.alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- guava -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${google.guava.version}</version>
+            </dependency>
+            <!-- apache lang3 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${apache.commons.lang3}</version>
+            </dependency>
+            <!-- mybatis starter -->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.starter.version}</version>
+            </dependency>
+            <!-- generator core -->
+            <dependency>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-core</artifactId>
+                <version>${mybatis.generator.version}</version>
+            </dependency>
+            <!-- mysql驱动 -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <scope>runtime</scope>
+                <version>${mysql.driver.version}</version>
+            </dependency>
+            <!-- pageHelper分页插件 -->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper.starter.version}</version>
+            </dependency>
+            <!-- druid连接池 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.starter.version}</version>
+            </dependency>
+            <!-- zookeeper客户端 -->
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-framework</artifactId>
+                <version>${curator.framework.version}</version>
+            </dependency>
+            <!-- zookeeper -->
+            <dependency>
+                <groupId>org.apache.zookeeper</groupId>
+                <artifactId>zookeeper</artifactId>
+                <version>${zookeeper.version}</version>
+            </dependency>
+            <!-- fastjson -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${alibaba.fastjson.version}</version>
+            </dependency>
+            <!-- gson -->
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>${google.gson.version}</version>
+            </dependency>
+            <!-- apache shardingsphere starter -->
+            <dependency>
+                <groupId>org.apache.shardingsphere</groupId>
+                <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
+                <version>${apache.shardingsphere.starter.version}</version>
+            </dependency>
+            <!-- spring statemachine -->
+            <dependency>
+                <groupId>org.springframework.statemachine</groupId>
+                <artifactId>spring-statemachine-core</artifactId>
+                <version>${spring.statemachine.version}</version>
+            </dependency>
+            <!-- apache dubbo -->
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-dependencies-zookeeper</artifactId>
+                <version>${dubbo.version}</version>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>org.codehaus.groovy</groupId>
+                <artifactId>groovy-all</artifactId>
+                <version>${groovy-all.version}</version>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>com.caucho</groupId>
+                <artifactId>hessian</artifactId>
+                <version>${cuacho.hessian.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.xerial.snappy</groupId>
+                <artifactId>snappy-java</artifactId>
+                <version>${snappy.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>${netty.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-digester3</artifactId>
+                <version>${apache.commons.digester3.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
