@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  rabbitmq-management:
+    restart: always
+    image: rabbitmq:3.9.15-management-alpine
+    container_name: rabbitmq-management
+    ports:
+      - 15672:15672
+      - 5672:5672
+    environment:
+      - TZ=Asia/Shanghai
