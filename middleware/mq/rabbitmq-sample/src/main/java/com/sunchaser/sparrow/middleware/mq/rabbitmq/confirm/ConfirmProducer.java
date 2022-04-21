@@ -2,6 +2,7 @@ package com.sunchaser.sparrow.middleware.mq.rabbitmq.confirm;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.ConfirmListener;
+import com.rabbitmq.client.MessageProperties;
 import com.sunchaser.sparrow.middleware.mq.rabbitmq.common.RabbitMqHelper;
 
 import java.io.IOException;
@@ -19,7 +20,6 @@ public class ConfirmProducer {
     private static final int COUNT = 1000;
 
     public static void main(String[] args) throws Exception {
-        // 单个发布确认
         // singlePublishConfirmMessage();// 单个发布确认1000条消息耗时：1130ms
         // batchPublishConfirmMessage();// 批量发布确认1000条消息耗时：110ms
         asyncPublishConfirmMessage();// 异步发布确认1000条消息耗时81ms
@@ -36,7 +36,8 @@ public class ConfirmProducer {
             channel.confirmSelect();
             long begin = System.currentTimeMillis();
             for (int i = 0; i < COUNT; i++) {
-                channel.basicPublish("", QUEUE_NAME, null, String.valueOf(i).getBytes());
+                channel.basicPublish("", QUEUE_NAME, MessageProperties.PERSISTENT_TEXT_PLAIN, String.valueOf(i).getBytes());
+                // 等待回传确认ack
                 boolean waitForConfirms = channel.waitForConfirms();
                 if (waitForConfirms) {
                     System.out.println("第" + i + "条消息单个发布确认成功");
@@ -58,7 +59,7 @@ public class ConfirmProducer {
             long begin = System.currentTimeMillis();
             int batchSize = 100;
             for (int i = 0; i < COUNT; i++) {
-                channel.basicPublish("", QUEUE_NAME, null, String.valueOf(i).getBytes());
+                channel.basicPublish("", QUEUE_NAME, MessageProperties.PERSISTENT_TEXT_PLAIN, String.valueOf(i).getBytes());
                 // 每发布batchSize条消息确认一次
                 if ((i + 1) % batchSize == 0) {
                     boolean waitForConfirms = channel.waitForConfirms();
@@ -105,7 +106,8 @@ public class ConfirmProducer {
 
             for (int i = 0; i < COUNT; i++) {
                 String message = String.valueOf(i);
-                channel.basicPublish("", QUEUE_NAME, null, message.getBytes());
+                channel.basicPublish("", QUEUE_NAME, MessageProperties.PERSISTENT_TEXT_PLAIN, message.getBytes());
+                // 将被指派的唯一ID和消息内容进行映射，并存储在跳表中
                 confirmMap.put(channel.getNextPublishSeqNo(), message);
             }
 

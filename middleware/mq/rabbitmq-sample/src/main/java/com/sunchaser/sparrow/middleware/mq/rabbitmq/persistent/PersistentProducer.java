@@ -22,7 +22,7 @@ public class PersistentProducer {
             Scanner scanner = new Scanner(System.in);
             while (scanner.hasNext()) {
                 String message = scanner.next();
-                // MessageProperties.PERSISTENT_TEXT_PLAIN：
+                // MessageProperties.PERSISTENT_TEXT_PLAIN：持久化消息
                 channel.basicPublish("", PERSISTENT_QUEUE_NAME, MessageProperties.PERSISTENT_TEXT_PLAIN, message.getBytes());
                 System.out.println(" [x] persistent_queue Sent '" + message + "'");
             }

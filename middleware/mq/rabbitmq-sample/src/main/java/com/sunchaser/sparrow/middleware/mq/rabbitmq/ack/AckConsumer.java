@@ -23,9 +23,6 @@ public class AckConsumer {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
-            int i = 1 / 0;
-
             System.out.println(" [x] Received '" + new String(message.getBody()) + "'");
             /*
              * 手动应答
