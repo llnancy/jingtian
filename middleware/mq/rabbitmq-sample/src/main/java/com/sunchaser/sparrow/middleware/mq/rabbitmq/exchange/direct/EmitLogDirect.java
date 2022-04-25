@@ -21,6 +21,7 @@ public class EmitLogDirect {
             Scanner scanner = new Scanner(System.in);
             while (scanner.hasNext()) {
                 String next = scanner.next();
+                // 消息内容和消息的路由键之间用冒号:进行分隔
                 String[] split = next.split(":");
                 String message = split[0];
                 String routingKey = split[1];

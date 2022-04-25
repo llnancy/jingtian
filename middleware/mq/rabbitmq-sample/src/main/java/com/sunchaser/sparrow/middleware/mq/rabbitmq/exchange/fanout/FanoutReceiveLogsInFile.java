@@ -30,7 +30,7 @@ public class FanoutReceiveLogsInFile {
         DeliverCallback deliverCallback = (consumerTag, delivery) -> {
             String message = new String(delivery.getBody());
             File file = new File("/Users/sunchaser/workspace/idea-projects/sunchaser-sparrow/middleware/mq/rabbitmq-sample/src/main/resources/fanout_log.txt");
-            FileUtil.appendString(message, file, StandardCharsets.UTF_8);
+            FileUtil.appendUtf8String(message, file);
             System.out.println(" [x] Received '" + message + "'");
         };
         channel.basicConsume(queueName, true, deliverCallback, consumerTag -> {});

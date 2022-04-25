@@ -7,7 +7,6 @@ import com.rabbitmq.client.DeliverCallback;
 import com.sunchaser.sparrow.middleware.mq.rabbitmq.common.RabbitMqHelper;
 
 import java.io.File;
-import java.nio.charset.StandardCharsets;
 
 /**
  * direct exchange 直接类型交换机 消息消费者：消费error日志消息后将消息内容写入文件
@@ -21,9 +20,8 @@ public class DirectReceiveLogsInFile {
     public static void main(String[] args) throws Exception {
         Channel channel = RabbitMqHelper.getChannel();
         channel.exchangeDeclare(EXCHANGE_NAME, BuiltinExchangeType.DIRECT);
-        // 定义队列
-        String queueName = "file";
-        channel.queueDeclare(queueName, false, false, false, null);
+        // 临时队列：具有随机生成名称的非持久、独占、自动删除的队列。
+        String queueName = channel.queueDeclare().getQueue();
         // 交换机绑定队列
         channel.queueBind(queueName, EXCHANGE_NAME, "error");
         System.out.println(" [*] Waiting for messages. Write error log to file. To exit press CTRL+C");
@@ -31,7 +29,7 @@ public class DirectReceiveLogsInFile {
         DeliverCallback deliverCallback = (consumerTag, delivery) -> {
             String message = new String(delivery.getBody());
             File file = new File("/Users/sunchaser/workspace/idea-projects/sunchaser-sparrow/middleware/mq/rabbitmq-sample/src/main/resources/direct_log.txt");
-            FileUtil.appendString(message, file, StandardCharsets.UTF_8);
+            FileUtil.appendUtf8String(message, file);
             System.out.println(" [x] Received '" + delivery.getEnvelope().getRoutingKey() + "':'" + message + "'");
         };
         channel.basicConsume(queueName, true, deliverCallback, consumerTag -> {});

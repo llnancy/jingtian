@@ -7,7 +7,6 @@ import com.rabbitmq.client.DeliverCallback;
 import com.sunchaser.sparrow.middleware.mq.rabbitmq.common.RabbitMqHelper;
 
 import java.io.File;
-import java.nio.charset.StandardCharsets;
 
 /**
  * topic exchange 直接类型交换机 消息消费者：绑定队列Q2
@@ -31,8 +30,8 @@ public class TopicReceiveLogsInFile {
         DeliverCallback deliverCallback = (consumerTag, delivery) -> {
             String message = new String(delivery.getBody());
             File file = new File("/Users/sunchaser/workspace/idea-projects/sunchaser-sparrow/middleware/mq/rabbitmq-sample/src/main/resources/topic_log.txt");
-            FileUtil.appendString(message, file, StandardCharsets.UTF_8);
-            System.out.println(" [x] Received '" + delivery.getEnvelope().getRoutingKey() + "':'" + message + "'");
+            FileUtil.appendUtf8String(message, file);
+            System.out.println(" [x] Received '" + delivery.getEnvelope().getRoutingKey() + "':" + message);
         };
         channel.basicConsume(queueName, true, deliverCallback, consumerTag -> {});
     }

@@ -18,6 +18,7 @@ public class EmitLog {
     public static void main(String[] args) throws Exception {
         try (Channel channel = RabbitMqHelper.getChannel()) {
             // 定义fanout类型的交换机
+            // channel.exchangeDeclare(EXCHANGE_NAME, "fanout");
             channel.exchangeDeclare(EXCHANGE_NAME, BuiltinExchangeType.FANOUT);
             Scanner scanner = new Scanner(System.in);
             while (scanner.hasNext()) {
