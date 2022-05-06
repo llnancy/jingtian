@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
  * @since JDK8 2022/5/6
  */
 @Component
-public class GraphqlExceptionHandler {
+public class GraphQLExceptionHandler {
 
     @ExceptionHandler(GraphQLException.class)
     public ThrowableGraphQLError handle(GraphQLException e) {

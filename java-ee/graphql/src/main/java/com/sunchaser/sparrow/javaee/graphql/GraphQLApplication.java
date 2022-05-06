@@ -9,9 +9,9 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
  * @since JDK8 2022/5/6
  */
 @SpringBootApplication
-public class GraphqlApplication {
+public class GraphQLApplication {
     public static void main(String[] args) {
-        new SpringApplicationBuilder(GraphqlApplication.class)
+        new SpringApplicationBuilder(GraphQLApplication.class)
                 .web(WebApplicationType.SERVLET)
                 .run(args);
     }
