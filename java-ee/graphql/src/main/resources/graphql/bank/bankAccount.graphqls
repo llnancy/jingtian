@@ -1,0 +1,6 @@
+# !表示非空
+type BankAccount {
+    id: ID!
+    client: Client!
+    currency: Currency!
+}

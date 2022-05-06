@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: graphql-java-application
+
+server:
+  http2:
+    enabled: true
+
+graphql:
+  servlet:
+    max-query-depth: 13 # 最大递归查询深度，不能设置的太小，否则导致playground、voyager工具报错。
+    exception-handlers-enabled: true

@@ -28,6 +28,7 @@
         <module>sunchaser-lombok</module>
         <module>grpc</module>
         <module>spring</module>
+        <module>graphql</module>
     </modules>
 
 </project>
