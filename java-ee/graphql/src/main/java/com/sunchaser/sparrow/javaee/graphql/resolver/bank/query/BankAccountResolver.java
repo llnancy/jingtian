@@ -1,8 +1,10 @@
 package com.sunchaser.sparrow.javaee.graphql.resolver.bank.query;
 
+import com.sunchaser.sparrow.javaee.graphql.context.CustomGraphQLContext;
 import com.sunchaser.sparrow.javaee.graphql.domain.bank.BankAccount;
 import com.sunchaser.sparrow.javaee.graphql.domain.bank.Currency;
 import graphql.kickstart.tools.GraphQLQueryResolver;
+import graphql.schema.DataFetchingEnvironment;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -16,7 +18,7 @@ import java.util.UUID;
 @Slf4j
 public class BankAccountResolver implements GraphQLQueryResolver {
 
-    public BankAccount bankAccount(UUID id) {
+    public BankAccount bankAccount(UUID id, DataFetchingEnvironment environment) {
         log.info("Retrieving bank account id: {}", id);
 
         /*
@@ -41,6 +43,10 @@ public class BankAccountResolver implements GraphQLQueryResolver {
                 .lastName("LiLu")
                 .build();
          **/
+
+        CustomGraphQLContext context = environment.getContext();
+
+        log.info("User ID: {}", context.getUserId());
 
         return BankAccount.builder()
                 .id(id)
