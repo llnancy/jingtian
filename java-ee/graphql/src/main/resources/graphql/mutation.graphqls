@@ -1,3 +1,8 @@
+# @see graphql.scalars.ExtendedScalars
+scalar NonNegativeInt
+scalar Date
+scalar DateTime
+
 # All mutations available in graphql
 type Mutation {
     # Create a bank account

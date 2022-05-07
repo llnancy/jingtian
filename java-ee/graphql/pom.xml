@@ -16,7 +16,8 @@
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <graphql.version>11.1.0</graphql.version>
+        <graphql.starter.version>11.1.0</graphql.starter.version>
+        <graphql.extended.scalars.version>18.0</graphql.extended.scalars.version>
     </properties>
 
     <dependencyManagement>
@@ -44,20 +45,39 @@
         <dependency>
             <groupId>com.graphql-java-kickstart</groupId>
             <artifactId>graphql-spring-boot-starter</artifactId>
-            <version>${graphql.version}</version>
+            <version>${graphql.starter.version}</version>
         </dependency>
+        <!-- graphql的一个网页IDE -->
         <dependency>
             <groupId>com.graphql-java-kickstart</groupId>
             <artifactId>playground-spring-boot-starter</artifactId>
-            <version>${graphql.version}</version>
+            <version>${graphql.starter.version}</version>
             <scope>runtime</scope>
         </dependency>
-        <!--可以查看schema之间的关系图-->
+        <!--可以查看graphql之间的关系图-->
         <dependency>
             <groupId>com.graphql-java-kickstart</groupId>
             <artifactId>voyager-spring-boot-starter</artifactId>
-            <version>${graphql.version}</version>
+            <version>${graphql.starter.version}</version>
             <scope>runtime</scope>
         </dependency>
+        <!-- graphql-java scalar -->
+        <dependency>
+            <groupId>com.graphql-java</groupId>
+            <artifactId>graphql-java-extended-scalars</artifactId>
+            <version>${graphql.extended.scalars.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.graphql-java</groupId>
+                    <artifactId>graphql-java</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- graphql datetime scalar -->
+<!--        <dependency>-->
+<!--            <groupId>com.zhokhov.graphql</groupId>-->
+<!--            <artifactId>graphql-datetime-spring-boot-starter</artifactId>-->
+<!--            <version>4.1.0</version>-->
+<!--        </dependency>-->
     </dependencies>
 </project>
