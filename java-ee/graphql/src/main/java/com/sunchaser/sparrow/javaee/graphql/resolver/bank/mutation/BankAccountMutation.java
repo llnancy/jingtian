@@ -8,7 +8,9 @@ import graphql.schema.DataFetchingEnvironment;
 import graphql.schema.SelectedField;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
+import org.springframework.validation.annotation.Validated;
 
+import javax.validation.Valid;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
@@ -22,9 +24,10 @@ import java.util.stream.Collectors;
  */
 @Component
 @Slf4j
+@Validated
 public class BankAccountMutation implements GraphQLMutationResolver {
 
-    public BankAccount createBankAccount(CreateBankAccountInput input, DataFetchingEnvironment environment) {
+    public BankAccount createBankAccount(@Valid CreateBankAccountInput input, DataFetchingEnvironment environment) {
         log.info("Creating bank account for {}", input.getFirstName());
 
         Set<String> requestedFields = environment.getSelectionSet()
