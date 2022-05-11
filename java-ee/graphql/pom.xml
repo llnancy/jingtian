@@ -47,6 +47,12 @@
             <artifactId>graphql-spring-boot-starter</artifactId>
             <version>${graphql.starter.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.graphql-java-kickstart</groupId>
+            <artifactId>graphql-spring-boot-starter-test</artifactId>
+            <version>${graphql.starter.version}</version>
+            <scope>test</scope>
+        </dependency>
         <!-- graphql的一个网页IDE -->
         <dependency>
             <groupId>com.graphql-java-kickstart</groupId>
@@ -83,6 +89,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-core</artifactId>
         </dependency>
     </dependencies>
 </project>
