@@ -5,14 +5,14 @@ import lombok.EqualsAndHashCode;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.annotation.Nonnull;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.Objects;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.TimeoutException;
+import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import static com.sunchaser.sparrow.javase.shell.ShellCommandExecutor.Status.SUCCESS;
@@ -21,26 +21,68 @@ import static com.sunchaser.sparrow.javase.shell.ShellCommandExecutor.Status.WAR
 /**
  * 对Java执行shell命令的封装
  *
- * @see "org.apache.zookeeper.Shell"
  * @author sunchaser admin@lilu.org.cn
+ * @see "org.apache.zookeeper.Shell"
  * @since JDK8 2022/2/21
  */
 @Slf4j
 public class ShellCommandExecutor {
 
+    /**
+     * 线程池
+     */
+    private static final ExecutorService SHELL_COMMAND_EXECUTOR;
+
+    /**
+     * 换行符
+     */
+    private static final String LINE_SEPARATOR;
+
+    /**
+     * default timeout interval, 60s. timeunit is millis
+     */
+    private static final Long DEFAULT_TIMEOUT_INTERVAL;
+
+    static {
+        int cpu = Runtime.getRuntime().availableProcessors();
+        log.info("Runtime.getRuntime().availableProcessors() = {}", cpu);
+        SHELL_COMMAND_EXECUTOR = Executors.newFixedThreadPool(
+                cpu - 1,
+                new ThreadFactory() {
+                    private final ThreadFactory defaultFactory = Executors.defaultThreadFactory();
+                    private final AtomicInteger threadNumber = new AtomicInteger(1);
+
+                    @Override
+                    public Thread newThread(@Nonnull Runnable r) {
+                        Thread thread = this.defaultFactory.newThread(r);
+                        if (!thread.isDaemon()) {
+                            thread.setDaemon(true);
+                        }
+                        thread.setName("shell-command-" + this.threadNumber.getAndIncrement());
+                        return thread;
+                    }
+                }
+        );
+        LINE_SEPARATOR = "line.separator";
+        DEFAULT_TIMEOUT_INTERVAL = 60000L;
+    }
+
+    /**
+     * command
+     */
     private final Command command;
 
+    /**
+     * result
+     */
     private final Result result;
 
+    /* getter */
     public Result getResult() {
         return result;
     }
 
-    /**
-     * default timeout interval. timeunit is millis
-     */
-    private static final Long DEFAULT_TIMEOUT_INTERVAL = 0L;
-
+    /* constructors begin */
     public ShellCommandExecutor(String[] commandStrings) {
         this(commandStrings, (File) null);
     }
@@ -63,55 +105,88 @@ public class ShellCommandExecutor {
 
     public ShellCommandExecutor(String[] commandStrings, File dir, Map<String, String> env, Long timeOutInterval) {
         command = new Command();
+        result = new Result();
         command.setCommand(commandStrings);
+        result.setCommand(commandStrings);
         if (Objects.nonNull(dir)) {
             command.setDir(dir);
+            result.setDir(dir);
         }
         if (Objects.nonNull(env)) {
             command.setEnvironment(env);
+            result.setEnvironment(env);
         }
         if (Objects.nonNull(timeOutInterval)) {
             command.setTimeOutInterval(timeOutInterval);
+            result.setTimeOutInterval(timeOutInterval);
         } else {
-            command.setTimeOutInterval(DEFAULT_TIMEOUT_INTERVAL);
+            command.setTimeOutInterval(0L);
+            result.setTimeOutInterval(0L);
         }
-        result = new Result();
-        result.setCommand(commandStrings);
     }
+    /* constructors end */
 
-    public void execute() {
-        this.run();
-    }
-
-    protected void run() {
-        Worker worker = null;
-        Process process = null;
-        try {
-            ProcessBuilder builder = prepareProcessBuilder();
-            process = builder.start();
-            worker = new Worker(process, result);
-            worker.start();
-            Long timeOutInterval = command.getTimeOutInterval();
-            worker.join(timeOutInterval);
-            if (Objects.isNull(result.exitCode)) {
-                throw new TimeoutException("CommandExecutor执行命令" + command + "超时, timeOutInterval=" + timeOutInterval);
+    public Result execute() {
+        Future<Result> future = SHELL_COMMAND_EXECUTOR.submit(() -> {
+            InputStream is = null;
+            Process process = null;
+            try {
+                process = prepareProcessBuilder().start();
+                is = process.getInputStream();
+                StringBuilder execInfoBuilder = result.getExecInfoBuilder();
+                InputStreamReader isr = new InputStreamReader(is);
+                BufferedReader br = new BufferedReader(isr);
+                String line;
+                while ((line = br.readLine()) != null) {
+                    execInfoBuilder.append(line);
+                    execInfoBuilder.append(System.getProperty(LINE_SEPARATOR));
+                }
+                int exitCode = process.waitFor();
+                result.exitCode = exitCode;
+                if (exitCode == 0) {
+                    if (log.isDebugEnabled()) {
+                        log.debug("ShellCommandExecutor执行shell命令的子线程正常执行完成结束. exitCode == 0");
+                    }
+                } else {
+                    if (log.isDebugEnabled()) {
+                        log.debug("ShellCommandExecutor执行shell命令的子线程执行失败异常结束. exitCode == {}", exitCode);
+                    }
+                }
+                result.print();
+            } catch (Exception e) {
+                log.error("[ShellCommandExecutor] execute error", e);
+                throw new ShellCommandExecutorException(e);
+            } finally {
+                if (Objects.nonNull(is)) {
+                    try {
+                        is.close();
+                    } catch (Exception e) {
+                        // 静默关闭
+                    }
+                }
+                if (Objects.nonNull(process)) {
+                    process.destroy();
+                }
             }
-        } catch (InterruptedException e) {
-            log.error("ShellCommandExecutor#Worker#join interrupted exception.", e);
-            worker.interrupt();
-            Thread.currentThread().interrupt();
-        } catch (Exception e) {
-            log.error("ShellCommandExecutor#run error");
-            throw new ShellCommandExecutorException(e);
-        } finally {
-            if (Objects.nonNull(process)) {
-                process.destroy();
+            return result;
+        });
+        Long timeOutInterval = command.getTimeOutInterval();
+        if (timeOutInterval > 0) {
+            try {
+                future.get(timeOutInterval, TimeUnit.MILLISECONDS);
+            } catch (TimeoutException e) {
+                log.error("[ShellCommandExecutor] future get timeout", e);
+                future.cancel(true);
+            } catch (Exception e) {
+                log.error("[ShellCommandExecutor] future get error", e);
             }
         }
+        return result;
     }
 
     private ProcessBuilder prepareProcessBuilder() {
         ProcessBuilder builder = new ProcessBuilder(command.getCommand());
+        builder.redirectErrorStream(true);
 
         Map<String, String> environment = command.getEnvironment();
         File dir = command.getDir();
@@ -145,7 +220,7 @@ public class ShellCommandExecutor {
         }
 
         public static Result execute(String command, File dir) {
-            return execute(command, dir, 0L);
+            return execute(command, dir, DEFAULT_TIMEOUT_INTERVAL);
         }
 
         public static Result execute(String command, String navigatePath, Long timeout) {
@@ -173,7 +248,7 @@ public class ShellCommandExecutor {
         }
 
         public static Result execute(String[] commands, File dir) {
-            return execute(commands, dir, 0L);
+            return execute(commands, dir, DEFAULT_TIMEOUT_INTERVAL);
         }
 
         public static Result execute(String[] commands, String navigatePath, Long timeout) {
@@ -189,136 +264,11 @@ public class ShellCommandExecutor {
         }
 
         public static Result execute(String[] commands, File dir, Map<String, String> env, Long timeout) {
-            ShellCommandExecutor shellCommandExecutor = new ShellCommandExecutor(commands, dir, env, timeout);
-            shellCommandExecutor.execute();
-            return shellCommandExecutor.getResult();
+            return new ShellCommandExecutor(commands, dir, env, timeout).execute();
         }
 
         public static File getSafeFile(String navigatePath) {
             return (navigatePath == null || navigatePath.length() == 0) ? null : new File(navigatePath);
-        }
-    }
-
-    /**
-     * 任务执行者
-     */
-    private static class Worker extends Thread {
-
-        /**
-         * Process对象，用来获取标准输入流
-         */
-        private final Process process;
-
-        /**
-         * 执行结果
-         */
-        private final Result result;
-
-        /**
-         * 收集缓冲区字符的线程池
-         */
-        private final ExecutorService executorService;
-
-        /* constructors begin */
-        public Worker(Process process, Result result) {
-            this.process = process;
-            this.result = result;
-            this.executorService = Executors.newFixedThreadPool(2, new ThreadFactory() {
-                private final ThreadFactory defaultFactory = Executors.defaultThreadFactory();
-                private final AtomicInteger threadNumber = new AtomicInteger(1);
-
-                @Override
-                public Thread newThread(@Nonnull Runnable r) {
-                    Thread thread = this.defaultFactory.newThread(r);
-                    if (!thread.isDaemon()) {
-                        thread.setDaemon(true);
-                    }
-                    thread.setName("shell-command-" + this.threadNumber.getAndIncrement());
-                    return thread;
-                }
-            });
-        }
-
-        public Worker(Process process, Result result, ExecutorService executorService) {
-            this.process = process;
-            this.result = result;
-            this.executorService = executorService;
-        }
-        /* constructors end */
-
-        /**
-         * worker start invoke
-         */
-        @Override
-        public void run() {
-            try {
-                InputStream inputStream = process.getInputStream();
-                InputStream errorStream = process.getErrorStream();
-                executorService.execute(new Task(inputStream, result.execInfoBuilder));
-                executorService.execute(new Task(errorStream, result.execErrorBuilder));
-                int exitCode = process.waitFor();
-                result.exitCode = exitCode;
-                if (exitCode == 0) {
-                    if (log.isDebugEnabled()) {
-                        log.debug("ShellCommandExecutor执行shell命令的子线程正常执行完成结束. exitCode == 0");
-                    }
-                } else {
-                    if (log.isDebugEnabled()) {
-                        log.debug("ShellCommandExecutor执行shell命令的子线程执行失败异常结束. exitCode == {}", exitCode);
-                    }
-                }
-            } catch (InterruptedException e) {
-                log.error("ShellCommandExecutor.Worker#run interrupted exception", e);
-                throw new ShellCommandExecutorException(e);
-            }
-        }
-    }
-
-    /**
-     * 任务：收集缓冲区中的字符内容
-     */
-    private static class Task implements Runnable {
-
-        /**
-         * 标准输入流
-         */
-        private final InputStream is;
-
-        /**
-         * 从流中读取的字符
-         */
-        private final StringBuilder output;
-
-        /**
-         * 行分隔符
-         */
-        private static final String LINE_SEPARATOR = "line.separator";
-
-        /**
-         * Constructor
-         * @param is InputStream
-         * @param output StringBuilder
-         */
-        public Task(InputStream is, StringBuilder output) {
-            this.is = is;
-            this.output = output;
-        }
-
-        /**
-         * the task
-         */
-        @Override
-        public void run() {
-            try (InputStreamReader isr = new InputStreamReader(is); BufferedReader br = new BufferedReader(isr)) {
-                String line;
-                while ((line = br.readLine()) != null) {
-                    output.append(line);
-                    output.append(System.getProperty(LINE_SEPARATOR));
-                }
-            } catch (IOException e) {
-                log.error("[ShellCommandExecutor.Task] Error reading the error stream", e);
-                throw new ShellCommandExecutorException(e);
-            }
         }
     }
 
@@ -384,13 +334,7 @@ public class ShellCommandExecutor {
          * 打印输出执行的shell命令和缓冲区内容
          */
         public void print() {
-            log.info("command: {}", Arrays.toString(this.getCommand()));
-            if (this.execInfoBuilder.length() != 0) {
-                log.info("info: {}", this.getExecInfoBuilder().toString());
-            }
-            if (this.execErrorBuilder.length() != 0) {
-                log.info("error: {}", this.getExecErrorBuilder().toString());
-            }
+            log.info("command: {}, exitCode: {}, timeout={}ms, execute result:\n{}", Arrays.toString(this.getCommand()), exitCode, this.getTimeOutInterval(), this.getExecInfoBuilder().toString());
         }
     }
 
@@ -400,11 +344,6 @@ public class ShellCommandExecutor {
     public enum Status {
         SUCCESS, WARN,
         ;
-
-        @Override
-        public String toString() {
-            return super.toString().toLowerCase();
-        }
     }
 
     public static class ShellCommandExecutorException extends RuntimeException {
