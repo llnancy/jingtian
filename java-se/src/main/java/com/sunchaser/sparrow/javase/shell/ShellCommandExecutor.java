@@ -45,7 +45,7 @@ public class ShellCommandExecutor {
 
     static {
         int cpu = Runtime.getRuntime().availableProcessors();
-        log.info("Runtime.getRuntime().availableProcessors() = {}", cpu);
+        LOGGER.info("Runtime.getRuntime().availableProcessors() = {}", cpu);
         SHELL_COMMAND_EXECUTOR = Executors.newFixedThreadPool(
                 cpu - 1,
                 new ThreadFactory() {
@@ -144,17 +144,17 @@ public class ShellCommandExecutor {
                 int exitCode = process.waitFor();
                 result.exitCode = exitCode;
                 if (exitCode == 0) {
-                    if (log.isDebugEnabled()) {
-                        log.debug("ShellCommandExecutor执行shell命令的子线程正常执行完成结束. exitCode == 0");
+                    if (LOGGER.isDebugEnabled()) {
+                        LOGGER.debug("ShellCommandExecutor执行shell命令的子线程正常执行完成结束. exitCode == 0");
                     }
                 } else {
-                    if (log.isDebugEnabled()) {
-                        log.debug("ShellCommandExecutor执行shell命令的子线程执行失败异常结束. exitCode == {}", exitCode);
+                    if (LOGGER.isDebugEnabled()) {
+                        LOGGER.debug("ShellCommandExecutor执行shell命令的子线程执行失败异常结束. exitCode == {}", exitCode);
                     }
                 }
                 result.print();
             } catch (Exception e) {
-                log.error("[ShellCommandExecutor] execute error", e);
+                LOGGER.error("[ShellCommandExecutor] execute error", e);
                 throw new ShellCommandExecutorException(e);
             } finally {
                 if (Objects.nonNull(is)) {
@@ -175,10 +175,10 @@ public class ShellCommandExecutor {
             try {
                 future.get(timeOutInterval, TimeUnit.MILLISECONDS);
             } catch (TimeoutException e) {
-                log.error("[ShellCommandExecutor] future get timeout", e);
+                LOGGER.error("[ShellCommandExecutor] future get timeout", e);
                 future.cancel(true);
             } catch (Exception e) {
-                log.error("[ShellCommandExecutor] future get error", e);
+                LOGGER.error("[ShellCommandExecutor] future get error", e);
             }
         }
         return result;
@@ -334,7 +334,7 @@ public class ShellCommandExecutor {
          * 打印输出执行的shell命令和缓冲区内容
          */
         public void print() {
-            log.info("command: {}, exitCode: {}, timeout={}ms, execute result:\n{}", Arrays.toString(this.getCommand()), exitCode, this.getTimeOutInterval(), this.getExecInfoBuilder().toString());
+            LOGGER.info("command: {}, exitCode: {}, timeout={}ms, execute result:\n{}", Arrays.toString(this.getCommand()), exitCode, this.getTimeOutInterval(), this.getExecInfoBuilder().toString());
         }
     }
 

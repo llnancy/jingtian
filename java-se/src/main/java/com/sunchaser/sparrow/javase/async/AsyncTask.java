@@ -34,7 +34,7 @@ public class AsyncTask {
             try {
                 future.get();
             } catch (InterruptedException | ExecutionException e) {
-                log.error("AsyncTask#asyncAccepts error", e);
+                LOGGER.error("AsyncTask#asyncAccepts error", e);
                 throw new AsyncRuntimeException(e);
             }
         }
@@ -58,7 +58,7 @@ public class AsyncTask {
             try {
                 resultList.add(future.get());
             } catch (InterruptedException | ExecutionException e) {
-                log.error("AsyncTask#asyncApplies error", e);
+                LOGGER.error("AsyncTask#asyncApplies error", e);
                 throw new AsyncRuntimeException(e);
             }
         }

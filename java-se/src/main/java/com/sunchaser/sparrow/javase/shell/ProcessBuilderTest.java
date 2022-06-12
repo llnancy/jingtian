@@ -46,7 +46,7 @@ public class ProcessBuilderTest {
         BufferedReader br = new BufferedReader(new InputStreamReader(is));
         String line;
         while ((line = br.readLine()) != null) {
-            log.info("CommandExecutor collectStreamInfo: " + line);
+            LOGGER.info("CommandExecutor collectStreamInfo: " + line);
             collector.add(line);
         }
     }
