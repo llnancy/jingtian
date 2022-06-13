@@ -14,6 +14,7 @@ import java.util.Map;
  */
 @Slf4j
 public class ProcessBuilderTest {
+
     public static void main(String[] args) throws IOException, InterruptedException {
         ProcessBuilder builder = new ProcessBuilder("/bin/sh", "-c", "curl https://lilu.org.cn/");
 
