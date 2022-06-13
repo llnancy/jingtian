@@ -23,10 +23,10 @@ public class TestFileChannelTransferTo {
             // 一次最多传输2G数据
             // from.transferTo(0, from.size(), to);
             long size = from.size();
-            long left = size;
-            while (left > 0) {
-                LOGGER.info("position:{}, left:{}", (size - left), left);
-                left -= from.transferTo((size - left), left, to);
+            long transfer = size;
+            while (transfer > 0) {
+                LOGGER.info("position:{}, transfer:{}", (size - transfer), transfer);
+                transfer -= from.transferTo((size - transfer), transfer, to);
             }
         } catch (IOException e) {
             e.printStackTrace();
