@@ -10,8 +10,8 @@ import java.util.Objects;
  */
 public class Utils {
 
-    public static String path(String fileName) {
-        return Objects.requireNonNull(Utils.class.getResource(""))
+    public static String path(Class<?> clazz, String fileName) {
+        return Objects.requireNonNull(clazz.getResource(""))
                 .getPath()
                 .replace("target/classes", "src/main/java") + fileName;
     }

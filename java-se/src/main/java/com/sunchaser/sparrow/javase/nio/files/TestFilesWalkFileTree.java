@@ -1,4 +1,4 @@
-package com.sunchaser.sparrow.javase.nio;
+package com.sunchaser.sparrow.javase.nio.files;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -21,7 +21,7 @@ public class TestFilesWalkFileTree {
         AtomicInteger dirCount = new AtomicInteger();
         // 文件数量
         AtomicInteger fileCount = new AtomicInteger();
-        Files.walkFileTree(Paths.get("java-se"), new SimpleFileVisitor<Path>() {
+        Files.walkFileTree(Paths.get("sunchaser-sparrow/java-se"), new SimpleFileVisitor<Path>() {
 
             @Override
             public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) throws IOException {

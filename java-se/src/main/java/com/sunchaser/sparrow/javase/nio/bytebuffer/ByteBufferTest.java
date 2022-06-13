@@ -1,5 +1,6 @@
-package com.sunchaser.sparrow.javase.nio;
+package com.sunchaser.sparrow.javase.nio.bytebuffer;
 
+import com.sunchaser.sparrow.javase.nio.Utils;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.FileInputStream;
@@ -17,7 +18,7 @@ import java.nio.channels.FileChannel;
 public class ByteBufferTest {
 
     public static void main(String[] args) {
-        try (FileChannel channel = new FileInputStream(Utils.path("data.txt")).getChannel()) {
+        try (FileChannel channel = new FileInputStream(Utils.path(ByteBufferTest.class, "data.txt")).getChannel()) {
             // 给buffer分配10个字节
             ByteBuffer buffer = ByteBuffer.allocate(10);
             // 从channel读取数据到buffer

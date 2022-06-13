@@ -1,4 +1,6 @@
-package com.sunchaser.sparrow.javase.nio;
+package com.sunchaser.sparrow.javase.nio.bytebuffer;
+
+import com.sunchaser.sparrow.javase.nio.Utils;
 
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -18,7 +20,7 @@ public class TestScatteringReads {
 
     public static void main(String[] args) {
         // 长度已知，一次读取到多个ByteBuffer中
-        try (FileChannel channel = new RandomAccessFile(Utils.path("reads.txt"), "r").getChannel()) {
+        try (FileChannel channel = new RandomAccessFile(Utils.path(TestScatteringReads.class, "reads.txt"), "r").getChannel()) {
             ByteBuffer b1 = ByteBuffer.allocate(3);
             ByteBuffer b2 = ByteBuffer.allocate(3);
             ByteBuffer b3 = ByteBuffer.allocate(5);

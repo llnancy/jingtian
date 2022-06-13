@@ -1,4 +1,6 @@
-package com.sunchaser.sparrow.javase.nio;
+package com.sunchaser.sparrow.javase.nio.bytebuffer;
+
+import com.sunchaser.sparrow.javase.nio.Utils;
 
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -20,7 +22,7 @@ public class TestGatheringWrites {
         ByteBuffer b2 = StandardCharsets.UTF_8.encode("world");
         ByteBuffer b3 = StandardCharsets.UTF_8.encode("你好");
 
-        try (FileChannel channel = new RandomAccessFile(Utils.path("writes.txt"), "rw").getChannel()) {
+        try (FileChannel channel = new RandomAccessFile(Utils.path(TestGatheringWrites.class, "writes.txt"), "rw").getChannel()) {
             channel.write(new ByteBuffer[] {b1, b2, b3});
         } catch (IOException e) {
             e.printStackTrace();

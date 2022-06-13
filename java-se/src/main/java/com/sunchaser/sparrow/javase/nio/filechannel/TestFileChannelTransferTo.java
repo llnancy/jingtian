@@ -1,5 +1,6 @@
-package com.sunchaser.sparrow.javase.nio;
+package com.sunchaser.sparrow.javase.nio.filechannel;
 
+import com.sunchaser.sparrow.javase.nio.Utils;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.FileInputStream;
@@ -17,8 +18,8 @@ import java.nio.channels.FileChannel;
 public class TestFileChannelTransferTo {
 
     public static void main(String[] args) {
-        try (FileChannel from = new FileInputStream(Utils.path("from.txt")).getChannel();
-             FileChannel to = new FileOutputStream(Utils.path("to.txt")).getChannel()) {
+        try (FileChannel from = new FileInputStream(Utils.path(TestFileChannelTransferTo.class, "from.txt")).getChannel();
+             FileChannel to = new FileOutputStream(Utils.path(TestFileChannelTransferTo.class, "to.txt")).getChannel()) {
             // 底层使用操作系统的零拷贝
             // 一次最多传输2G数据
             // from.transferTo(0, from.size(), to);
