@@ -30,9 +30,7 @@ public class NIOSelectorServer {
             SelectionKey sscKey = ssc.register(selector, SelectionKey.OP_ACCEPT);
             LOGGER.debug("register key: {}", sscKey);
             ssc.bind(new InetSocketAddress(8080));
-            int i = 0;
-            while (i < 10) {
-                i++;
+            while (true) {
                 // select()方法：
                 // 没有事件发生时，线程阻塞；有事件到来时，线程恢复运行。
                 // 事件要么进行处理，要么进行取消。如果不管事件，线程非阻塞，下次select仍会触发该事件（nio底层是水平触发）。
@@ -45,26 +43,16 @@ public class NIOSelectorServer {
                 while (iter.hasNext()) {
                     SelectionKey key = iter.next();
                     LOGGER.debug("key: {}", key);
+                    // key必须进行处理，且处理完后必须从集合中删除。
+                    iter.remove();
                     if (key.isAcceptable()) {
-                        ServerSocketChannel channel = (ServerSocketChannel) key.channel();
-                        // 处理事件
-                        SocketChannel sc = channel.accept();
-                        sc.configureBlocking(false);
-                        sc.register(selector, SelectionKey.OP_READ);
-                        LOGGER.debug("sc: {}", sc);
-                        // doAccept(selector, key);
+                        doAccept(selector, key);
                     } else if (key.isReadable()) {
-                        // doRead(key);
-                        SocketChannel channel = (SocketChannel) key.channel();
-                        ByteBuffer buffer = ByteBuffer.allocate(16);
-                        channel.read(buffer);
-                        buffer.flip();
-                        ByteBuffers.debugRead(buffer);
+                        // 客户端主动断开连接时，为了让服务端感知到断开，会触发OP_READ读事件，从channel中读数据会返回-1。
+                        doRead(key);
                     }
                     // 取消事件
                     // key.cancel();
-                    // key必须进行处理，且处理完后必须从集合中删除。
-                    iter.remove();
                 }
             }
         } catch (IOException e) {
@@ -72,20 +60,60 @@ public class NIOSelectorServer {
         }
     }
 
-    private static void doRead(SelectionKey key) throws IOException {
-        SocketChannel channel = (SocketChannel) key.channel();
-        ByteBuffer buffer = ByteBuffer.allocate(16);
-        channel.read(buffer);
-        buffer.flip();
-        ByteBuffers.debugRead(buffer);
-    }
-
     private static void doAccept(Selector selector, SelectionKey key) throws IOException {
         ServerSocketChannel channel = (ServerSocketChannel) key.channel();
         // 处理事件
         SocketChannel sc = channel.accept();
         sc.configureBlocking(false);
-        sc.register(selector, SelectionKey.OP_READ);
+        ByteBuffer buffer = ByteBuffer.allocate(16);// attachment
+        // 将一个ByteBuffer作为attachment附件关联到selectionKey上
+        sc.register(selector, SelectionKey.OP_READ, buffer);
         LOGGER.debug("sc: {}", sc);
+    }
+
+    private static void doRead(SelectionKey key) throws IOException {
+        SocketChannel channel = (SocketChannel) key.channel();
+        // 获取selectionKey上关联的附件
+        ByteBuffer buffer = (ByteBuffer) key.attachment();
+        int read = channel.read(buffer);
+        if (read < 0) {// 无数据可读时返回0，小于0说明客户端断开连接了。
+            // 关闭channel
+            channel.close();
+            // 取消事件
+            key.cancel();
+            return;
+        }
+        split(buffer);
+        // compact压缩之后无变化说明没有以\n结尾的字节，此buffer不是一条完整的消息，需要进行扩容
+        if (buffer.position() == buffer.limit()) {
+            // 扩容2倍
+            ByteBuffer newBuffer = ByteBuffer.allocate(buffer.capacity() * 2);
+            buffer.flip();
+            // 将旧buffer内容填入扩容后的新buffer
+            newBuffer.put(buffer);
+            // 将扩容后的newBuffer作为附件与selectionKey进行关联
+            key.attach(newBuffer);
+        }
+    }
+
+    /**
+     * 消息以\n分隔时
+     * 拆分出一条完整消息
+     *
+     * @param source 源ByteBuffer
+     */
+    private static void split(ByteBuffer source) {
+        source.flip();
+        for (int i = 0; i < source.limit(); i++) {
+            if (source.get(i) == '\n') {
+                int length = i + 1 - source.position();
+                ByteBuffer target = ByteBuffer.allocate(length);
+                for (int j = 0; j < length; j++) {
+                    target.put(source.get());
+                }
+                ByteBuffers.debugAll(target);
+            }
+        }
+        source.compact();
     }
 }

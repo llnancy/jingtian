@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.channels.SocketChannel;
+import java.nio.charset.Charset;
 
 /**
  * NIO Client端
@@ -19,6 +20,9 @@ public class NIOClient {
         try (SocketChannel sc = SocketChannel.open()) {
             sc.connect(new InetSocketAddress("127.0.0.1", 8080));
             LOGGER.debug("waiting");
+            sc.write(Charset.defaultCharset().encode("hello\n"));
+            sc.write(Charset.defaultCharset().encode("0123456789abcdefgsunchaser\n"));
+            System.in.read();
         } catch (IOException e) {
             e.printStackTrace();
         }
