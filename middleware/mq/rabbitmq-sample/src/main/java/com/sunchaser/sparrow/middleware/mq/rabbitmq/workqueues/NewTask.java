@@ -12,6 +12,7 @@ import java.util.Scanner;
  * @since JDK8 2022/4/18
  */
 public class NewTask {
+
     private static final String QUEUE_NAME = "hello";
 
     public static void main(String[] args) throws Exception {

@@ -12,6 +12,7 @@ import com.sunchaser.sparrow.middleware.mq.rabbitmq.common.RabbitMqHelper;
  * @since JDK8 2022/4/18
  */
 public class TopicReceiveLogsInConsole {
+
     private static final String EXCHANGE_NAME = "topic_logs";
 
     public static void main(String[] args) throws Exception {

@@ -15,6 +15,7 @@ import java.io.File;
  * @since JDK8 2022/4/18
  */
 public class DirectReceiveLogsInFile {
+
     private static final String EXCHANGE_NAME = "direct_logs";
 
     public static void main(String[] args) throws Exception {

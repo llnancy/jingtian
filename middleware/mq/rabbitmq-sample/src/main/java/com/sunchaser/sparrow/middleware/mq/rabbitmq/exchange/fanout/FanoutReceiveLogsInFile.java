@@ -16,6 +16,7 @@ import java.nio.charset.StandardCharsets;
  * @since JDK8 2022/4/18
  */
 public class FanoutReceiveLogsInFile {
+
     private static final String EXCHANGE_NAME = "logs";
 
     public static void main(String[] args) throws Exception {

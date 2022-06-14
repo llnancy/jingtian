@@ -12,6 +12,7 @@ import java.util.concurrent.TimeoutException;
  * @since JDK8 2022/4/15
  */
 public class Consumer {
+
     private static final String QUEUE_NAME = "hello";
 
     public static void main(String[] args) throws IOException, TimeoutException {

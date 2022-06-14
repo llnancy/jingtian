@@ -12,6 +12,7 @@ import com.sunchaser.sparrow.middleware.mq.rabbitmq.common.RabbitMqHelper;
  * @since JDK8 2022/4/18
  */
 public class QosConsumer {
+
     private static final String PERSISTENT_QUEUE_NAME = "persistent_queue";
 
     public static void main(String[] args) throws Exception {

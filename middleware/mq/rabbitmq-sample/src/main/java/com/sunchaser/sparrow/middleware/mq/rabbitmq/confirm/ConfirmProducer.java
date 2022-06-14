@@ -16,7 +16,9 @@ import java.util.concurrent.ConcurrentSkipListMap;
  * @since JDK8 2022/4/18
  */
 public class ConfirmProducer {
+
     private static final String QUEUE_NAME = "confirm_queue";
+
     private static final int COUNT = 1000;
 
     public static void main(String[] args) throws Exception {

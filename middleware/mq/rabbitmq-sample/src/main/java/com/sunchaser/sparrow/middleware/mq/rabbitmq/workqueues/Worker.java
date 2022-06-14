@@ -12,6 +12,7 @@ import com.sunchaser.sparrow.middleware.mq.rabbitmq.common.RabbitMqHelper;
  * @since JDK8 2022/4/15
  */
 public class Worker {
+
     private static final String QUEUE_NAME = "hello";
 
     public static void main(String[] args) throws Exception {
