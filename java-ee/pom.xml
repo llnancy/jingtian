@@ -29,6 +29,7 @@
         <module>grpc</module>
         <module>spring</module>
         <module>graphql</module>
+        <module>netty</module>
     </modules>
 
 </project>
