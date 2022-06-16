@@ -8,6 +8,7 @@ import io.netty.channel.ChannelInitializer;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.codec.string.StringEncoder;
+import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
 import lombok.extern.slf4j.Slf4j;
 
@@ -30,7 +31,7 @@ public class CloseFutureClient {
                     @Override
                     protected void initChannel(NioSocketChannel ch) throws Exception {
                         ch.pipeline()
-                                .addLast(new LoggingHandler())
+                                .addLast(new LoggingHandler(LogLevel.DEBUG))
                                 .addLast(new StringEncoder());
                     }
                 })
@@ -66,7 +67,7 @@ public class CloseFutureClient {
         closeFuture.addListener((ChannelFutureListener) future -> {
             // 在NioEventLoop线程中执行
             LOGGER.debug("优雅关闭后执行的一些操作...");
-            // 优雅关闭NioEventLoop线程
+            // 优雅关闭NioEventLoop线程，让主线程也停止。
             group.shutdownGracefully();
         });
     }
