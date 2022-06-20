@@ -1,4 +1,4 @@
-package com.sunchaser.rpc.protocol;
+package com.sunchaser.microservice.rpc.protocol;
 
 import lombok.Data;
 
@@ -10,9 +10,14 @@ import java.io.Serializable;
  */
 @Data
 public class Request implements Serializable {
+
     private static final long serialVersionUID = 4851167785488839231L;
+
     private String serviceName;
+
     private String methodName;
+
     private Class<?>[] argTypes;
+
     private Object[] args;
 }

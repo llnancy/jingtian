@@ -1,6 +1,6 @@
-package com.sunchaser.rpc.serialize.compressor.impl;
+package com.sunchaser.microservice.rpc.serialize.compressor.impl;
 
-import com.sunchaser.rpc.serialize.compressor.Compressor;
+import com.sunchaser.microservice.rpc.serialize.compressor.Compressor;
 import org.xerial.snappy.Snappy;
 
 import java.io.IOException;
@@ -13,6 +13,7 @@ import java.util.Objects;
  * @since JDK8 2021/4/12
  */
 public class SnappyCompressor implements Compressor {
+
     @Override
     public byte[] compress(byte[] data) throws IOException {
         Objects.requireNonNull(data);

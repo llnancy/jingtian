@@ -1,8 +1,8 @@
-package com.sunchaser.rpc.serialize.serializator.factory;
+package com.sunchaser.microservice.rpc.serialize.serializator.factory;
 
 import com.google.common.collect.Maps;
-import com.sunchaser.rpc.serialize.serializator.Serializer;
-import com.sunchaser.rpc.serialize.serializator.impl.HessianSerializer;
+import com.sunchaser.microservice.rpc.serialize.serializator.Serializer;
+import com.sunchaser.microservice.rpc.serialize.serializator.impl.HessianSerializer;
 import lombok.Getter;
 
 import java.util.Map;
@@ -14,21 +14,21 @@ import java.util.Optional;
  */
 public class SerializerFactory {
 
-    public static Serializer get(byte extraInfo) {
-        return SerializerEnum.match((byte) (extraInfo & 0x7)).getSerializer();
+    public static Serializer get(byte protocolInfo) {
+        return SerializerEnum.match((byte) (protocolInfo & 0x7)).getSerializer();
     }
 
     @Getter
     public enum SerializerEnum {
         HESSIAN((byte) 0x0, new HessianSerializer()),
         ;
-        private final byte extraInfo;
+        private final byte protocolInfo;
         private final Serializer serializer;
         private static final Map<Byte, SerializerEnum> enumMap = Maps.newHashMap();
 
         static {
             for (SerializerEnum serializerEnum : SerializerEnum.values()) {
-                enumMap.put(serializerEnum.extraInfo, serializerEnum);
+                enumMap.put(serializerEnum.protocolInfo, serializerEnum);
             }
         }
 
@@ -36,8 +36,8 @@ public class SerializerFactory {
             return Optional.ofNullable(enumMap.get(type)).orElse(HESSIAN);
         }
 
-        SerializerEnum(byte extraInfo, Serializer serializer) {
-            this.extraInfo = extraInfo;
+        SerializerEnum(byte protocolInfo, Serializer serializer) {
+            this.protocolInfo = protocolInfo;
             this.serializer = serializer;
         }
     }

@@ -1,8 +1,8 @@
-package com.sunchaser.rpc.serialize.serializator.impl;
+package com.sunchaser.microservice.rpc.serialize.serializator.impl;
 
 import com.caucho.hessian.io.HessianInput;
 import com.caucho.hessian.io.HessianOutput;
-import com.sunchaser.rpc.serialize.serializator.Serializer;
+import com.sunchaser.microservice.rpc.serialize.serializator.Serializer;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
