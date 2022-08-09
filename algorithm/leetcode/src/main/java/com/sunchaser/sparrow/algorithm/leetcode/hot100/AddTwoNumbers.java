@@ -1,15 +1,18 @@
 package com.sunchaser.sparrow.algorithm.leetcode.hot100;
 
 import com.sunchaser.sparrow.algorithm.common.ListNode;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * 两数相加
- * https://leetcode-cn.com/problems/add-two-numbers/
+ * <a href="https://leetcode-cn.com/problems/add-two-numbers/">https://leetcode-cn.com/problems/add-two-numbers/</a>
  *
  * @author sunchaser admin@lilu.org.cn
  * @since JDK8 2021/12/17
  */
+@Slf4j
 public class AddTwoNumbers {
+
     public static void main(String[] args) {
         ListNode l1 = new ListNode(2);
         ListNode l11 = new ListNode(4);
@@ -21,7 +24,8 @@ public class AddTwoNumbers {
         l11.next = l12;
         l2.next = l21;
         l21.next = l22;
-        System.out.println(addTwoNumbers(l1, l2));
+        ListNode res = addTwoNumbers(l1, l2);
+        LOGGER.info("addTwoNumbers: {}", res);
     }
 
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {

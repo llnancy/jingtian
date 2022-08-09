@@ -1,31 +1,29 @@
 package com.sunchaser.sparrow.algorithm.leetcode.easy;
 
-import java.util.Arrays;
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * 1. 两数之和
- * <p>
- * https://leetcode-cn.com/problems/two-sum/
+ * <a href="https://leetcode-cn.com/problems/two-sum/">https://leetcode-cn.com/problems/two-sum/</a>
  *
- * @author sunchaser
+ * @author sunchaser admin@lilu.org.cn
  * @since JDK8 2019/7/15
  */
+@Slf4j
 public class TwoSum {
+
     public static void main(String[] args) {
         int[] nums = {2, 7, 11, 15};
         int target = 9;
         int[] result = fun2(nums, target);
-        Arrays.stream(result).forEach(System.out::println);
+        LOGGER.info("result: {}", result);
     }
 
     /**
      * 暴力法
-     *
-     * @param nums
-     * @param target
-     * @return
      */
     public static int[] fun1(int[] nums, int target) {
         for (int i = 0; i < nums.length; i++) {
@@ -40,13 +38,9 @@ public class TwoSum {
 
     /**
      * 一遍哈希表法
-     *
-     * @param nums
-     * @param target
-     * @return
      */
     public static int[] fun2(int[] nums, int target) {
-        Map<Integer, Integer> map = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>(nums.length);
         for (int i = 0; i < nums.length; i++) {
             // 待找寻的第二个数
             int num2 = target - nums[i];

@@ -5,19 +5,18 @@ import java.util.Map;
 
 /**
  * 无重复字符的最长子串
- * https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
+ * <a href="https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/">https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/</a>
  *
  * @author sunchaser admin@lilu.org.cn
  * @since 2022/1/6
  */
 public class LongestSubstringWithoutRepeatingCharacters {
+
     public static int lengthOfLongestSubstring(String s) {
         char[] sArr = s.toCharArray();
         // 定义窗口
-        Map<Character, Integer> window = new HashMap<>();
-        int left = 0;
-        int right = 0;
-        int res = 0;
+        Map<Character, Integer> window = new HashMap<>(sArr.length);
+        int left = 0, right = 0, res = 0;
         while (right < sArr.length) {
             // 右侧移入窗口
             char c = sArr[right++];
