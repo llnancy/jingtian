@@ -1,33 +1,42 @@
-package com.sunchaser.sparrow.javase.juc;
+package com.sunchaser.sparrow.javase.concurrency;
+
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.TimeUnit;
 
 /**
  * 死锁演示
+ *
  * @author sunchaser admin@lilu.org.cn
  * @since JDK8 2021/7/16
  */
+@Slf4j
 public class DeadLock {
-    private static final Object lockObject1 = new Object();
-    private static final Object lockObject2 = new Object();
+
+    private static final Object LOCK_OBJECT_1 = new Object();
+
+    private static final Object LOCK_OBJECT_2 = new Object();
+
     private void deadLock() {
         new Thread(() -> {
-            synchronized (lockObject1) {
+            synchronized (LOCK_OBJECT_1) {
+                LOGGER.info("Thread one get lock object 1.");
                 try {
-                    TimeUnit.SECONDS.sleep(2);
+                    TimeUnit.SECONDS.sleep(1);
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    throw new RuntimeException(e);
                 }
-                synchronized (lockObject2) {
-                    System.out.println("lock object 2.");
+                synchronized (LOCK_OBJECT_2) {
+                    LOGGER.info("Thread one get lock object 2.");
                 }
             }
         }).start();
 
         new Thread(() -> {
-            synchronized (lockObject2) {
-                synchronized (lockObject1) {
-                    System.out.println("lock object 1.");
+            synchronized (LOCK_OBJECT_2) {
+                LOGGER.info("Thread two get lock object 2.");
+                synchronized (LOCK_OBJECT_1) {
+                    LOGGER.info("Thread two get lock object 1.");
                 }
             }
         }).start();
@@ -37,7 +46,7 @@ public class DeadLock {
         new DeadLock().deadLock();
     }
 
-    /**
+    /*
      * 如何避免死锁：
      * 1、避免一个线程同时获取多个锁。
      * 2、避免一个线程在锁内同时占用多个资源，尽量保证每个锁只占用一个资源。

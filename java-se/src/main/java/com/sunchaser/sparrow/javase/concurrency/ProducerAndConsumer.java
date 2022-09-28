@@ -22,6 +22,78 @@ public class ProducerAndConsumer {
 
     public static void main(String[] args) {
         // baseBlockingQueue();
+
+        // baseCondition();
+
+        baseWaitNotify();
+    }
+
+    private static void baseWaitNotify() {
+        // 基于wait-notify机制实现的阻塞队列
+        MyBlockingQueueBaseWaitNotify<String> queue = new MyBlockingQueueBaseWaitNotify<>();
+        // 生产者
+        Runnable producer = () -> {
+            while (true) {
+                try {
+                    String data = UUID.randomUUID().toString();
+                    queue.put(data);
+                    LOGGER.info("producer put data: {}", data);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        };
+        // 启动生产者
+        new Thread(producer).start();
+        new Thread(producer).start();
+        // 消费者
+        Runnable consumer = () -> {
+            while (true) {
+                try {
+                    String take = queue.take();
+                    LOGGER.info("consumer take result is {}.", take);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        };
+        // 启动消费者
+        new Thread(consumer).start();
+        new Thread(consumer).start();
+    }
+
+    private static void baseCondition() {
+        // 基于Condition实现的阻塞队列
+        MyBlockingQueueBaseCondition<String> queue = new MyBlockingQueueBaseCondition<>(10);
+        // 生产者
+        Runnable producer = () -> {
+            while (true) {
+                try {
+                    String data = UUID.randomUUID().toString();
+                    queue.put(data);
+                    LOGGER.info("producer put data: {}", data);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        };
+        // 启动生产者
+        new Thread(producer).start();
+        new Thread(producer).start();
+        // 消费者
+        Runnable consumer = () -> {
+            while (true) {
+                try {
+                    String take = queue.take();
+                    LOGGER.info("consumer take result is {}.", take);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        };
+        // 启动消费者
+        new Thread(consumer).start();
+        new Thread(consumer).start();
     }
 
     static class MyBlockingQueueBaseWaitNotify<T> {
@@ -52,7 +124,7 @@ public class ProducerAndConsumer {
             }
         }
 
-        public T get() throws InterruptedException {
+        public T take() throws InterruptedException {
             synchronized (this) {
                 while (queue.size() == 0) {
                     // queue已空，wait进行阻塞等待生产者生产数据
@@ -135,7 +207,9 @@ public class ProducerAndConsumer {
         Runnable producer = () -> {
             while (true) {
                 try {
-                    queue.put(UUID.randomUUID().toString());
+                    String data = UUID.randomUUID().toString();
+                    queue.put(data);
+                    LOGGER.info("producer put data: {}", data);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
