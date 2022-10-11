@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+status="warn" 表示 log4j2 日志框架本身的日志输出级别为 warn
+monitorInterval="5" 表示自动加载配置文件的间隔时间，不低于 5 秒。
+-->
+<Configuration status="warn" monitorInterval="5">
+    <!-- 全局属性 -->
+    <Properties>
+        <Property name="FILE_BASE_DIR">logs</Property>
+        <Property name="PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger-[%L]-%m%n</Property>
+    </Properties>
+
+    <Appenders>
+        <!-- 控制台 appender -->
+        <Console name="CONSOLE" target="SYSTEM_OUT">
+            <PatternLayout pattern="${PATTERN}"/>
+        </Console>
+        <!-- 文件 appender -->
+        <File name="FILE" fileName="${FILE_BASE_DIR}/log4j2.log">
+            <PatternLayout pattern="${PATTERN}"/>
+        </File>
+        <!-- 使用随机读写流的文件 appender，性能高 -->
+        <RandomAccessFile name="accessFile" fileName="${FILE_BASE_DIR}/access-log.log">
+            <PatternLayout pattern="${PATTERN}"/>
+        </RandomAccessFile>
+        <!-- 按规则拆分的文件 appender -->
+        <RollingFile name="rollingFile"
+                     fileName="${FILE_BASE_DIR}/rolling-log.log"
+                     filePattern="${FILE_BASE_DIR}/$${date:yyyy-MM-dd}/rolling-log-%d{yyyy-MM-dd-HH-mm}-%i.log">
+            <!-- 日志级别过滤器 -->
+            <ThresholdFilter level="debug" onMatch="ACCEPT" onMismatch="DENY"/>
+            <!-- 日志格式 -->
+            <PatternLayout pattern="${PATTERN}"/>
+            <Policies>
+                <!-- 在系统启动时触发拆分规则，生成一个新的日志文件 -->
+                <OnStartupTriggeringPolicy/>
+                <!-- 按照文件大小拆分，超过 10MB 则拆分 -->
+                <SizeBasedTriggeringPolicy size="10MB"/>
+                <!-- 按照时间节点拆分，规则按照 filePattern 定义 -->
+                <!--
+                filePattern="${FILE_BASE_DIR}/$${date:yyyy-MM-dd}/rolling-log-%d{yyyy-MM-dd-HH-mm}-%i.log"
+                $${date:yyyy-MM-dd}：按天拆分文件夹
+                rolling-log-%d{yyyy-MM-dd-HH-mm}-%i.log：按分钟拆分文件
+                -->
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+            <!-- 在同一个目录下，文件的数量限制为30个，超过则覆盖 -->
+            <DefaultRolloverStrategy max="30"/>
+        </RollingFile>
+        <!-- 异步 appender
+        <Async name="ASYNC">
+            <AppenderRef ref="FILE"/>
+        </Async>
+        -->
+    </Appenders>
+
+    <!-- logger 定义 -->
+    <Loggers>
+        <!-- 自定义异步 logger 对象 -->
+        <!--
+        includeLocation="false" 表示关闭日志记录的行号信息
+        additivity="false" 表示不继承 root logger 对象
+        -->
+        <AsyncLogger name="com.sunchaser.sparrow.javaee.log.log4j2"
+                     level="trace"
+                     includeLocation="false"
+                     additivity="false">
+            <AppenderRef ref="CONSOLE"/>
+        </AsyncLogger>
+        <Root level="trace">
+            <AppenderRef ref="CONSOLE"/>
+            <AppenderRef ref="ASYNC"/>
+        </Root>
+    </Loggers>
+</Configuration>
