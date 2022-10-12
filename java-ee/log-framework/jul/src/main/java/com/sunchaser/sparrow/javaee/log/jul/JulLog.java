@@ -37,6 +37,7 @@ public class JulLog {
     }
 
     private static void basicUse() {
+        LOGGER.info("This is a info log.");
         LOGGER.log(Level.INFO, "This is a simple log.");
         LOGGER.log(Level.INFO, "This is a log with one parameter. {0}", "param1");
         LOGGER.log(Level.INFO, "This is a log with multiple parameters. {0}, {1}", new Object[]{"param1", "param2"});
@@ -118,6 +119,7 @@ public class JulLog {
         // owner.readPrimordialConfiguration();
         // readConfiguration()
         // 默认配置文件路径为：/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk/Contents/Home/jre/lib/logging.properties
+        // 即：$JAVA_HOME/jre/lib/logging.properties
 
         // 使用自定义配置文件
         // 通过类加载器读取配置文件

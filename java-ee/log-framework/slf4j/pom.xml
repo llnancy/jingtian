@@ -26,7 +26,7 @@
             <artifactId>slf4j-api</artifactId>
             <version>1.7.36</version>
         </dependency>
-        <!-- 日志实现-slf4j内置的简单实现 slf4j-simple
+        <!-- 日志实现-SLF4J内置的简单实现 slf4j-simple
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
@@ -39,12 +39,26 @@
             <artifactId>logback-classic</artifactId>
             <version>1.2.11</version>
         </dependency>
-        <!-- log4j 的桥接器 log4j-over-slf4j -->
+        <!-- Log4j 的桥接器 log4j-over-slf4j -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>log4j-over-slf4j</artifactId>
             <version>1.7.36</version>
         </dependency>
+        <!-- JUL 的桥接器 jul-to-slf4j
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jul-to-slf4j</artifactId>
+            <version>1.7.36</version>
+        </dependency>
+         -->
+        <!-- JCL 的桥接器 jcl-over-slf4j
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>1.7.36</version>
+        </dependency>
+         -->
         <!-- 日志实现-丢弃所有日志 slf4j-nop
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -52,26 +66,26 @@
             <version>1.7.36</version>
         </dependency>
          -->
-        <!-- 绑定 log4j 日志实现，需要导入适配器 slf4j-log4j12
+        <!-- 绑定 Log4j 日志实现，需要导入适配器 slf4j-log4j12
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
             <version>1.7.36</version>
         </dependency>
          -->
-        <!-- log4j
+        <!-- Log4j
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
         </dependency>
          -->
-        <!-- 绑定 jul 日志实现，需要导入适配器 slf4j-jdk14
+        <!-- 绑定 JUL 日志实现，需要导入适配器 slf4j-jdk14
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-jdk14</artifactId>
             <version>1.7.36</version>
         </dependency>
-        -->
+         -->
     </dependencies>
 </project>

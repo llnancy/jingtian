@@ -15,11 +15,9 @@
     <property name="CONSOLE_PATTERN"
               value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%boldYellow(%thread)] %highlight(%-5level) %boldGreen(%logger)-[%L]-%m%n"/>
     <!-- 文件日志格式 -->
-    <property name="FILE_PATTERN"
-              value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger-[%L]-%m%n"/>
+    <property name="FILE_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger-[%L]-%m%n"/>
     <!-- HTML日志格式 -->
-    <property name="HTML_PATTERN"
-              value="%d{yyyy-MM-dd HH:mm:ss.SSS}%thread%-5level%logger%L%m"/>
+    <property name="HTML_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS}%thread%-5level%logger%L%m"/>
     <!-- 日志文件根路径 -->
     <property name="FILE_BASE_DIR" value="logs"/>
 
@@ -63,9 +61,10 @@
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <pattern>${FILE_PATTERN}</pattern>
         </encoder>
+        <!-- 日志拆分规则 -->
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <!-- 按照时间和压缩格式声明拆分的文件名 -->
-            <fileNamePattern>${FILE_BASE_DIR}/rolling.%d{yyyy-MM-dd-HH-mm-ss}.log-%i.zip</fileNamePattern>
+            <!-- 按照时间和压缩格式生成文件名 -->
+            <fileNamePattern>${FILE_BASE_DIR}/rolling.%d{yyyy-MM-dd}.log-%i.zip</fileNamePattern>
             <!-- 按照文件大小拆分 -->
             <maxFileSize>1MB</maxFileSize>
         </rollingPolicy>
@@ -94,7 +93,7 @@
 
     <!-- 自定义 logger 配置 -->
     <!-- additivity 属性表示自定义 logger 对象是否继承 root logger，false 表示不继承。 -->
-    <logger name="com.sunchaser.sparrow.javaee.log.logback" level="info" additivity="false">
+    <logger name="com.sunchaser" level="info" additivity="false">
         <appender-ref ref="CONSOLE"/>
     </logger>
 </configuration>
