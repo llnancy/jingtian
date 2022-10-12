@@ -47,11 +47,11 @@ monitorInterval="5" 表示自动加载配置文件的间隔时间，不低于 5 
             <!-- 在同一个目录下，文件的数量限制为30个，超过则覆盖 -->
             <DefaultRolloverStrategy max="30"/>
         </RollingFile>
-        <!-- 异步 appender
+        <!-- 异步 appender -->
         <Async name="ASYNC">
+            <!-- 指定某个具体的 appender -->
             <AppenderRef ref="FILE"/>
         </Async>
-        -->
     </Appenders>
 
     <!-- logger 定义 -->
@@ -61,7 +61,7 @@ monitorInterval="5" 表示自动加载配置文件的间隔时间，不低于 5 
         includeLocation="false" 表示关闭日志记录的行号信息
         additivity="false" 表示不继承 root logger 对象
         -->
-        <AsyncLogger name="com.sunchaser.sparrow.javaee.log.log4j2"
+        <AsyncLogger name="com.sunchaser"
                      level="trace"
                      includeLocation="false"
                      additivity="false">
@@ -69,7 +69,7 @@ monitorInterval="5" 表示自动加载配置文件的间隔时间，不低于 5 
         </AsyncLogger>
         <Root level="trace">
             <AppenderRef ref="CONSOLE"/>
-            <AppenderRef ref="ASYNC"/>
+            <!-- <AppenderRef ref="ASYNC"/> -->
         </Root>
     </Loggers>
 </Configuration>

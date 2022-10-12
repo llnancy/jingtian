@@ -31,7 +31,7 @@ public class JclLog {
         for(int i=0; i<classesToDiscover.length && result == null; ++i) {
             result = createLogFromClass(classesToDiscover[i], logCategory, true);
         }
-        通过 for 循环按数组顺序反射加载实现类，数组写死在代码中，不可再进行额外扩展。
+        通过 for 循环按照 classesToDiscover 数组的顺序反射加载实现类，数组写死在代码中，无法进行动态扩展。
          */
     }
 }
