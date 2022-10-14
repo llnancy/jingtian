@@ -1,7 +1,6 @@
 package com.sunchaser.sparrow.javase.base.xml.digester;
 
-import com.alibaba.fastjson.JSON;
-import com.sunchaser.sparrow.javase.base.xml.SAXParseXmlTest;
+import cn.hutool.json.JSONUtil;
 import org.apache.commons.digester3.Digester;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,11 +10,15 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
+ * DigesterParseXml Test
+ *
  * @author sunchaser admin@lilu.org.cn
  * @since JDK8 2021/8/18
  */
 public class DigesterParseXmlTest {
+
     private static final Logger LOGGER = LoggerFactory.getLogger(DigesterParseXmlTest.class);
+
     private MyServer myServer;
 
     public MyServer getMyServer() {
@@ -29,7 +32,7 @@ public class DigesterParseXmlTest {
     public static void main(String[] args) throws IOException, SAXException {
         DigesterParseXmlTest dpxt = new DigesterParseXmlTest();
         dpxt.parse();
-        LOGGER.info("{}", JSON.toJSONString(dpxt.getMyServer()));
+        LOGGER.info("{}", JSONUtil.toJsonStr(dpxt.getMyServer()));
     }
 
     private void parse() throws IOException, SAXException {
