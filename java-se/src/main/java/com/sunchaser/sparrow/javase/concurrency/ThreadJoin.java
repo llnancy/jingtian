@@ -4,7 +4,7 @@ import cn.hutool.core.thread.ThreadUtil;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Thread join
+ * Thread#join 等待线程执行结束
  *
  * @author sunchaser admin@lilu.org.cn
  * @since JDK8 2022/10/14
@@ -20,6 +20,26 @@ public class ThreadJoin {
 
     public static void main(String[] args) throws InterruptedException {
         // simpleJoin();
+        // multipleJoin();
+        timedJoin();
+    }
+
+    private static void timedJoin() throws InterruptedException {
+        Thread thread = new Thread(() -> {
+            ThreadUtil.sleep(1000L);
+            i = 10;
+        });
+        long start = System.currentTimeMillis();
+        thread.start();
+        // 线程执行结束会导致 join 提前结束
+        // thread.join(1500L);
+        // 最多等待 millis 时间
+        thread.join(500L);
+        long end = System.currentTimeMillis();
+        LOGGER.info("i: {}, times: {}.", i, end - start);
+    }
+
+    private static void multipleJoin() throws InterruptedException {
         Thread t1 = new Thread(() -> {
             ThreadUtil.sleep(1000L);
             n1 = 10;
@@ -44,8 +64,9 @@ public class ThreadJoin {
             i = 10;
         });
         thread.start();
+        // join 等待线程执行结束
         thread.join();
-        LOGGER.info("i={}", i);
+        LOGGER.info("i: {}", i);
     }
 
 }
