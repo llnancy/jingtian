@@ -90,6 +90,13 @@
 
     <dependencyManagement>
         <dependencies>
+            <!-- lombok -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.24</version>
+                <scope>provided</scope>
+            </dependency>
             <!-- spring boot -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
