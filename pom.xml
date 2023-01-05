@@ -3,41 +3,30 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.sunchaser.sparrow</groupId>
-    <artifactId>sunchaser-sparrow</artifactId>
-    <description>Sparrow：麻雀虽小，五脏俱全</description>
+    <groupId>io.github.llnancy</groupId>
+    <artifactId>jingtian</artifactId>
+    <description>景天：天大地大，快乐最大。</description>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <url>https://lilu.org.cn</url>
     <issueManagement>
         <system>GitHub</system>
-        <url>https://github.com/sunchaser-lilu/sunchaser-sparrow/issues</url>
+        <url>https://github.com/llnancy/jingtian/issues</url>
     </issueManagement>
     <inceptionYear>2020</inceptionYear>
     <developers>
         <developer>
-            <id>SunChaser</id>
-            <name>lilu</name>
+            <name>llnancy</name>
             <email>admin@lilu.org.cn</email>
             <url>https://lilu.org.cn</url>
-            <roles>
-                <role>Project Manager</role>
-            </roles>
-            <organization>SunChaser</organization>
         </developer>
     </developers>
-    <contributors>
-        <contributor />
-    </contributors>
     <licenses>
         <license>
-            <name>GNU General Public License v3.0</name>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0</url>
         </license>
     </licenses>
-    <organization>
-        <name>SunChaser</name>
-        <url>https://lilu.org.cn</url>
-    </organization>
     <modules>
         <module>algorithm</module>
         <module>book-notes</module>

@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>algorithm</artifactId>
-        <groupId>com.sunchaser.sparrow</groupId>
+        <groupId>io.github.llnancy</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -17,7 +17,7 @@
             <artifactId>lombok</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.sunchaser.sparrow</groupId>
+            <groupId>io.github.llnancy</groupId>
             <artifactId>algorithm-common</artifactId>
         </dependency>
     </dependencies>
