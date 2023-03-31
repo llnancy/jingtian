@@ -11,7 +11,7 @@
     <artifactId>algorithm</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <description>不会算法的程序员不是一个好程序员</description>
+    <description>刷题记录</description>
     <modules>
         <module>leetcode</module>
         <module>coding-interview-guide</module>
@@ -22,6 +22,13 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <dependency>
                 <groupId>io.github.llnancy</groupId>
                 <artifactId>algorithm-common</artifactId>
