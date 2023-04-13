@@ -5,10 +5,13 @@ import java.lang.reflect.Proxy;
 import java.util.Arrays;
 
 /**
+ * test client
+ *
  * @author sunchaser
  * @since JDK8 2020/4/27
  */
 public class TestClient {
+
     public static void main(String[] args) {
         // [interface MyList]
         showInstance(MyAbstractList.class);
@@ -29,15 +32,15 @@ public class TestClient {
     }
 
     private static void showInstance(Class<?> clazz) {
-        System.out.printf("%s --- %s\n",clazz, Arrays.toString(clazz.getInterfaces()));
+        System.out.printf("%s --- %s\n", clazz, Arrays.toString(clazz.getInterfaces()));
     }
 
     @SuppressWarnings("unchecked")
     private static <T> T createProxy(final T obj) {
         final InvocationHandler invocationHandler = (proxy, method, args) -> {
-            System.out.printf("call %s method on %s object\n",method.getName(),obj);
-            return method.invoke(obj,args);
+            System.out.printf("call %s method on %s object\n", method.getName(), obj);
+            return method.invoke(obj, args);
         };
-        return (T) Proxy.newProxyInstance(obj.getClass().getClassLoader(),obj.getClass().getInterfaces(),invocationHandler);
+        return (T) Proxy.newProxyInstance(obj.getClass().getClassLoader(), obj.getClass().getInterfaces(), invocationHandler);
     }
 }

@@ -1,6 +1,9 @@
 package io.github.llnancy.jingtian.javase.base.randomaccess;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * 随机访问和迭代器访问效率比较
@@ -9,7 +12,9 @@ import java.util.*;
  * @since JDK8 2020/4/26
  */
 public class RandomIteratorCompare {
+
     public static void main(String[] args) {
+
         // init ArrayList data
         List<String> arrayList = new ArrayList<>();
         for (int i = 0; i < 10000000; i++) {
@@ -17,7 +22,7 @@ public class RandomIteratorCompare {
         }
         // random access
         long arrayListRandomStartTime = System.currentTimeMillis();
-        for (int i = 0,size = arrayList.size(); i < size; i++) {
+        for (int i = 0, size = arrayList.size(); i < size; i++) {
             arrayList.get(i);
         }
         long arrayListRandomEndTime = System.currentTimeMillis();
@@ -38,7 +43,7 @@ public class RandomIteratorCompare {
         }
         // random access
         long linkedListRandomStartTime = System.currentTimeMillis();
-        for (int i = 0,size = linkedList.size(); i < size; i++) {
+        for (int i = 0, size = linkedList.size(); i < size; i++) {
             linkedList.get(i);
         }
         long linkedListRandomEndTime = System.currentTimeMillis();

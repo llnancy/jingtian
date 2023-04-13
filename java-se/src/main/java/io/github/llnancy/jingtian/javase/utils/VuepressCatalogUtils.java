@@ -56,7 +56,13 @@ public class VuepressCatalogUtils {
     }
 
     public static List<String> generateCatalog(String path) {
-        return generateCatalog(path, s -> s.substring(5, s.length() - 3));
+        return generateCatalog(path, s -> {
+            if (Character.isDigit(s.charAt(0))) {
+                return s.substring(5, s.length() - 3);
+            } else {
+                return s.substring(0, s.length() - 3);
+            }
+        });
     }
 
     public static List<String> generateCatalog(String path, Function<String, String> catalogItemHandler) {

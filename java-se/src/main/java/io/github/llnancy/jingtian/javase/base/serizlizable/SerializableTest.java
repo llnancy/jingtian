@@ -1,6 +1,10 @@
 package io.github.llnancy.jingtian.javase.base.serizlizable;
 
-import java.io.*;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 /**
  * 序列化测试
@@ -9,12 +13,13 @@ import java.io.*;
  * @since JDK8 2020/3/19
  */
 public class SerializableTest {
+
     public static void main(String[] args) {
-        // 获取当前类所在包中的serializableClass.txt文件路径
+        // 获取当前类所在包中的 serializableClass.txt 文件路径
         String path = SerializableTest.class.getResource("").getPath();
-        path = path.replace("target/classes","src/main/java") + "serializableClass.txt";
+        path = path.replace("target/classes", "src/main/java") + "serializableClass.txt";
         SerializableClass sc = new SerializableClass().setName("序列化测试").setAge(10);
-//        writeObject(sc,path);
+        // writeObject(sc,path);
         readObject(path);
     }
 

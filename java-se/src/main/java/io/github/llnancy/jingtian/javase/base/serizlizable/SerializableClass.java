@@ -9,8 +9,11 @@ import java.io.Serializable;
  * @since JDK8 2020/3/19
  */
 public class SerializableClass implements Serializable {
+
     private static final long serialVersionUID = 5135631042912401553L;
+
     private String name;
+
     private Integer age;
 
     public String getName() {
@@ -33,10 +36,9 @@ public class SerializableClass implements Serializable {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("SerializableClass{");
-        sb.append("name='").append(name).append('\'');
-        sb.append(", age=").append(age);
-        sb.append('}');
-        return sb.toString();
+        return "SerializableClass{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 }
