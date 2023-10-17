@@ -29,13 +29,10 @@
     </licenses>
     <modules>
         <module>algorithm</module>
-        <module>book-notes</module>
         <module>design-patterns</module>
         <module>java-ee</module>
         <module>java-se</module>
-        <module>database</module>
         <module>middleware</module>
-        <module>distributed</module>
         <module>microservice</module>
         <module>devops</module>
     </modules>
@@ -50,7 +47,6 @@
         <log4j2.version>2.17.0</log4j2.version>
 
         <spring.boot.version>2.6.4</spring.boot.version>
-        <spring-boot.version>2.7.9</spring-boot.version>
         <spring.cloud.version>2021.0.4</spring.cloud.version>
         <spring.cloud.alibaba.version>2.2.1.RELEASE</spring.cloud.alibaba.version>
         <google.guava.version>30.0-jre</google.guava.version>
@@ -243,8 +239,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.1</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
                 </configuration>
             </plugin>
         </plugins>

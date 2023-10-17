@@ -15,11 +15,15 @@
         <module>java9</module>
         <module>java10</module>
         <module>java11</module>
+        <module>java8</module>
+        <module>java12</module>
+        <module>java13</module>
+        <module>java14</module>
+        <module>java15</module>
+        <module>java17</module>
     </modules>
 
     <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <jmh.version>1.35</jmh.version>
