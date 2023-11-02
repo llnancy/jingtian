@@ -1,6 +1,6 @@
 package com.sunchaser.sparrow.algorithm.base.binarytree;
 
-import io.github.llnancy.algorithm.common.TreeNode;
+import io.github.llnancy.jingtian.algorithm.common.TreeNode;
 
 /**
  * 二叉树的最近公共祖先

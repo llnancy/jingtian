@@ -1,6 +1,6 @@
 package com.sunchaser.sparrow.algorithm.base.binarytree;
 
-import io.github.llnancy.algorithm.common.TreeNode;
+import io.github.llnancy.jingtian.algorithm.common.TreeNode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

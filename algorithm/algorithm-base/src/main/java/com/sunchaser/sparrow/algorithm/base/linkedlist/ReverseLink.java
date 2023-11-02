@@ -1,7 +1,7 @@
 package com.sunchaser.sparrow.algorithm.base.linkedlist;
 
-import io.github.llnancy.algorithm.common.SinglyLinkedListNode;
-import io.github.llnancy.algorithm.common.util.LinkedListUtils;
+import io.github.llnancy.jingtian.algorithm.common.SinglyLinkedListNode;
+import io.github.llnancy.jingtian.algorithm.common.util.LinkedListUtils;
 
 /**
  * 反转链表：递归和非递归实现

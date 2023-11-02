@@ -1,6 +1,6 @@
 package com.sunchaser.sparrow.swordfingeroffer;
 
-import io.github.llnancy.algorithm.common.SinglyLinkedListNode;
+import io.github.llnancy.jingtian.algorithm.common.SinglyLinkedListNode;
 
 /**
  * 剑指 Offer 22. 链表中倒数第k个节点

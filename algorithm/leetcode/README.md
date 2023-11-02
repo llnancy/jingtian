@@ -1,7 +1,6 @@
-## 简介
-本部分是LeetCode题解。
+# LeetCode
 
-### 目录
-- [（简单）两数之和](./docs/（简单）两数之和.md)
+## 目录
 
-待完善...
+- [热题 HOT 100](https://lilu.org.cn/notes/algorithm/leetcode/hot100/)
+- [简单难度](https://lilu.org.cn/notes/algorithm/leetcode/easy/)
