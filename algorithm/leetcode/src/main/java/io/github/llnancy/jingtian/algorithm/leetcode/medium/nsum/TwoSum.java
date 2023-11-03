@@ -1,4 +1,4 @@
-package io.github.llnancy.jingtian.algorithm.leetcode.middle.nsum;
+package io.github.llnancy.jingtian.algorithm.leetcode.medium.nsum;
 
 import java.util.ArrayList;
 import java.util.Arrays;

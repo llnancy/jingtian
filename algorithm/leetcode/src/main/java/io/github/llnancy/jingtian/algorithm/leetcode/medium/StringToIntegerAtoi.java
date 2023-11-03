@@ -1,4 +1,4 @@
-package io.github.llnancy.jingtian.algorithm.leetcode.middle;
+package io.github.llnancy.jingtian.algorithm.leetcode.medium;
 
 /**
  * 8. 字符串转换整数 (atoi)

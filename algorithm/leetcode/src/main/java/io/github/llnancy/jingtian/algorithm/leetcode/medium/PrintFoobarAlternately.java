@@ -1,4 +1,4 @@
-package io.github.llnancy.jingtian.algorithm.leetcode.middle;
+package io.github.llnancy.jingtian.algorithm.leetcode.medium;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;

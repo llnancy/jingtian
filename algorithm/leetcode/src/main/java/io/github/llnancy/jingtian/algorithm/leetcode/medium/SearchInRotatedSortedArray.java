@@ -1,4 +1,4 @@
-package io.github.llnancy.jingtian.algorithm.leetcode.middle;
+package io.github.llnancy.jingtian.algorithm.leetcode.medium;
 
 /**
  * 33. 搜索旋转排序数组

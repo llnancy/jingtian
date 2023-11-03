@@ -1,4 +1,4 @@
-package io.github.llnancy.jingtian.algorithm.leetcode.middle;
+package io.github.llnancy.jingtian.algorithm.leetcode.medium;
 
 import io.github.llnancy.jingtian.algorithm.common.SinglyLinkedListNode;
 import io.github.llnancy.jingtian.algorithm.common.util.LinkedListUtils;

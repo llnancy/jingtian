@@ -1,47 +1,49 @@
-package io.github.llnancy.jingtian.algorithm.leetcode.middle;
+package io.github.llnancy.jingtian.algorithm.leetcode.medium;
 
 import io.github.llnancy.jingtian.algorithm.common.TreeNode;
 import io.github.llnancy.jingtian.algorithm.common.util.TreeUtils;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
 /**
- * 102. 二叉树的层序遍历
+ * 199. 二叉树的右视图
  * <p>
- * https://leetcode-cn.com/problems/binary-tree-level-order-traversal/
+ * https://leetcode-cn.com/problems/binary-tree-right-side-view/
  *
  * @author sunchaser admin@lilu.org.cn
- * @since JDK8 2021/11/14
+ * @since JDK8 2021/11/20
  */
-public class BinaryTreeLevelOrderTraversal {
+public class BinaryTreeRightSideView {
 
     public static void main(String[] args) {
         TreeNode root = TreeUtils.generateSimpleBinaryTree();
-        System.out.println(levelOrder(root));
+        System.out.println(rightSideView(root));
     }
 
-    /**
-     * 队列
-     */
-    public static List<List<Integer>> levelOrder(TreeNode root) {
-        List<List<Integer>> res = new LinkedList<>();
+    public static List<Integer> rightSideView(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
         Queue<TreeNode> queue = new LinkedList<>();
         if (root != null) {
             queue.offer(root);
         }
         while (!queue.isEmpty()) {
-            List<Integer> list = new LinkedList<>();
             int size = queue.size();
             while (size > 0) {
                 TreeNode poll = queue.poll();
-                list.add(poll.val);
-                if (poll.left != null) queue.offer(poll.left);
-                if (poll.right != null) queue.offer(poll.right);
+                if (poll.left != null) {
+                    queue.offer(poll.left);
+                }
+                if (poll.right != null) {
+                    queue.offer(poll.right);
+                }
+                if (size == 1) {
+                    res.add(poll.val);
+                }
                 size--;
             }
-            res.add(list);
         }
         return res;
     }

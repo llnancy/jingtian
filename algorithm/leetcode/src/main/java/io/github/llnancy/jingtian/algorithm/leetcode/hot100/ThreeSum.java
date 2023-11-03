@@ -22,12 +22,12 @@ public class ThreeSum {
             List<List<Integer>> twoSumRes = twoSum(nums, i + 1, -nums[i]);
             // 如果存在和为 target - nums[i] 的二元组，再加上 nums[i] 就是结果三元组
             for (List<Integer> twoSumRe : twoSumRes) {
-                twoSumRe.add(0, nums[i]);
+                twoSumRe.add(nums[i]);
                 res.add(twoSumRe);
             }
             // 跳过第一个数重复的情况，否则会出现重复结果
             // 例如输入是 nums = [1, 1, 1, 2, 3], target = 6，如果不去重，前面 3 个 1 就会导致结果重复。
-            while (i < nums[i] - 1 && nums[i] == nums[i + 1]) i++;
+            while (i < nums.length - 1 && nums[i] == nums[i + 1]) i++;
         }
         return res;
     }
@@ -45,24 +45,24 @@ public class ThreeSum {
         int right = nums.length - 1;
         List<List<Integer>> res = new ArrayList<>();
         while (left < right) {
-            int sum = nums[left] + nums[right];
-            int i = nums[left];
-            int j = nums[right];
+            int l = nums[left];
+            int r = nums[right];
+            int sum = l + r;
             if (sum < target) {
                 // 去重
-                while (left < right && nums[left] == i) left++;
+                while (left < right && nums[left] == l) left++;
             } else if (sum > target) {
                 // 去重
-                while (left < right && nums[right] == j) right--;
+                while (left < right && nums[right] == r) right--;
             } else {
                 // sum = target 得到目标值
                 List<Integer> list = new ArrayList<>();
-                list.add(i);
-                list.add(j);
+                list.add(l);
+                list.add(r);
                 res.add(list);
                 // 去重
-                while (left < right && nums[left] == i) left++;
-                while (left < right && nums[right] == j) right--;
+                while (left < right && nums[left] == l) left++;
+                while (left < right && nums[right] == r) right--;
             }
         }
         return res;
