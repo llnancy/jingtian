@@ -4,6 +4,7 @@ import io.github.llnancy.jingtian.algorithm.common.ListNode;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;
+import java.util.Queue;
 
 /**
  * 合并 K 个升序链表
@@ -25,7 +26,7 @@ public class MergeKSortedLists {
         ListNode hair = new ListNode();
         ListNode cur = hair;
         // 优先队列（小根堆）
-        PriorityQueue<ListNode> pq = new PriorityQueue<>(lists.length, Comparator.comparingInt(a -> a.val));
+        Queue<ListNode> pq = new PriorityQueue<>(lists.length, Comparator.comparingInt(a -> a.val));
         // k 个链表的头节点加入优先队列（小根堆）
         for (ListNode head : lists) {
             if (head != null) {

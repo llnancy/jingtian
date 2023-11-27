@@ -5,6 +5,7 @@ import io.github.llnancy.jingtian.algorithm.common.ListNode;
 /**
  * 回文链表
  * <a href="https://leetcode.cn/problems/palindrome-linked-list/description/?envType=featured-list&envId=2cktkvj?envType=featured-list&envId=2cktkvj">https://leetcode.cn/problems/palindrome-linked-list/description/?envType=featured-list&envId=2cktkvj?envType=featured-list&envId=2cktkvj</a>
+ *
  * @author llnancy admin@lilu.org.cn
  * @since JDK8 2023/10/23
  */

@@ -25,13 +25,13 @@ public class RemoveNthNodeFromEndOfList {
         return hair.next;
     }
 
-    private ListNode findNthFromEnd(ListNode head, int n) {
-        ListNode p1 = head;
+    private ListNode findNthFromEnd(ListNode hair, int n) {
+        ListNode p1 = hair;
         // p1 先走 n 步
         for (int i = 0; i < n; i++) {
             p1 = p1.next;
         }
-        ListNode p2 = head;
+        ListNode p2 = hair;
         // p1 p2 同时走，直到 p1 走到链表尾部
         while (p1 != null) {
             p1 = p1.next;
