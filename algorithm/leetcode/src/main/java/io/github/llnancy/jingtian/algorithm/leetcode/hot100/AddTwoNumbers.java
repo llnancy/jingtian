@@ -1,7 +1,6 @@
 package io.github.llnancy.jingtian.algorithm.leetcode.hot100;
 
 import io.github.llnancy.jingtian.algorithm.common.ListNode;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * 两数相加
