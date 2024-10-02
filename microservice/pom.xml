@@ -5,7 +5,7 @@
     <parent>
         <groupId>io.github.llnancy</groupId>
         <artifactId>jingtian</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${revision}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -13,7 +13,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>spring-cloud</module>
-        <module>dubbo-samples</module>
         <module>sunchaser-demo-rpc</module>
     </modules>
 </project>

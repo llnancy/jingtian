@@ -30,7 +30,7 @@ public class MergeKSortedLists {
         // k 个链表的头节点加入优先队列（小根堆）
         for (ListNode head : lists) {
             if (head != null) {
-                pq.add(head);
+                pq.offer(head);
             }
         }
         while (!pq.isEmpty()) {
@@ -38,7 +38,7 @@ public class MergeKSortedLists {
             ListNode poll = pq.poll();
             cur.next = poll;
             if (poll.next != null) {
-                pq.add(poll.next);
+                pq.offer(poll.next);
             }
             cur = cur.next;
         }

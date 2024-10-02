@@ -9,11 +9,12 @@ import io.github.llnancy.jingtian.algorithm.common.SinglyLinkedListNode;
  * @since JDK8 2020/12/23
  */
 public class LinkedListUtils {
+
     private LinkedListUtils() {
     }
 
     /**
-     * 构造一个单链表: 1 -> 2 -> 3 -> 4 -> 5
+     * 构造一个单链表：1 -> 2 -> 3 -> 4 -> 5
      *
      * @return 单链表头节点
      */

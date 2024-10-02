@@ -12,7 +12,7 @@ import io.github.llnancy.jingtian.algorithm.common.ListNode;
 public class PalindromeLinkedList {
 
     /*
-    利用双指针技巧寻找链表中点，在慢指针迭代过程中顺便将前半部分链表反转，然后进行回文值比较。
+    利用快慢双指针技巧寻找链表中点，在慢指针迭代过程中顺便将前半部分链表反转，然后进行回文值比较，在比较过程中再次将前半部分链表反转恢复链表结构。
      */
 
     public boolean isPalindrome(ListNode head) {
@@ -36,13 +36,18 @@ public class PalindromeLinkedList {
             // 慢指针需要再向前推进一步
             slow = slow.next;
         }
+        ListNode prepre = slow;
+        ListNode prenext;
         while (slow != null && pre != null) {
             // 值回文比较
             if (slow.val != pre.val) {
                 return false;
             }
+            prenext = pre.next;
+            pre.next = prepre;
+            prepre = pre;
+            pre = prenext;
             slow = slow.next;
-            pre = pre.next;
         }
         return true;
     }

@@ -5,11 +5,11 @@
     <parent>
         <groupId>io.github.llnancy</groupId>
         <artifactId>algorithm</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${revision}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>coding-interview-guide</artifactId>
 
-    <description>《程序员代码面试指南-IT名企算法与数据结构最优解》-左程云著</description>
+    <description>《程序员代码面试指南-IT 名企算法与数据结构最优解》- 左程云著</description>
 </project>

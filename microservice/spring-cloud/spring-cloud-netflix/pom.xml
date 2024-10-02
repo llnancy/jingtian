@@ -5,7 +5,7 @@
     <parent>
         <artifactId>spring-cloud</artifactId>
         <groupId>io.github.llnancy</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${revision}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -20,26 +20,5 @@
         <module>hystrix-dashboard</module>
         <module>zuul</module>
     </modules>
-
-    <dependencyManagement>
-        <dependencies>
-            <!-- spring boot -->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>2.3.12.RELEASE</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <!-- spring cloud -->
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Hoxton.SR12</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
 </project>

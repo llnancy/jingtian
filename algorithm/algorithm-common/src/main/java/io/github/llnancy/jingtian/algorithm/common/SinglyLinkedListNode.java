@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 /**
  * 单向链表节点类
+ *
  * @author sunchaser admin@lilu.org.cn
  * @since JDK8 2020/6/3
  */

@@ -5,18 +5,19 @@
     <parent>
         <artifactId>algorithm</artifactId>
         <groupId>io.github.llnancy</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${revision}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>sword-finger-offer</artifactId>
 
-    <description>《剑指Offer》</description>
+    <description>《剑指 Offer》</description>
 
     <dependencies>
         <dependency>
             <groupId>io.github.llnancy</groupId>
             <artifactId>algorithm-common</artifactId>
+            <version>${revision}</version>
         </dependency>
     </dependencies>
 </project>

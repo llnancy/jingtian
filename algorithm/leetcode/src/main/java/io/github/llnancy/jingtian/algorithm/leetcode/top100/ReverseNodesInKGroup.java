@@ -19,28 +19,28 @@ public class ReverseNodesInKGroup {
         if (head == null) {
             return null;
         }
-        ListNode p = head;
-        // p 指针走 k 步
+        ListNode cur = head;
+        // cur 指针走 k 步
         for (int i = 0; i < k; i++) {
             // 不足 k 个不需要反转
-            if (p == null) {
+            if (cur == null) {
                 return head;
             }
-            p = p.next;
+            cur = cur.next;
         }
-        // 反转前 k 个元素，区间 [head, p)
-        ListNode newHead = reverse(head, p);
+        // 反转前 k 个元素，区间 [head, cur)
+        ListNode newHead = reverse(head, cur);
         // 第 k + 1 个元素作为头节点递归反转并连接
-        head.next = reverseKGroup(p, k);
+        head.next = reverseKGroup(cur, k);
         return newHead;
     }
 
-    private ListNode reverse(ListNode p1, ListNode p2) {
+    private ListNode reverse(ListNode head, ListNode p) {
         ListNode pre = null;
-        ListNode cur = p1;
+        ListNode cur = head;
         ListNode next;
-        // 反转 [p1, p2) 区间内的元素
-        while (cur != p2) {
+        // 反转 [head, p) 区间内的元素
+        while (cur != p) {
             next = cur.next;
             cur.next = pre;
             pre = cur;

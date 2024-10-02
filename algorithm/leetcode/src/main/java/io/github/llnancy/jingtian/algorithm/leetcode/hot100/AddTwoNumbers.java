@@ -38,7 +38,7 @@ public class AddTwoNumbers {
             sum = sum % 10;
             // 连接新节点
             cur.next = new ListNode(sum);
-            // cur右移
+            // cur 右移
             cur = cur.next;
         }
         // 返回新的头节点（虚拟哨兵节点的下一个就是新的头节点）

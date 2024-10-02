@@ -6,7 +6,7 @@
     <parent>
         <groupId>io.github.llnancy</groupId>
         <artifactId>java-se</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${revision}</version>
     </parent>
 
     <artifactId>java17</artifactId>

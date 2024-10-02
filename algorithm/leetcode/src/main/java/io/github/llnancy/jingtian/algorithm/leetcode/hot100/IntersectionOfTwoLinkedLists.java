@@ -12,24 +12,16 @@ import io.github.llnancy.jingtian.algorithm.common.ListNode;
 public class IntersectionOfTwoLinkedLists {
 
     /*
-    双指针技巧，指针 p1 p2 分别在两个链表上前进，当 p1 遍历完链表 A 时让其遍历链表 B，当 p2 遍历完链表 B 时让其遍历链表 A。
-    如果链表相交，则两指针相遇点为交点，否则都为 null。
+    双指针技巧。指针 p1 p2 分别在两个链表上前进，当 p1 遍历完链表 A 时让其遍历链表 B，当 p2 遍历完链表 B 时让其遍历链表 A。
+    当 p1 p2 指向同一节点时，该节点为两个链表的交点或 null。
      */
 
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         ListNode p1 = headA;
         ListNode p2 = headB;
         while (p1 != p2) {
-            if (p1 == null) {
-                p1 = headB;
-            } else {
-                p1 = p1.next;
-            }
-            if (p2 == null) {
-                p2 = headA;
-            } else {
-                p2 = p2.next;
-            }
+            p1 = p1 == null ? headB : p1.next;
+            p2 = p2 == null ? headA : p2.next;
         }
         return p1;
     }

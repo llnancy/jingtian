@@ -38,10 +38,11 @@ public class SwapNodesInPairs {
         if (head == null || head.next == null) {
             return head;
         }
-        ListNode newHead = head.next;
         // 递归写法
-        head.next = swapPairsRecursion(head.next.next);
-        newHead.next = head;
-        return newHead;
+        ListNode second = head.next;
+        ListNode others = head.next.next;
+        second.next = head;
+        head.next = swapPairsRecursion(others);
+        return second;
     }
 }

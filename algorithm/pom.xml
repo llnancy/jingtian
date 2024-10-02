@@ -5,13 +5,12 @@
     <parent>
         <groupId>io.github.llnancy</groupId>
         <artifactId>jingtian</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${revision}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>algorithm</artifactId>
-    <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <description>刷题记录</description>
+    <description>算法刷题</description>
     <modules>
         <module>leetcode</module>
         <module>coding-interview-guide</module>
@@ -19,22 +18,4 @@
         <module>algorithm-base</module>
         <module>algorithm-common</module>
     </modules>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring.boot.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>io.github.llnancy</groupId>
-                <artifactId>algorithm-common</artifactId>
-                <version>1.0-SNAPSHOT</version>
-                <scope>compile</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 </project>
