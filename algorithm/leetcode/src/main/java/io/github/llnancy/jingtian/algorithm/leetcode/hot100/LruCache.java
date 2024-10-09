@@ -6,7 +6,7 @@ import java.util.Map;
 
 /**
  * LRU 缓存
- * <a href="https://leetcode.cn/problems/lru-cache/description/?envType=featured-list&envId=2cktkvj?envType=featured-list&envId=2cktkvj">https://leetcode.cn/problems/lru-cache/description/?envType=featured-list&envId=2cktkvj?envType=featured-list&envId=2cktkvj</a>
+ * <a href="https://leetcode.cn/problems/lru-cache/">https://leetcode.cn/problems/lru-cache/</a>
  *
  * @author llnancy admin@lilu.org.cn
  * @since JDK8 2023/11/15
