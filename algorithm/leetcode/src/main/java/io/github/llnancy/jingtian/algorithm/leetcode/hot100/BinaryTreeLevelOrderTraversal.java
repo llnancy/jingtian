@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.Queue;
 
 /**
- * 二叉树的层序遍历
- * <a href="https://leetcode.cn/problems/binary-tree-level-order-traversal/description/?envType=featured-list&envId=2cktkvj?envType=featured-list&envId=2cktkvj">https://leetcode.cn/problems/binary-tree-level-order-traversal/description/?envType=featured-list&envId=2cktkvj?envType=featured-list&envId=2cktkvj</a>
+ * 102. 二叉树的层序遍历
+ * <a href="https://leetcode.cn/problems/binary-tree-level-order-traversal/">https://leetcode.cn/problems/binary-tree-level-order-traversal/</a>
  *
  * @author llnancy admin@lilu.org.cn
  * @since JDK8 2023/11/17
@@ -17,7 +17,7 @@ import java.util.Queue;
 public class BinaryTreeLevelOrderTraversal {
 
     /*
-    用队列存储每一层的节点。
+     * BFS 广度优先遍历。用队列存储每一层的节点。
      */
 
     public List<List<Integer>> levelOrder(TreeNode root) {

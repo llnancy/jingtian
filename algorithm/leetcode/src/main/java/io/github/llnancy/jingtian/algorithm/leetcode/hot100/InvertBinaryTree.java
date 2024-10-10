@@ -3,13 +3,18 @@ package io.github.llnancy.jingtian.algorithm.leetcode.hot100;
 import io.github.llnancy.jingtian.algorithm.common.TreeNode;
 
 /**
- * 翻转二叉树
- * <a href="https://leetcode.cn/problems/invert-binary-tree/description/?envType=featured-list&envId=2cktkvj?envType=featured-list&envId=2cktkvj">https://leetcode.cn/problems/invert-binary-tree/description/?envType=featured-list&envId=2cktkvj?envType=featured-list&envId=2cktkvj</a>
+ * 226. 翻转二叉树
+ * <a href="https://leetcode.cn/problems/invert-binary-tree/">https://leetcode.cn/problems/invert-binary-tree/</a>
  *
  * @author llnancy admin@lilu.org.cn
  * @since JDK8 2023/11/17
  */
 public class InvertBinaryTree {
+
+    /*
+     * 遍历思路：遍历每个节点时交换左右子节点。
+     * 分解问题思路：翻转一个二叉树的结果可由子树的翻转结果推导出来。
+     */
 
     public TreeNode invertTree(TreeNode root) {
         traverse(root);
@@ -31,14 +36,20 @@ public class InvertBinaryTree {
         traverse(root.right);
     }
 
+    /**
+     * 定义：输入二叉树根节点，返回翻转后的二叉树根节点
+     */
     public TreeNode invertTreeII(TreeNode root) {
         if (root == null) {
             return null;
         }
 
-        // 先翻转左右子树，然后交换左右子节点
+        // 利用定义翻转左右子树
         TreeNode left = invertTreeII(root.left);
-        root.left = invertTreeII(root.right);
+        TreeNode right = invertTreeII(root.right);
+
+        // 翻转当前节点
+        root.left = right;
         root.right = left;
 
         return root;

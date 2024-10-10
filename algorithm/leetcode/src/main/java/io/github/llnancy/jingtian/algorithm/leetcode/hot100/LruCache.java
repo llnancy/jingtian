@@ -5,7 +5,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * LRU 缓存
+ * 146. LRU 缓存
  * <a href="https://leetcode.cn/problems/lru-cache/">https://leetcode.cn/problems/lru-cache/</a>
  *
  * @author llnancy admin@lilu.org.cn
