@@ -3,10 +3,10 @@ package io.github.llnancy.jingtian.javase.async;
 import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
 
+import java.io.Serial;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
-import java.util.stream.Collectors;
 
 /**
  * 异步任务工具类
@@ -16,11 +16,12 @@ import java.util.stream.Collectors;
  */
 @Slf4j
 public class AsyncTask {
+
     private AsyncTask() {
     }
 
     /**
-     * 执行多个IAsyncConsumer任务并调用get方法确保执行成功
+     * 执行多个 IAsyncConsumer 任务并调用 get 方法确保执行成功
      *
      * @param params        任务参数集合
      * @param asyncConsumer 任务
@@ -29,7 +30,7 @@ public class AsyncTask {
     public static <P> void asyncAccepts(List<P> params, IAsyncConsumer<P> asyncConsumer) {
         List<Future<Void>> futureList = params.stream()
                 .map(asyncConsumer::accept)
-                .collect(Collectors.toList());
+                .toList();
         for (Future<Void> future : futureList) {
             try {
                 future.get();
@@ -41,7 +42,7 @@ public class AsyncTask {
     }
 
     /**
-     * 执行多个IAsyncFunction任务，并收集其执行结果
+     * 执行多个 IAsyncFunction 任务，并收集其执行结果
      *
      * @param params        任务参数集合
      * @param asyncFunction 任务
@@ -52,7 +53,7 @@ public class AsyncTask {
     public static <P, R> List<R> asyncApplies(List<P> params, IAsyncFunction<P, R> asyncFunction) {
         List<Future<R>> futureList = params.stream()
                 .map(asyncFunction::apply)
-                .collect(Collectors.toList());
+                .toList();
         List<R> resultList = Lists.newArrayListWithExpectedSize(params.size());
         for (Future<R> future : futureList) {
             try {
@@ -67,6 +68,7 @@ public class AsyncTask {
 
     public static class AsyncRuntimeException extends RuntimeException {
 
+        @Serial
         private static final long serialVersionUID = -4615255664865122399L;
 
         /**

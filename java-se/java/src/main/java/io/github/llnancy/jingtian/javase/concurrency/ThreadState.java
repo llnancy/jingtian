@@ -17,9 +17,9 @@ public class ThreadState {
             LOGGER.info("{} running.", Thread.currentThread().getName());
         }, "t1");
 
+        // RUNNABLE
         Thread t2 = new Thread(() -> {
             while (true) {
-                // RUNNABLE
                 // 可能分到了时间片，也可能没有
             }
         }, "t2");
@@ -31,10 +31,10 @@ public class ThreadState {
         }, "t3");
         t3.start();
 
+        // TIMED_WAITING
         Thread t4 = new Thread(() -> {
             synchronized (ThreadState.class) {
                 try {
-                    // TIMED_WAITING
                     Thread.sleep(10000000L);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
@@ -43,9 +43,9 @@ public class ThreadState {
         }, "t4");
         t4.start();
 
+        // WAITING
         Thread t5 = new Thread(() -> {
             try {
-                // WAITING
                 t2.join();
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
@@ -55,9 +55,9 @@ public class ThreadState {
 
         // BLOCKED
         Thread t6 = new Thread(() -> {
+            // t4 线程先执行，锁被 t4 线程拿到
             synchronized (ThreadState.class) {
                 try {
-                    // BLOCKED
                     Thread.sleep(10000000L);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
