@@ -4,7 +4,7 @@ import cn.hutool.core.thread.ThreadUtil;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * 华罗庚 《统筹方法》
+ * 华罗庚《统筹方法》
  *
  * @author sunchaser admin@lilu.org.cn
  * @since JDK8 2022/10/17

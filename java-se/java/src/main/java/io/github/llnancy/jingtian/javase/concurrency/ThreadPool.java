@@ -81,7 +81,7 @@ public class ThreadPool {
         // 仅包含一个线程的线程池
         ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();
 
-        // 固定2个线程的线程池
+        // 固定 2 个线程的线程池
         ExecutorService fixedThreadPool = Executors.newFixedThreadPool(2);
 
         // 线程数不限的线程池
@@ -90,7 +90,7 @@ public class ThreadPool {
         // 仅包含一个线程的 ScheduledThreadPoolExecutor 线程池
         ScheduledExecutorService singleThreadScheduledExecutor = Executors.newSingleThreadScheduledExecutor();
 
-        // 固定2个线程数的 ScheduledThreadPoolExecutor 线程池
+        // 固定 2 个线程数的 ScheduledThreadPoolExecutor 线程池
         ScheduledExecutorService scheduledThreadPool = Executors.newScheduledThreadPool(2);
 
         // fork join pool

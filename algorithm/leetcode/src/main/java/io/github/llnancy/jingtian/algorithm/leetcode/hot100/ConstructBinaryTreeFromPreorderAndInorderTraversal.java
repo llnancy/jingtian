@@ -6,8 +6,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 从前序与中序遍历序列构造二叉树
- * <a href="https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/?envType=featured-list&envId=2cktkvj?envType=featured-list&envId=2cktkvj">https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/?envType=featured-list&envId=2cktkvj?envType=featured-list&envId=2cktkvj</a>
+ * 105. 从前序与中序遍历序列构造二叉树
+ * <a href="https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/">https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/</a>
  *
  * @author llnancy admin@lilu.org.cn
  * @since JDK8 2023/11/23
@@ -37,14 +37,14 @@ public class ConstructBinaryTreeFromPreorderAndInorderTraversal {
         // 前序遍历数组第一个元素为根节点
         int rootVal = preorder[preStart];
         // 找根节点在中序遍历中的索引位置
-        int index = inorderValToIndexMap.get(rootVal);
+        int rootIndex = inorderValToIndexMap.get(rootVal);
         // 左子树长度
-        int leftSize = index - inStart;
+        int leftSize = rootIndex - inStart;
         // 构造根节点
         TreeNode root = new TreeNode(rootVal);
         // 递归构建左右子树
-        root.left = build(preorder, preStart + 1, preStart + leftSize, inorder, inStart, index - 1);
-        root.right = build(preorder, preStart + leftSize + 1, preEnd, inorder, index + 1, inEnd);
+        root.left = build(preorder, preStart + 1, preStart + leftSize, inorder, inStart, rootIndex - 1);
+        root.right = build(preorder, preStart + leftSize + 1, preEnd, inorder, rootIndex + 1, inEnd);
         return root;
     }
 }
