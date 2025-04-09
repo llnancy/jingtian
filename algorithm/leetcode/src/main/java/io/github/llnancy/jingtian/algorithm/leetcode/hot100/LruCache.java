@@ -26,19 +26,6 @@ public class LruCache<K, V> {
     }
 
     /**
-     * 将指定 key 提升为最近使用过的
-     *
-     * @param key 指定 key
-     */
-    private void makeRecently(K key) {
-        Node<K, V> node = map.get(key);
-        // 先从双向链表中删除该节点
-        cache.remove(node);
-        // 再将该节点添加到尾部
-        cache.addLast(node);
-    }
-
-    /**
      * 添加最近使用的元素
      *
      * @param key k
@@ -60,20 +47,14 @@ public class LruCache<K, V> {
         map.remove(key);
     }
 
-    /**
-     * 删除最久未使用
-     */
-    private void removeLeastRecently() {
-        Node<K, V> node = cache.removeFirst();
-        map.remove(node.key);
-    }
-
     public V get(K key) {
         if (!map.containsKey(key)) {
             return null;
         }
-        makeRecently(key);
-        return map.get(key).val;
+        Node<K, V> node = map.get(key);
+        cache.remove(node);
+        cache.addLast(node);
+        return node.val;
     }
 
     public void put(K key, V val) {
@@ -83,7 +64,8 @@ public class LruCache<K, V> {
             return;
         }
         if (cache.size() == capacity) {
-            removeLeastRecently();
+            Node<K, V> first = cache.removeFirst();
+            map.remove(first.key);
         }
         addRecently(key, val);
     }
@@ -97,11 +79,11 @@ public class LruCache<K, V> {
  */
 class DoubleList<K, V> {
 
-    private final Node<K, V> head;
+    Node<K, V> head;
 
-    private final Node<K, V> tail;
+    Node<K, V> tail;
 
-    private int size;
+    int size;
 
     public DoubleList() {
         head = new Node<>();
