@@ -24,6 +24,7 @@ public class PalindromeLinkedList {
         ListNode next;
         // 找中点过程中将慢指针迭代部分进行链表反转
         while (fast != null && fast.next != null) {
+            // 快指针要先走，因为慢指针迭代过程中会反转节点
             fast = fast.next.next;
             next = slow.next;
             slow.next = pre;
@@ -31,24 +32,27 @@ public class PalindromeLinkedList {
             slow = next;
         }
 
-        // 如果快指针指向不为 null，说明链表长度为奇数。
         if (fast != null) {
-            // 慢指针需要再向前推进一步
+            // fast 不为 null，说明链表长度为奇数，slow 需要再往前走一步以错开中点
             slow = slow.next;
         }
-        ListNode prepre = slow;
-        ListNode prenext;
-        while (slow != null && pre != null) {
+
+        ListNode p1 = pre;
+        ListNode pre1 = slow;
+        ListNode next1;
+        boolean result = true;
+        while (p1 != null && slow != null) {
             // 值回文比较
-            if (slow.val != pre.val) {
-                return false;
+            if (p1.val != slow.val) {
+                // 非回文更新结果，但依然要遍历完所有节点以便还原整个链表
+                result = false;
             }
-            prenext = pre.next;
-            pre.next = prepre;
-            prepre = pre;
-            pre = prenext;
+            next1 = p1.next;
+            p1.next = pre1;
+            pre1 = p1;
+            p1 = next1;
             slow = slow.next;
         }
-        return true;
+        return result;
     }
 }

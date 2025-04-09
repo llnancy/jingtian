@@ -17,8 +17,8 @@ public class FileSourceDemo {
 
     public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        String getenv = System.getProperty("user.dir");
-        System.out.println(getenv);
+        String userDir = System.getProperty("user.dir");
+        System.out.println(userDir);
 
         FileSource<String> fileSource = FileSource.forRecordStreamFormat(
                         new TextLineInputFormat(),

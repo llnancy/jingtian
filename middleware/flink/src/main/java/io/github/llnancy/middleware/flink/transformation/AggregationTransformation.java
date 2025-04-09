@@ -35,7 +35,7 @@ public class AggregationTransformation {
             }
         });
 
-        // sum 聚合（按索引位置指定字段）
+        // sum 聚合（按索引位置指定字段），适用于 TUPLE 类型，POJO 不行。
         // SingleOutputStreamOperator<Tuple3<Integer, Integer, Integer>> sumByPosition = ks.sum(2);
         // sumByPosition.print();
 

@@ -2,68 +2,53 @@ package io.github.llnancy.jingtian.algorithm.leetcode.medium;
 
 import io.github.llnancy.jingtian.algorithm.common.TreeNode;
 
+import java.util.ArrayList;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
 
 /**
  * 103. 二叉树的锯齿形层序遍历
- * <p>
  * 之字形打印二叉树
- * <p>
- * https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/
+ * <a href="https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/">https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/</a>
  *
  * @author sunchaser admin@lilu.org.cn
  * @since JDK8 2021/11/14
  */
 public class BinaryTreeZigzagLevelOrderTraversal {
 
-    public static void main(String[] args) {
-        TreeNode root = new TreeNode(3);
-        TreeNode node1 = new TreeNode(9);
-        TreeNode node2 = new TreeNode(20);
-        TreeNode node3 = new TreeNode(15);
-        TreeNode node4 = new TreeNode(7);
-        root.left = node1;
-        root.right = node2;
-        node2.left = node3;
-        node2.right = node4;
-
-        System.out.println(zigzagLevelOrder(root));
-    }
-
     /**
-     * Deque双端队列
-     * 从左至右：左出右进
-     * 从右至左：右出左进
+     * Deque 双端队列
      */
-    public static List<List<Integer>> zigzagLevelOrder(TreeNode root) {
-        List<List<Integer>> res = new LinkedList<>();
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<>();
+        if (root == null) {
+            return result;
+        }
+        // 标记变量，控制遍历方向，true 表示从左往右，false 表示从右往左
+        boolean flag = true;
         Deque<TreeNode> deque = new LinkedList<>();
-        if (root != null) {
-            deque.offerLast(root);
-        }
-        boolean isLeft = true;// true：从左至右遍历
+        deque.offer(root);
         while (!deque.isEmpty()) {
-            List<Integer> list = new LinkedList<>();
+            LinkedList<Integer> level = new LinkedList<>();
             int size = deque.size();
-            while (size > 0) {
-                TreeNode poll;
-                if (isLeft) {// 从左至右
-                    poll = deque.pollFirst();// 左出
-                    if (poll.left != null) deque.offerLast(poll.left);// 右进
-                    if (poll.right != null) deque.offerLast(poll.right);
-                } else {// 从右至左
-                    poll = deque.pollLast();// 右出
-                    if (poll.right != null) deque.offerFirst(poll.right);// 左进
-                    if (poll.left != null) deque.offerFirst(poll.left);
+            for (int i = 0; i < size; i++) {
+                TreeNode node = deque.poll();
+                if (flag) {
+                    level.addLast(node.val);
+                } else {
+                    level.addFirst(node.val);
                 }
-                list.add(poll.val);
-                size--;
+                if (node.left != null) {
+                    deque.offer(node.left);
+                }
+                if (node.right != null) {
+                    deque.offer(node.right);
+                }
             }
-            isLeft = !isLeft;
-            res.add(list);
+            flag = !flag;
+            result.add(level);
         }
-        return res;
+        return result;
     }
 }

@@ -19,6 +19,7 @@ public class DataGenSourceDemo {
     public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         // 设置并行度
+        // 如果并行度设为 n，则子任务会将最大值均分为 n 份，由每个子任务并行生成。
         env.setParallelism(1);
 
         DataGeneratorSource<String> dataGeneratorSource = new DataGeneratorSource<>(

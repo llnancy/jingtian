@@ -1,5 +1,6 @@
 package io.github.llnancy.middleware.flink.transformation;
 
+import io.github.llnancy.middleware.flink.WordCount;
 import org.apache.flink.api.java.functions.KeySelector;
 import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
@@ -35,44 +36,5 @@ public class KeyByTransformation {
 
         sum.print();
         env.execute();
-    }
-
-    public static class WordCount {
-
-        public String word;
-
-        public Integer count;
-
-        public WordCount() {
-        }
-
-        public WordCount(String word, Integer count) {
-            this.word = word;
-            this.count = count;
-        }
-
-        @Override
-        public String toString() {
-            return "WordCount{" +
-                    "word='" + word + '\'' +
-                    ", count=" + count +
-                    '}';
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-
-            WordCount wordCount = (WordCount) o;
-            return word.equals(wordCount.word) && count.equals(wordCount.count);
-        }
-
-        @Override
-        public int hashCode() {
-            int result = word.hashCode();
-            result = 31 * result + count.hashCode();
-            return result;
-        }
     }
 }
